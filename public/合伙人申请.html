@@ -17,17 +17,19 @@
 .btn{height:30px;padding:0 12px;border:1px solid var(--line);border-radius:4px;background:#fff;color:#4e5969;font-size:13px;line-height:28px;transition:.16s}.btn:hover{border-color:#b6d8ff;background:#f5f9ff;color:var(--blue)}.btn.primary{border-color:var(--blue);background:var(--blue);color:#fff}.btn.primary:hover{border-color:var(--blue-strong);background:var(--blue-strong);color:#fff}.btn.text{border-color:transparent;background:#fff;color:#606266}.btn.text:hover{border-color:transparent;background:#f5f9ff;color:var(--blue)}.btn[disabled]{opacity:.55;cursor:not-allowed}
 .filter-card{max-width:1600px;margin:0 auto 10px;background:#fff;border:1px solid #e8edf3;border-radius:4px}.filter-grid{display:grid;grid-template-columns:minmax(210px,1.1fr) minmax(210px,1.1fr) minmax(170px,1fr) 210px;gap:9px 16px;padding:10px 12px}.filter-field{display:grid;grid-template-columns:50px minmax(0,1fr);align-items:center;min-width:0}.filter-field label{color:var(--text-2);font-size:13px;text-align:right;padding-right:10px;white-space:nowrap}.filter-field input,.filter-field select{width:100%;height:30px;min-width:0;padding:0 10px;border:1px solid var(--line);border-radius:4px;background:#fff;color:var(--text);outline:none}.filter-field select{padding-right:26px;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M2 3.5 5 6.5 8 3.5' fill='none' stroke='%23a8abb2' stroke-width='1.2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center;background-size:10px}.filter-field input::placeholder{color:#a8abb2}.filter-field input:focus,.filter-field select:focus{border-color:#409eff;box-shadow:0 0 0 2px rgba(64,158,255,.12)}.filter-actions{display:flex;align-items:center;justify-content:flex-end;gap:7px;grid-column:4;grid-row:1}.time-field{grid-column:2/span 3}.date-range{display:flex;align-items:center;gap:7px;min-width:0}.date-range input{flex:1;min-width:0}.date-range span{color:#b6bcc7}.filter-expand{display:none;align-items:center;justify-content:space-between;padding:10px 12px;color:#8a94a6;font-size:12.5px}.filter-card.collapsed .filter-grid{display:none}.filter-card.collapsed .filter-expand{display:flex}
 .table-card{position:relative;max-width:1600px;margin:0 auto;background:#fff;border:1px solid #e8edf3;border-radius:4px;box-shadow:0 1px 2px rgba(24,36,56,.03)}.table-card.fullscreen{position:fixed;z-index:40;inset:10px;max-width:none;display:flex;flex-direction:column;box-shadow:0 18px 50px rgba(24,36,56,.18)}.table-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;border-bottom:1px solid #eef1f5}.table-title{display:flex;align-items:baseline;gap:9px}.table-title h2{margin:0;color:#1f2733;font-size:15px;line-height:22px}.table-title .count{color:#8a94a6;font-size:12px}.table-tools{position:relative;display:flex;align-items:center;gap:6px}.round-btn{width:28px;height:28px;display:grid;place-items:center;border:0;border-radius:50%;background:#f2f5f9;color:#606a7b;font-size:18px;line-height:1}.round-btn.primary{background:var(--blue);color:#fff}.round-btn.primary:hover{background:var(--blue-strong)}.round-btn:hover{background:#e8f3ff;color:var(--blue)}.column-menu{position:absolute;z-index:20;top:34px;right:0;width:148px;padding:8px;border:1px solid #e4e7ed;border-radius:6px;background:#fff;box-shadow:0 8px 24px rgba(24,36,56,.14)}.column-menu label{display:flex;align-items:center;gap:7px;height:28px;padding:0 5px;border-radius:4px;color:#4e5969;cursor:pointer}.column-menu label:hover{background:#f5f9ff}.column-menu input{accent-color:var(--blue)}
-.table-wrap{position:relative;overflow:auto}.table-wrap::-webkit-scrollbar{height:8px;width:8px}.table-wrap::-webkit-scrollbar-thumb{border-radius:4px;background:#d8dee8}table{width:100%;min-width:1190px;border-collapse:collapse;font-size:13px;table-layout:fixed}th{height:36px;padding:0 9px;border-bottom:1px solid #edf0f5;background:#f7f8fa;color:#5b6575;font-weight:600;text-align:left;white-space:nowrap}td{height:42px;padding:7px 9px;border-bottom:1px solid #f0f2f5;color:#4e5969;vertical-align:middle}tbody tr:hover td{background:#fafcff}tbody tr:last-child td{border-bottom:0}.phone{font-variant-numeric:tabular-nums;letter-spacing:.1px}.ellipsis{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.actions-cell{display:flex;align-items:center;gap:1px;white-space:nowrap}.action-link{border:0;background:transparent;padding:0 4px;color:var(--blue);font-size:13px;line-height:20px;white-space:nowrap}.action-link:hover{color:var(--blue-strong);text-decoration:underline}.action-link:disabled{color:#c0c4cc;cursor:not-allowed;text-decoration:none}.tag{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:11px;font-size:12px;white-space:nowrap}.tag.following{background:#fff7e6;color:var(--warning)}.tag.approved{background:#e8f8ee;color:var(--success)}.tag.rejected{background:#fff0f0;color:#e25b5b}.tag.closed{background:#f2f4f7;color:#8a94a6}.tag.waiting{background:#eef4ff;color:#3a72c9}.empty-state{display:none;padding:70px 20px;color:#a0a6b1;text-align:center}.empty-state.show{display:block}.empty-icon{width:42px;height:42px;margin:0 auto 10px;display:grid;place-items:center;border-radius:50%;background:#f2f5f9;color:#b8c0cb;font-size:20px}.loading-mask{display:none;position:absolute;z-index:5;inset:0;align-items:center;justify-content:center;gap:9px;background:rgba(255,255,255,.72);color:#6b7482;font-size:12.5px}.loading-mask.show{display:flex}.spinner{width:16px;height:16px;border:2px solid #d9e6f7;border-top-color:var(--blue);border-radius:50%;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.table-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;border-top:1px solid #eef1f5;color:#6b7482;font-size:12.5px}.footer-left b{color:#303133}.footer-right{display:flex;align-items:center;gap:7px}.page-size{height:28px;padding:0 22px 0 8px;border:1px solid var(--line);border-radius:4px;color:#606266;background:#fff;outline:none}.pager-btn{min-width:28px;height:28px;padding:0 7px;border:1px solid var(--line);border-radius:4px;background:#fff;color:#606266}.pager-btn:hover:not(:disabled){border-color:#9cc9ff;color:var(--blue)}.pager-btn:disabled{color:#c0c4cc;cursor:not-allowed}.page-numbers{display:flex;gap:4px}.page-number{min-width:28px;height:28px;padding:0 7px;border:1px solid var(--line);border-radius:4px;background:#fff;color:#606266}.page-number:hover{border-color:#9cc9ff;color:var(--blue)}.page-number.active{border-color:var(--blue);background:var(--blue);color:#fff}.ellipsis-page{display:flex;align-items:center;color:#a0a6b1;padding:0 2px}
+.table-wrap{position:relative;overflow:auto}.table-wrap::-webkit-scrollbar{height:8px;width:8px}.table-wrap::-webkit-scrollbar-thumb{border-radius:4px;background:#d8dee8}table{width:100%;min-width:0;border-collapse:collapse;font-size:13px;table-layout:fixed}th{height:36px;padding:0 9px;border-bottom:1px solid #edf0f5;background:#f7f8fa;color:#5b6575;font-weight:600;text-align:left;white-space:nowrap}td{height:42px;padding:7px 9px;border-bottom:1px solid #f0f2f5;color:#4e5969;vertical-align:middle}tbody tr:hover td{background:#fafcff}tbody tr:last-child td{border-bottom:0}.phone{font-variant-numeric:tabular-nums;letter-spacing:.1px}.ellipsis{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.actions-cell{display:flex;align-items:center;gap:1px;white-space:nowrap}.action-link{border:0;background:transparent;padding:0 4px;color:var(--blue);font-size:13px;line-height:20px;white-space:nowrap}.action-link:hover{color:var(--blue-strong);text-decoration:underline}.action-link:disabled{color:#c0c4cc;cursor:not-allowed;text-decoration:none}.tag{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:11px;font-size:12px;white-space:nowrap}.tag.following{background:#fff7e6;color:var(--warning)}.tag.approved{background:#e8f8ee;color:var(--success)}.tag.rejected{background:#fff0f0;color:#e25b5b}.tag.closed{background:#f2f4f7;color:#8a94a6}.tag.waiting{background:#eef4ff;color:#3a72c9}.empty-state{display:none;padding:70px 20px;color:#a0a6b1;text-align:center}.empty-state.show{display:block}.empty-icon{width:42px;height:42px;margin:0 auto 10px;display:grid;place-items:center;border-radius:50%;background:#f2f5f9;color:#b8c0cb;font-size:20px}.loading-mask{display:none;position:absolute;z-index:5;inset:0;align-items:center;justify-content:center;gap:9px;background:rgba(255,255,255,.72);color:#6b7482;font-size:12.5px}.loading-mask.show{display:flex}.spinner{width:16px;height:16px;border:2px solid #d9e6f7;border-top-color:var(--blue);border-radius:50%;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.table-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;border-top:1px solid #eef1f5;color:#6b7482;font-size:12.5px}.footer-left b{color:#303133}.footer-right{display:flex;align-items:center;gap:7px}.page-size{height:28px;padding:0 22px 0 8px;border:1px solid var(--line);border-radius:4px;color:#606266;background:#fff;outline:none}.pager-btn{min-width:28px;height:28px;padding:0 7px;border:1px solid var(--line);border-radius:4px;background:#fff;color:#606266}.pager-btn:hover:not(:disabled){border-color:#9cc9ff;color:var(--blue)}.pager-btn:disabled{color:#c0c4cc;cursor:not-allowed}.page-numbers{display:flex;gap:4px}.page-number{min-width:28px;height:28px;padding:0 7px;border:1px solid var(--line);border-radius:4px;background:#fff;color:#606266}.page-number:hover{border-color:#9cc9ff;color:var(--blue)}.page-number.active{border-color:var(--blue);background:var(--blue);color:#fff}.ellipsis-page{display:flex;align-items:center;color:#a0a6b1;padding:0 2px}
 .overlay{position:fixed;z-index:45;inset:0;background:rgba(15,23,42,.32);opacity:0;pointer-events:none;transition:.2s}.overlay.show{opacity:1;pointer-events:auto}.summary-card{padding:12px;border:1px solid #e8edf3;border-radius:6px;background:#fbfcfe}.summary-top{display:flex;align-items:center;justify-content:space-between;gap:12px}.summary-name{color:#1f2733;font-size:16px;font-weight:700}.summary-phone{margin-top:4px;color:#6b7482;font-size:13px}.meta-grid{display:grid;grid-template-columns:76px minmax(0,1fr) 76px minmax(0,1fr);gap:9px 10px;margin-top:14px;color:#6b7482;font-size:12.5px}.meta-grid dt{color:#9aa3b1}.meta-grid dd{margin:0;color:#4e5969}.timeline{margin-top:18px}.timeline h4{margin:0 0 12px;color:#303133;font-size:13.5px}.timeline-item{position:relative;padding:0 0 16px 18px;border-left:1px solid #e4e7ed}.timeline-item:last-child{padding-bottom:0;border-left-color:transparent}.timeline-dot{position:absolute;left:-4px;top:2px;width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 3px #e8f3ff}.timeline-time{color:#9aa3b1;font-size:12px}.timeline-title{margin-top:3px;color:#303133;font-size:13px;font-weight:600}.timeline-text{margin-top:4px;color:#6b7482;font-size:12.5px;line-height:19px}
 .modal-overlay{position:fixed;z-index:60;inset:0;display:none;align-items:center;justify-content:center;background:rgba(15,23,42,.34)}.modal-overlay.show{display:flex}.modal.wide{width:880px}.modal.wide.fullscreen{width:96vw;max-width:96vw;height:88vh;max-height:88vh}.modal-head-tools{display:flex;align-items:center;gap:4px}.head-tool{width:28px;height:28px;display:grid;place-items:center;border:0;border-radius:4px;background:transparent;color:#8a94a6}.head-tool:hover{background:#f2f5f9;color:var(--blue)}.follow-sub{margin:0 0 10px;color:#8a94a6;font-size:12.5px;line-height:18px}.follow-table-wrap{max-height:min(52vh,460px);overflow:auto;border:1px solid #ebeef5;border-radius:4px}.modal.wide.fullscreen .follow-table-wrap{max-height:none;flex:1}.follow-table{width:100%;min-width:0;border-collapse:collapse;table-layout:fixed;font-size:13px}.follow-table th{height:38px;padding:0 12px;background:#fafafa;border-bottom:1px solid #ebeef5;color:#606266;font-weight:600;text-align:left;white-space:nowrap}.follow-table td{height:auto;padding:10px 12px;border-bottom:1px solid #f2f4f7;color:#4e5969;vertical-align:top;overflow-wrap:anywhere}.follow-table tr:last-child td{border-bottom:0}.follow-table .nowrap{white-space:nowrap}.follow-empty{padding:44px 0;text-align:center;color:#a0a6b1;font-size:13px}.follow-link{border:0;background:transparent;padding:0;max-width:100%;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left;color:var(--blue);font:inherit;cursor:pointer}.follow-link:hover{color:var(--blue-strong);text-decoration:underline}.follow-kind{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:11px;font-size:12px;white-space:nowrap}.follow-kind.kind-follow{background:#e8f3ff;color:#1677ff}.follow-kind.kind-status{background:#fff7e6;color:#d48806}.follow-title{font-weight:600;color:#303133}.follow-detail{display:block;margin-top:3px;color:#6b7482;line-height:19px}.modal{width:520px;max-width:92vw;max-height:88vh;display:flex;flex-direction:column;background:#fff;border-radius:6px;box-shadow:0 18px 50px rgba(24,36,56,.2)}.modal-head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #eef1f5}.modal-head h3{margin:0;color:#1f2733;font-size:15px}.modal-close{width:28px;height:28px;border:0;border-radius:4px;background:transparent;color:#8a94a6;font-size:20px;line-height:1}.modal-close:hover{background:#f2f5f9;color:#303133}.modal-body{min-height:0;overflow:auto;padding:14px 16px}.modal-row{display:grid;grid-template-columns:88px minmax(0,1fr);gap:10px;align-items:start;margin-bottom:12px}.modal-row>label{height:32px;display:flex;align-items:center;justify-content:flex-end;padding-right:2px;color:#606266;font-size:13px}.modal-row>label.required:before{content:"*";margin-right:3px;color:var(--danger)}.modal-control input,.modal-control select,.modal-control textarea{width:100%;border:1px solid var(--line);border-radius:4px;background:#fff;color:#303133;outline:none}.modal-control input,.modal-control select{height:32px;padding:0 10px}.modal-control textarea{min-height:88px;padding:8px 10px;line-height:20px;resize:vertical}.modal-control input:focus,.modal-control select:focus,.modal-control textarea:focus{border-color:#409eff;box-shadow:0 0 0 2px rgba(64,158,255,.12)}.modal-control.has-error textarea{border-color:var(--danger)}.modal-error{display:none;margin-top:5px;color:var(--danger);font-size:12px}.modal-control.has-error .modal-error{display:block}.readonly-value{height:32px;display:flex;align-items:center;color:#303133}.confirm-text{margin:0;color:#4e5969;line-height:21px}.confirm-tip{margin-top:9px;padding:8px 10px;border:1px solid #ffe1b8;border-radius:4px;background:#fff8ed;color:#9a6419;font-size:12.5px;line-height:18px}.modal-tip{margin-top:6px;color:#8a94a6;font-size:12px;line-height:16px}.modal-row.hidden-row{display:none}.radio-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.radio-card{position:relative;display:flex;flex-direction:column;gap:2px;padding:8px 10px;border:1px solid var(--line);border-radius:4px;cursor:pointer}.radio-card input{position:absolute;opacity:0;pointer-events:none}.radio-card .rc-title{color:#303133;font-size:13px}.radio-card .rc-tip{color:#8a94a6;font-size:12px;line-height:16px}.radio-card.selected{border-color:var(--blue);background:#f4f9ff}.modal-foot{display:flex;justify-content:flex-end;gap:8px;padding:12px 16px;border-top:1px solid #eef1f5}
-.content-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:18px;align-items:start;max-width:1600px;margin:0 auto}
-.content-primary{min-width:0}
+.partner-cell{display:flex;flex-direction:column;gap:3px;line-height:18px}.partner-cell-main{color:#303133}.partner-cell-sub{color:#8a94a6;font-size:12px;line-height:16px}.content-layout{display:grid;grid-template-columns:1440px 320px;gap:18px;align-items:start;width:1778px;margin:0 auto}
+.content-primary{width:1440px;min-width:0}
+.admin-config-page{display:none;max-width:960px;margin:0 auto;background:#fff;border:1px solid #e8edf3;border-radius:4px;box-shadow:0 1px 2px rgba(24,36,56,.03)}.admin-config-page.show{display:block}.config-page-wrap{display:none;grid-template-columns:minmax(0,1fr) 320px;gap:18px;max-width:1600px;margin:0 auto}.config-page-wrap.show{display:grid}.config-page-wrap .admin-config-page{display:block;max-width:none;margin:0}.config-help{border:1px solid #e8edf3;border-radius:4px;background:#fff;max-height:calc(100vh - 130px);overflow:auto;box-shadow:0 1px 2px rgba(24,36,56,.03)}.config-help .help-panel{padding:14px 16px}.config-head{padding:16px 18px;border-bottom:1px solid #eef1f5}.config-head h2{margin:0;color:#1f2733;font-size:16px}.config-head p{margin:6px 0 0;color:#8a94a6;font-size:12.5px}.config-body{padding:18px}.config-section{padding:0 0 18px;margin-bottom:18px;border-bottom:1px solid #eef1f5}.config-section:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}.config-section h3{margin:0 0 14px;color:#303133;font-size:14px}.config-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 24px}.config-field label{display:block;margin-bottom:6px;color:#606266;font-size:13px}.config-field input{width:100%;height:32px;padding:0 10px;border:1px solid var(--line);border-radius:4px;outline:0}.config-field input:read-only{border-color:#edf0f5;background:#f5f7fa;color:#606a7b;cursor:default;box-shadow:none}.config-field input:not(:read-only){border-color:#c6e2ff;background:#fff;color:#303133}.config-field input:focus:not(:read-only){border-color:#409eff;box-shadow:0 0 0 2px rgba(64,158,255,.12)}.config-actions{display:flex;justify-content:flex-end;margin-top:18px}.config-section-title{display:flex;align-items:center;justify-content:space-between;gap:12px}.config-switch{display:inline-flex;align-items:center;gap:8px;color:#606266;font-size:13px}.config-switch input{width:34px;height:18px;appearance:none;border:0;border-radius:10px;background:#cfd6e1;cursor:pointer;position:relative;vertical-align:middle}.config-switch input:before{content:"";position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;transition:.16s}.config-switch input:checked{background:var(--blue)}.config-switch input:checked:before{left:18px}.config-switch input:disabled{cursor:default;opacity:.7}.tax-tier-table-wrap{overflow:auto;border:1px solid #e8edf3;border-radius:4px}.tax-tier-table{width:100%;min-width:900px;border-collapse:collapse;font-size:12px}.tax-tier-table th,.tax-tier-table td{padding:8px;border-bottom:1px solid #eef1f5;text-align:left;vertical-align:middle}.tax-tier-table th{background:#f7f8fa;color:#606266;font-weight:600;white-space:nowrap}.tax-tier-table tr:last-child td{border-bottom:0}.tax-tier-table input{width:100%;min-width:70px;height:30px;padding:0 7px;border:1px solid var(--line);border-radius:4px}.tax-tier-table td:nth-child(1){width:170px}.tax-tier-table td:nth-child(2){width:110px}.tax-tier-table td:nth-child(3){width:80px}.tax-tier-table td:nth-child(4){width:180px}.tax-tier-table td:nth-child(5){width:56px}.tax-tier-table input:read-only{border-color:#edf0f5;background:#f5f7fa;color:#606a7b}.tax-tier-table input:not(:read-only){border-color:#c6e2ff;background:#fff}
 .content-layout .filter-card,.content-layout .table-card{max-width:none;margin:0}
 .content-layout .filter-card{margin-bottom:10px}
 .page-help{position:sticky;top:12px;border:1px solid #e8edf3;border-radius:4px;background:#fff;max-height:calc(100vh - 130px);overflow:auto;box-shadow:0 1px 2px rgba(24,36,56,.03)}
 .help-panel{padding:14px 16px}
 .help-panel>h2{margin:0 0 4px;color:#1f2733;font-size:15px}
 .help-block{padding:12px 0;border-bottom:1px solid #eef1f5}
+.help-block.today-update{margin:10px -8px 0;padding:12px 8px;border:1px solid #c7d2fe;border-radius:6px;background:#eef2ff}.help-block.today-update h3{color:#4338ca}.help-block.today-update p,.help-block.today-update li{color:#4338ca}
 .help-block h3{margin:0 0 8px;color:#263b58;font-size:13px}
 .help-block p,.help-block li{margin:0;color:#64748b;font-size:12.5px;line-height:1.7}
 .help-block ul{margin:0;padding-left:16px}
@@ -35,8 +37,8 @@
 .help-context{margin-top:12px;padding:10px 12px;border-left:3px solid var(--blue);border-radius:0 4px 4px 0;background:#f4f9ff}
 .help-context span{display:block;margin-bottom:6px;color:#8a94a6;font-size:12px}
 .help-context strong{color:#334866;font-size:12.5px;line-height:1.6;font-weight:600}
-@media(max-width:1440px){.content-layout{grid-template-columns:minmax(0,1fr) 288px;gap:14px}}
-@media(max-width:1200px){.content-layout{grid-template-columns:minmax(0,1fr)}.page-help{position:static;max-height:none}}
+
+
 .modal.wide .modal-row{grid-template-columns:96px minmax(0,1fr)}
 .modal.wide .modal-body{padding:16px 20px}
 .count-wrap{position:relative}.count-wrap textarea{min-height:132px;padding-bottom:26px}.char-count{position:absolute;right:22px;bottom:8px;color:#a8abb2;font-size:12px;line-height:16px;pointer-events:none}
@@ -83,13 +85,14 @@
   <aside class="sidebar">
     <div class="brand"><span class="brand-mark">优</span><span>优坐标管理系统</span></div>
     <nav class="menu" aria-label="主导航">
-      <div class="menu-item open" data-nav="配置中心"><svg class="icon"><use href="#i-gear"></use></svg><span>配置中心</span><svg class="icon chevron"><use href="#i-chevron"></use></svg></div>
-      <div class="submenu open">
-        <a class="submenu-item" id="navRule" href="index.html" data-nav="分润规则">分润规则</a>
-      </div>
       <div class="menu-item open" data-nav="客户管理"><svg class="icon"><use href="#i-user"></use></svg><span>客户管理</span><svg class="icon chevron"><use href="#i-chevron"></use></svg></div>
       <div class="submenu open">
         <div class="submenu-item active" data-nav="合伙人申请">合伙人申请</div>
+      </div>
+      <div class="menu-item" data-nav="分销管理"><svg class="icon"><use href="#i-share"></use></svg><span>分销管理</span><svg class="icon chevron"><use href="#i-chevron"></use></svg></div>
+      <div class="submenu">
+        <div class="submenu-item" data-nav="税率配置">税率配置</div>
+        <div class="submenu-item" data-nav="提现设置">提现设置</div>
       </div>
     </nav>
   </aside>
@@ -103,6 +106,14 @@
     </header>
     <div class="tabs"><button class="tab" type="button" id="analysisTab"><span>◫</span>分析页</button><button class="tab active" type="button" id="listTab"><span>▣</span>合伙人申请<span class="close" aria-hidden="true">×</span></button><div class="tabs-right"><button class="icon-btn" type="button" aria-label="栅格"><svg class="icon"><use href="#i-grid"></use></svg></button><button class="icon-btn" type="button" aria-label="刷新"><svg class="icon"><use href="#i-refresh"></use></svg></button></div></div>
     <main class="content">
+      <div class="config-page-wrap" id="taxConfigWrap"><section class="admin-config-page" id="taxConfigPage" aria-label="税率配置">
+        <div class="config-head"><h2>税率配置</h2></div>
+        <div class="config-body"><div class="config-section"><div class="config-section-title"><h3>税费阶梯</h3><label class="config-switch"><input id="taxEnabled" type="checkbox" checked><span>启用</span></label><button class="btn" type="button" id="addTaxTier" disabled hidden>增加阶梯</button></div><div class="tax-tier-table-wrap"><table class="tax-tier-table"><thead><tr><th>金额下限（元）</th><th>金额上限（元）</th><th>应纳税额</th><th>税率（%）</th><th>计算公式</th><th></th></tr></thead><tbody id="taxTierBody"><tr><td><input type="number" min="0" step="0.01" value="0" readonly></td><td><input type="number" min="0" step="0.01" value="800" readonly></td><td><input value="0" readonly></td><td><input type="number" min="0" max="100" step="0.01" value="20" readonly></td><td><input value="0" readonly></td><td><button class="btn text tax-remove" type="button" disabled hidden>删除</button></td></tr><tr><td><input type="number" min="0" step="0.01" value="800" readonly></td><td><input type="number" min="0" step="0.01" value="4000" readonly></td><td><input value="A-800" readonly></td><td><input type="number" min="0" max="100" step="0.01" value="20" readonly></td><td><input value="(A-800）*20%" readonly></td><td><button class="btn text tax-remove" type="button" disabled hidden>删除</button></td></tr><tr><td><input type="number" min="0" step="0.01" value="4000" readonly></td><td><input type="number" min="0" step="0.01" value="20000" readonly></td><td><input value="A*80%" readonly></td><td><input type="number" min="0" max="100" step="0.01" value="20" readonly></td><td><input value="(A*80%）*20%" readonly></td><td><button class="btn text tax-remove" type="button" disabled hidden>删除</button></td></tr><tr><td><input type="number" min="0" step="0.01" value="20000" readonly></td><td><input type="number" min="0" step="0.01" value="50000" readonly></td><td><input value="A*80%" readonly></td><td><input type="number" min="0" max="100" step="0.01" value="30" readonly></td><td><input value="(A*80%）*30%" readonly></td><td><button class="btn text tax-remove" type="button" disabled hidden>删除</button></td></tr><tr><td><input type="number" min="0" step="0.01" value="50000" readonly></td><td><input type="number" min="0" step="0.01" value="" readonly></td><td><input value="A*80%" readonly></td><td><input type="number" min="0" max="100" step="0.01" value="40" readonly></td><td><input value="(A*80%）*40%" readonly></td><td><button class="btn text tax-remove" type="button" disabled hidden>删除</button></td></tr></tbody></table></div></div><div class="config-actions"><button class="btn" type="button" data-config-edit="tax">编辑</button><button class="btn primary" type="button" data-config-save="tax" hidden>保存</button></div></div>
+      </section><aside class="config-help"><div class="help-panel"><h2>页面说明</h2><section class="help-block"><h3>用途</h3><p>维护创客中心提现时使用的阶梯税率规则。启用后才会生效，开关可在查看态直接切换。</p></section><section class="help-block"><h3>编辑方式</h3><p>点击「编辑」后，金额上下限、应纳税额、税率和计算公式才可修改；可增加或删除阶梯。金额下限含当前值、金额上限不含当前值，最后一档上限留空表示无上限。</p></section><section class="help-block"><h3>字段限制</h3><p>金额上下限为非负数，税率为 0–100%（最多两位小数）；应纳税额和计算公式不能为空，公式仅作为规则说明保存，不在此页面执行。</p></section><section class="help-block"><h3>保存校验</h3><p>至少保留一档；档位按升序连续衔接，不得重叠或留空；只有最后一档允许上限为空，且上限必须大于下限。校验不通过时不会退出编辑状态。</p></section></div></aside></div>
+      <div class="config-page-wrap" id="withdrawConfigWrap"><section class="admin-config-page" id="withdrawConfigPage" aria-label="提现设置">
+        <div class="config-head"><h2>提现设置</h2></div>
+        <div class="config-body"><div class="config-section"><div class="config-section-title"><h3>提现限制</h3><label class="config-switch"><input id="withdrawEnabled" type="checkbox" checked><span>启用</span></label></div><div class="config-grid"><div class="config-field"><label for="withdrawMin">单笔最低金额（元）</label><input id="withdrawMin" type="number" min="0" value="10" readonly></div><div class="config-field"><label for="withdrawMax">单笔最高金额（元）</label><input id="withdrawMax" type="number" min="0" value="2000" readonly></div><div class="config-field"><label for="dailyCount">每日提现次数上限</label><input id="dailyCount" type="number" min="0" value="3" readonly></div><div class="config-field"><label for="dailyAmount">每日提现金额上限（元）</label><input id="dailyAmount" type="number" min="0" value="3000" readonly></div></div></div><div class="config-actions"><button class="btn" type="button" data-config-edit="withdraw">编辑</button><button class="btn primary" type="button" data-config-save="withdraw" hidden>保存</button></div></div>
+      </section><aside class="config-help"><div class="help-panel"><h2>页面说明</h2><section class="help-block"><h3>用途</h3><p>维护创客中心提现金额和每日提现频次限制。启用后才会生效，开关可在查看态直接切换。</p></section><section class="help-block"><h3>编辑方式</h3><p>点击「编辑」后，四个限制字段才可修改；完成后点击「保存」，保存成功会回到只读状态。</p></section><section class="help-block"><h3>字段限制</h3><p>金额必须为非负数且最多两位小数；每日提现次数必须为正整数；单笔最高金额不得低于单笔最低金额，每日金额上限不得低于单笔最低金额。</p></section><section class="help-block"><h3>保存校验</h3><p>任一字段为空、不是有效数字或不满足大小关系时，保存会被阻止并提示原因。</p></section></div></aside></div>
       <div class="content-layout">
       <div class="content-primary">
       <section class="filter-card" id="filterCard">
@@ -111,7 +122,7 @@
           <div class="filter-field"><label for="phoneKeyword">电话</label><input id="phoneKeyword" type="tel" placeholder="模糊搜索"></div>
           <div class="filter-field"><label for="statusFilter">状态</label><select id="statusFilter"><option value="" selected>全部状态</option><option value="pending">未跟进/跟进中</option><option value="已成交">已成交</option><option value="已关闭">已关闭</option></select></div>
           <div class="filter-actions"><button class="btn" type="button" id="resetFilter">重置</button><button class="btn primary" type="button" id="searchFilter">搜索</button><button class="btn text" type="button" id="collapseFilter">收起</button></div>
-          <div class="filter-field"><label for="typeFilter">类型</label><select id="typeFilter"><option value="">请选择</option><option value="申请成为合伙人">申请成为合伙人</option></select></div>
+          <div class="filter-field"><label for="typeFilter">类型</label><select id="typeFilter"><option value="">请选择</option><option value="自主申请">自主申请</option><option value="加盟校开通">加盟校开通</option></select></div>
           <div class="filter-field time-field"><label for="startDate">申请时间</label><div class="date-range"><input id="startDate" type="date"><span>-</span><input id="endDate" type="date"></div></div>
         </div>
         <div class="filter-expand"><span>筛选条件已收起</span><button class="btn" type="button" id="expandFilter">展开</button></div>
@@ -124,13 +135,13 @@
             <button class="icon-btn" type="button" id="refreshBtn" title="刷新"><svg class="icon"><use href="#i-refresh"></use></svg></button>
             <button class="icon-btn" type="button" id="fullscreenBtn" title="全屏"><svg class="icon"><use href="#i-expand"></use></svg></button>
             <button class="icon-btn" type="button" id="columnBtn" title="列设置"><svg class="icon"><use href="#i-grid"></use></svg></button>
-            <div class="column-menu" id="columnMenu" hidden><label><input type="checkbox" data-col="partner" checked>合作类型</label><label><input type="checkbox" data-col="region" checked>所在地区</label><label><input type="checkbox" data-col="type" checked>类型</label><label><input type="checkbox" data-col="follow" checked>跟进记录</label><label><input type="checkbox" data-col="next" checked>下次跟进时间</label></div>
+            <div class="column-menu" id="columnMenu" hidden><label><input type="checkbox" data-col="partner" checked>合作类型</label><label><input type="checkbox" data-col="region" checked>所在地区</label><label><input type="checkbox" data-col="type" checked>类型</label><label><input type="checkbox" data-col="follow" checked>跟进记录</label></div>
           </div>
         </div>
         <div class="table-wrap">
           <table>
-            <colgroup><col style="width:44px"><col style="width:76px"><col style="width:88px"><col style="width:108px"><col style="width:158px"><col style="width:112px"><col style="width:112px"><col style="width:104px"><col style="width:136px"><col style="width:80px"><col style="width:172px"></colgroup>
-            <thead><tr><th>序号</th><th>联系人</th><th class="col-partner">合作类型</th><th>电话</th><th>申请时间</th><th class="col-region">所在地区</th><th class="col-type">类型</th><th class="col-follow">跟进记录</th><th class="col-next">下次跟进时间</th><th>状态</th><th>操作</th></tr></thead>
+            <colgroup><col style="width:76px"><col style="width:108px"><col style="width:88px"><col style="width:126px"><col style="width:112px"><col style="width:158px"><col style="width:112px"><col style="width:104px"><col style="width:80px"><col style="width:172px"></colgroup>
+            <thead><tr><th>联系人</th><th>电话</th><th class="col-partner">合作类型</th><th>推荐人信息</th><th class="col-region">所在地区</th><th>申请时间</th><th class="col-type">类型</th><th class="col-follow">跟进记录</th><th>状态</th><th>操作</th></tr></thead>
             <tbody id="tableBody"></tbody>
           </table>
           <div class="empty-state" id="emptyState"><div class="empty-icon">⌕</div><div>暂无匹配的合伙人申请</div></div>
@@ -145,7 +156,7 @@
           <section class="help-block">
             <h3>列表说明</h3>
             <dl class="help-list">
-              <dt>合作类型</dt><dd>成为合伙人后按「课程顾问 / 俱乐部」记录；已关闭的记录显示关闭前的合作类型。</dd>
+              <dt>合作类型</dt><dd>成为合伙人后按「课程顾问 / 加盟校」记录；已关闭的记录显示关闭前的合作类型。</dd>
               <dt>所在地区</dt><dd>仅展示到市（如 广东省 / 深圳市），不展示区县。</dd>
               <dt>类型</dt><dd>当前仅「申请成为合伙人」一种申请类型。</dd>
               <dt>跟进记录</dt><dd>点击「跟进记录」列可查看该申请人的全部跟进与状态流转明细，按时间倒序排列。</dd>
@@ -155,7 +166,7 @@
             <h3>状态说明</h3>
             <dl class="help-list">
               <dt>未跟进 / 跟进中</dt><dd>尚未开通合作的申请，可「添加跟进」或直接「成为合伙人」。</dd>
-              <dt>已成交</dt><dd>已开通课程顾问或俱乐部合作，可「修改身份」「续费」，也可关闭合作。</dd>
+              <dt>已成交</dt><dd>已开通课程顾问或加盟校合作，可「修改身份」「续费」，也可关闭合作。</dd>
               <dt>已关闭</dt><dd>合作已终止，关闭时必须填写关闭原因；可「重新开启」并选择新的合伙人身份及合作条件。</dd>
             </dl>
           </section>
@@ -163,9 +174,20 @@
             <h3>常用操作</h3>
             <ul>
               <li>添加跟进：填写跟进方式与跟进内容，可预留下次跟进时间。</li>
-              <li>成为合伙人：课程顾问按到期时间合作，俱乐部按名额合作。</li>
-              <li>续费：课程顾问可续费或升级至俱乐部，俱乐部按名额续费。</li>
+              <li>成为合伙人：课程顾问按到期时间合作，加盟校按名额合作。</li>
+              <li>续费：课程顾问可续费或升级至加盟校，加盟校按名额续费。</li>
               <li>关闭：必须填写关闭原因；重新开启时必须选择合伙人身份及合作条件。</li>
+            </ul>
+          </section>
+          <section class="help-block today-update">
+            <h3>今日更新 · 2026-10-09</h3>
+            <ul>
+              <li>列表容器宽度调整为 1440px，并移除序号、下次跟进时间两列，优化横向展示。</li>
+              <li>列表字段顺序调整为：联系人、电话、合作类型、推荐人信息、所在地区、申请时间、类型、跟进记录、状态、操作。</li>
+              <li>跟进记录统一显示为「查看详情」，点击后在弹窗中查看完整跟进记录。</li>
+              <li>新增「自主申请」与「加盟校开通」类型区分；加盟校开通记录仅允许成为课程顾问。</li>
+              <li>成为合伙人、修改身份、续费时支持加盟校名额及赠送名额展示；没有赠送名额时不显示赠送信息。</li>
+              <li>新增推荐人信息字段；没有推荐人信息时不虚构展示内容。</li>
             </ul>
           </section>
           <div class="help-context"><span>当前状态</span><strong id="helpContext">当前为合伙人申请列表。</strong></div>
@@ -177,32 +199,32 @@
 </div>
 <div class="modal-overlay" id="followOverlay"><div class="modal wide" id="followModal" role="dialog" aria-modal="true" aria-labelledby="followTitle"><div class="modal-head"><h3 id="followTitle">新增跟进记录</h3><div class="modal-head-tools"><button class="head-tool" type="button" id="followFull" title="全屏" aria-label="全屏"><svg class="icon"><use href="#i-expand"></use></svg></button><button class="modal-close" type="button" id="followClose" aria-label="关闭">×</button></div></div><div class="modal-body"><div class="modal-row"><label class="required" for="followMethod">跟进方式</label><div class="modal-control"><select id="followMethod"><option value="电话" selected>电话</option><option value="微信">微信</option><option value="线下">线下沟通</option><option value="其他">其他</option></select></div></div><div class="modal-row"><label class="required" for="followContent">跟进内容</label><div class="modal-control" id="followContentWrap"><div class="count-wrap"><textarea id="followContent" maxlength="500" placeholder="请输入跟进内容"></textarea><span class="char-count" id="followCount">0 / 500</span></div><div class="modal-error" id="followError">请输入跟进内容</div></div></div><div class="modal-row"><label for="followNextTime">下次跟进时间</label><div class="modal-control"><div class="datetime-wrap" id="followNextWrap"><svg class="icon dt-ico"><use href="#i-clock"></use></svg><input id="followNextTime" type="datetime-local"><span class="dt-placeholder">可选</span></div></div></div></div><div class="modal-foot"><button class="btn" type="button" id="followCancel">取消</button><button class="btn primary" type="button" id="followSave">确认</button></div></div></div>
 <div class="modal-overlay" id="confirmOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="confirmTitle"><div class="modal-head"><h3 id="confirmTitle">操作确认</h3><button class="modal-close" type="button" id="confirmClose" aria-label="关闭">×</button></div><div class="modal-body"><p class="confirm-text" id="confirmText">-</p><div class="confirm-tip" id="confirmTip">-</div><div class="modal-row hidden-row" id="confirmReasonRow"><label class="required" for="confirmReason">关闭原因</label><div class="modal-control" id="confirmReasonWrap"><textarea id="confirmReason" maxlength="100" placeholder="请输入关闭原因，如：客户主动放弃合作 / 合作到期未续约 / 违规终止合作"></textarea><div class="modal-error" id="confirmReasonError">请输入关闭原因</div></div></div></div><div class="modal-foot"><button class="btn" type="button" id="confirmCancel">取消</button><button class="btn primary" type="button" id="confirmOk">确认</button></div></div></div>
-<div class="modal-overlay" id="partnerOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="partnerTitle"><div class="modal-head"><h3 id="partnerTitle">成为合伙人</h3><button class="modal-close" type="button" id="partnerClose" aria-label="关闭">×</button></div><div class="modal-body"><div class="modal-row"><label>申请人</label><div class="readonly-value" id="partnerApplicant">-</div></div><div class="modal-row"><label class="required">合伙人身份</label><div class="modal-control"><div class="radio-cards" id="partnerRoles"><label class="radio-card selected" data-role="课程顾问"><input type="radio" name="partnerRole" value="课程顾问" checked><span class="rc-title">课程顾问</span><span class="rc-tip">时间，默认一年</span></label><label class="radio-card" data-role="俱乐部"><input type="radio" name="partnerRole" value="俱乐部"><span class="rc-title">俱乐部</span><span class="rc-tip">名额，默认 10 个</span></label></div></div></div><div class="modal-row" id="partnerExpireRow"><label for="partnerExpire">到期时间</label><div class="modal-control"><input id="partnerExpire" type="date"><div class="modal-tip">默认一年，可手动调整</div></div></div><div class="modal-row hidden-row" id="partnerQuotaRow"><label for="partnerQuota">俱乐部名额</label><div class="modal-control"><input id="partnerQuota" type="number" min="1" max="999" value="10"><div class="modal-tip">默认 10 个</div></div></div></div><div class="modal-foot"><button class="btn" type="button" id="partnerCancel">取消</button><button class="btn primary" type="button" id="partnerSave">确认成为合伙人</button></div></div></div>
-<div class="modal-overlay" id="identityOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="identityTitle"><div class="modal-head"><h3 id="identityTitle">修改身份</h3><button class="modal-close" type="button" id="identityClose" aria-label="关闭">×</button></div><div class="modal-body"><div class="modal-row"><label>申请人</label><div class="readonly-value" id="identityApplicant">-</div></div><div class="modal-row"><label>当前身份</label><div class="readonly-value" id="identityCurrent">-</div></div><div class="modal-row"><label class="required" for="identitySelect">新身份</label><div class="modal-control"><select id="identitySelect"><option value="课程顾问">课程顾问</option><option value="俱乐部">俱乐部</option></select></div></div><div class="modal-row" id="identityExpireRow"><label for="identityExpire">到期时间</label><div class="modal-control"><input id="identityExpire" type="date"><div class="modal-tip">课程顾问时间默认一年</div></div></div><div class="modal-row hidden-row" id="identityQuotaRow"><label for="identityQuota">俱乐部名额</label><div class="modal-control"><input id="identityQuota" type="number" min="1" max="999" value="10"><div class="modal-tip">默认 10 个</div></div></div></div><div class="modal-foot"><button class="btn" type="button" id="identityCancel">取消</button><button class="btn primary" type="button" id="identitySave">保存身份</button></div></div></div>
-<div class="modal-overlay" id="renewOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="renewTitle"><div class="modal-head"><h3 id="renewTitle">续费</h3><button class="modal-close" type="button" id="renewClose" aria-label="关闭">×</button></div><div class="modal-body"><div class="modal-row"><label>申请人</label><div class="readonly-value" id="renewApplicant">-</div></div><div class="modal-row"><label>当前身份</label><div class="readonly-value" id="renewCurrent">-</div></div><div class="modal-row" id="renewModeRow"><label>续费方式</label><div class="modal-control"><div class="radio-cards" id="renewModes"><label class="radio-card selected" data-mode="renew"><input type="radio" name="renewMode" value="renew" checked><span class="rc-title">续费课程顾问</span><span class="rc-tip">到期时间顺延，身份不变</span></label><label class="radio-card" data-mode="upgrade"><input type="radio" name="renewMode" value="upgrade"><span class="rc-title">升级至俱乐部</span><span class="rc-tip">身份变更为俱乐部，按名额合作</span></label></div></div></div><div class="modal-row" id="renewCourseRow"><label for="renewYears">续费时长</label><div class="modal-control"><select id="renewYears"><option value="1" selected>1 年</option><option value="2">2 年</option><option value="3">3 年</option></select><div class="modal-tip">默认 1 年，续费后到期时间顺延</div></div></div><div class="modal-row hidden-row" id="renewClubRow"><label for="renewQuota" id="renewQuotaLabel">续费名额</label><div class="modal-control"><input id="renewQuota" type="number" min="1" max="999" value="10"><div class="modal-tip" id="renewQuotaTip">默认 10 个，在原名额基础上增加</div></div></div><div class="modal-row"><label>续费后</label><div class="readonly-value" id="renewPreview">-</div></div></div><div class="modal-foot"><button class="btn" type="button" id="renewCancel">取消</button><button class="btn primary" type="button" id="renewSave">确认续费</button></div></div></div>
+<div class="modal-overlay" id="partnerOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="partnerTitle"><div class="modal-head"><h3 id="partnerTitle">成为合伙人</h3><button class="modal-close" type="button" id="partnerClose" aria-label="关闭">×</button></div><div class="modal-body"><div class="modal-row"><label>申请人</label><div class="readonly-value" id="partnerApplicant">-</div></div><div class="modal-row"><label class="required">合伙人身份</label><div class="modal-control"><div class="radio-cards" id="partnerRoles"><label class="radio-card selected" data-role="课程顾问"><input type="radio" name="partnerRole" value="课程顾问" checked><span class="rc-title">课程顾问</span><span class="rc-tip">时间，默认一年</span></label><label class="radio-card" data-role="加盟校"><input type="radio" name="partnerRole" value="加盟校"><span class="rc-title">加盟校</span><span class="rc-tip">名额，默认 10 个</span></label></div></div></div><div class="modal-row" id="partnerExpireRow"><label for="partnerExpire">到期时间</label><div class="modal-control"><input id="partnerExpire" type="date"><div class="modal-tip">默认一年，可手动调整</div></div></div><div class="modal-row hidden-row" id="partnerQuotaRow"><label for="partnerQuota">加盟校名额</label><div class="modal-control"><input id="partnerQuota" type="number" min="1" max="999" value="10"><div class="modal-tip" id="partnerQuotaTip">默认 10 个</div></div></div><div class="modal-row hidden-row" id="partnerGiftRow"><label for="partnerGiftQuota">赠送名额</label><div class="modal-control"><input id="partnerGiftQuota" type="number" min="0" max="999" step="1" placeholder="选填"><div class="modal-tip">非必填，不填则不赠送</div></div></div></div><div class="modal-foot"><button class="btn" type="button" id="partnerCancel">取消</button><button class="btn primary" type="button" id="partnerSave">确认成为合伙人</button></div></div></div>
+<div class="modal-overlay" id="identityOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="identityTitle"><div class="modal-head"><h3 id="identityTitle">修改身份</h3><button class="modal-close" type="button" id="identityClose" aria-label="关闭">×</button></div><div class="modal-body"><div class="modal-row"><label>申请人</label><div class="readonly-value" id="identityApplicant">-</div></div><div class="modal-row"><label>当前身份</label><div class="readonly-value" id="identityCurrent">-</div></div><div class="modal-row"><label class="required" for="identitySelect">新身份</label><div class="modal-control"><select id="identitySelect"><option value="课程顾问">课程顾问</option><option value="加盟校">加盟校</option></select></div></div><div class="modal-row" id="identityExpireRow"><label for="identityExpire">到期时间</label><div class="modal-control"><input id="identityExpire" type="date"><div class="modal-tip">课程顾问时间默认一年</div></div></div><div class="modal-row hidden-row" id="identityQuotaRow"><label for="identityQuota">加盟校名额</label><div class="modal-control"><input id="identityQuota" type="number" min="1" max="999" value="10"><div class="modal-tip" id="identityQuotaTip">默认 10 个</div></div></div></div><div class="modal-foot"><button class="btn" type="button" id="identityCancel">取消</button><button class="btn primary" type="button" id="identitySave">保存身份</button></div></div></div>
+<div class="modal-overlay" id="renewOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="renewTitle"><div class="modal-head"><h3 id="renewTitle">续费</h3><button class="modal-close" type="button" id="renewClose" aria-label="关闭">×</button></div><div class="modal-body"><div class="modal-row"><label>申请人</label><div class="readonly-value" id="renewApplicant">-</div></div><div class="modal-row"><label>当前身份</label><div class="readonly-value" id="renewCurrent">-</div></div><div class="modal-row" id="renewModeRow"><label>续费方式</label><div class="modal-control"><div class="radio-cards" id="renewModes"><label class="radio-card selected" data-mode="renew"><input type="radio" name="renewMode" value="renew" checked><span class="rc-title">续费课程顾问</span><span class="rc-tip">到期时间顺延，身份不变</span></label><label class="radio-card" data-mode="upgrade"><input type="radio" name="renewMode" value="upgrade"><span class="rc-title">升级至加盟校</span><span class="rc-tip">身份变更为加盟校，按名额合作</span></label></div></div></div><div class="modal-row" id="renewCourseRow"><label for="renewYears">续费时长</label><div class="modal-control"><select id="renewYears"><option value="1" selected>1 年</option><option value="2">2 年</option><option value="3">3 年</option></select><div class="modal-tip">默认 1 年，续费后到期时间顺延</div></div></div><div class="modal-row hidden-row" id="renewClubRow"><label for="renewQuota" id="renewQuotaLabel">续费名额</label><div class="modal-control"><input id="renewQuota" type="number" min="1" max="999" value="10"><div class="modal-tip" id="renewQuotaTip">默认 10 个，在原名额基础上增加</div></div></div><div class="modal-row hidden-row" id="renewGiftRow"><label for="renewGiftQuota">赠送名额</label><div class="modal-control"><input id="renewGiftQuota" type="number" min="0" max="999" step="1" placeholder="选填"><div class="modal-tip">非必填，不填则不赠送</div></div></div><div class="modal-row"><label>续费后</label><div class="readonly-value" id="renewPreview">-</div></div></div><div class="modal-foot"><button class="btn" type="button" id="renewCancel">取消</button><button class="btn primary" type="button" id="renewSave">确认续费</button></div></div></div>
 <div class="modal-overlay" id="followListOverlay"><div class="modal wide" id="followListModal" role="dialog" aria-modal="true" aria-labelledby="followListTitle"><div class="modal-head"><h3 id="followListTitle">跟进与状态记录</h3><div class="modal-head-tools"><button class="head-tool" type="button" id="followListFull" title="全屏" aria-label="全屏"><svg class="icon"><use href="#i-expand"></use></svg></button><button class="modal-close" type="button" id="followListClose" aria-label="关闭">×</button></div></div><div class="modal-body"><div class="follow-sub" id="followListSub">-</div><div class="follow-table-wrap"><table class="follow-table"><colgroup><col style="width:170px"><col style="width:120px"><col style="width:110px"><col></colgroup><thead><tr><th>记录时间</th><th>记录类型</th><th>操作人</th><th>记录内容</th></tr></thead><tbody id="followListBody"></tbody></table><div class="follow-empty" id="followListEmpty" hidden>暂无跟进或状态记录</div></div></div><div class="modal-foot"><button class="btn" type="button" id="followListFootClose">关闭</button></div></div></div>
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="toast-dot"></span><span id="toastText"></span></div>
 <script>
 (function(){
   const seedData = [
-    {id:1,seq:77,name:"芦笛",phone:"17611185912",appliedAt:"2026-09-15 10:12:22",lastFollowAt:"2026-09-15 10:20:00",region:["上海市","上海市","浦东新区"],type:"申请成为合伙人",followRecord:"已电话沟通，等待补充资料",followMethod:"电话",nextFollowAt:"2026-09-18 10:00",status:"跟进中",referrer:"王小敏 138****2211",identity:"教师"},
-    {id:2,seq:76,name:"王雨桐",phone:"13811452276",appliedAt:"2026-09-14 16:40:03",lastFollowAt:"2026-09-14 17:05:00",region:["广东省","深圳市","南山区"],type:"申请成为合伙人",followRecord:"已添加微信，待确认合作意向",followMethod:"微信",nextFollowAt:"2026-09-17 15:00",status:"跟进中",referrer:"李强 139****8802",identity:"家长"},
-    {id:3,seq:75,name:"陈思远",phone:"13905671234",appliedAt:"2026-09-14 11:21:18",lastFollowAt:"2026-09-14 11:40:00",region:["浙江省","杭州市","西湖区"],type:"申请成为合伙人",followRecord:"已发送资料清单",followMethod:"微信",nextFollowAt:"2026-09-16 14:30",status:"跟进中",referrer:"陈晨 158****3321",identity:"机构人员"},
-    {id:4,seq:74,name:"赵敏",phone:"15822334455",appliedAt:"2026-09-13 09:05:47",lastFollowAt:"2026-09-13 10:10:00",region:["北京市","北京市","朝阳区"],type:"申请成为合伙人",followRecord:"已确认合作细节，准备签约",followMethod:"线下",nextFollowAt:"2026-09-19 10:00",status:"已成交",partner:"课程顾问",expireAt:"2027-09-19",referrer:"平台运营 公开邀约",identity:"教师"},
-    {id:5,seq:73,name:"林晓峰",phone:"18677889900",appliedAt:"2026-09-12 19:32:10",lastFollowAt:"2026-09-12 19:50:00",region:["江苏省","苏州市","工业园区"],type:"申请成为合伙人",followRecord:"联系方式暂时无法接通",followMethod:"电话",nextFollowAt:"2026-09-16 09:30",status:"跟进中",referrer:"周舟 186****1190",identity:"家长"},
-    {id:6,seq:72,name:"周佳琪",phone:"13566778899",appliedAt:"2026-09-12 15:48:26",lastFollowAt:"2026-09-12 16:12:00",region:["广东省","广州市","天河区"],type:"申请成为合伙人",followRecord:"俱乐部合作到期未续约，已关闭",followMethod:"电话",nextFollowAt:"",status:"已关闭",partner:"俱乐部",quota:10,closeReason:"俱乐部合作到期未续约",referrer:"刘洋 135****6621",identity:"教师"},
-    {id:7,seq:71,name:"郑凯",phone:"17788990011",appliedAt:"2026-09-11 08:56:41",lastFollowAt:"2026-09-11 09:30:00",region:["上海市","上海市","徐汇区"],type:"申请成为合伙人",followRecord:"已完成首次沟通",followMethod:"线下",nextFollowAt:"2026-09-18 16:00",status:"跟进中",referrer:"吴倩 177****0098",identity:"机构人员"},
-    {id:8,seq:70,name:"孙悦",phone:"18812345678",appliedAt:"2026-09-10 14:20:33",lastFollowAt:"2026-09-10 15:00:00",region:["北京市","北京市","海淀区"],type:"申请成为合伙人",followRecord:"已安排线下见面",followMethod:"线下",nextFollowAt:"2026-09-20 11:00",status:"跟进中",referrer:"平台运营 公开邀约",identity:"家长"},
-    {id:9,seq:69,name:"何俊杰",phone:"15987654321",appliedAt:"2026-09-10 10:10:10",lastFollowAt:"2026-09-10 10:40:00",region:["浙江省","宁波市","海曙区"],type:"申请成为合伙人",followRecord:"客户主动咨询合作政策",followMethod:"电话",nextFollowAt:"2026-09-17 10:30",status:"已成交",partner:"俱乐部",quota:10,referrer:"何俊 159****3210",identity:"教师"},
-    {id:10,seq:68,name:"吴婷婷",phone:"13611223344",appliedAt:"2026-09-09 16:25:12",lastFollowAt:"2026-09-09 17:00:00",region:["广东省","深圳市","福田区"],type:"申请成为合伙人",followRecord:"已发送合作方案",followMethod:"微信",nextFollowAt:"2026-09-16 15:30",status:"跟进中",referrer:"张弛 136****7788",identity:"家长"},
-    {id:11,seq:67,name:"徐子墨",phone:"15033445566",appliedAt:"2026-09-09 09:18:42",lastFollowAt:"",region:["上海市","上海市","静安区"],type:"申请成为合伙人",followRecord:"",nextFollowAt:"",status:"未跟进",referrer:"徐倩 150****2231",identity:"教师"},
-    {id:12,seq:66,name:"高文博",phone:"13755667788",appliedAt:"2026-09-08 18:40:05",lastFollowAt:"2026-09-08 19:10:00",region:["江苏省","南京市","鼓楼区"],type:"申请成为合伙人",followRecord:"客户希望了解分润政策",followMethod:"电话",nextFollowAt:"2026-09-18 10:00",status:"跟进中",referrer:"平台运营 公开邀约",identity:"机构人员"},
-    {id:13,seq:65,name:"罗雨欣",phone:"18912345670",appliedAt:"2026-09-08 13:22:36",lastFollowAt:"2026-09-08 14:00:00",region:["浙江省","杭州市","滨江区"],type:"申请成为合伙人",followRecord:"已确认合作，待签署协议",followMethod:"线下",nextFollowAt:"2026-09-19 15:00",status:"已成交",partner:"课程顾问",expireAt:"2027-09-08",referrer:"罗成 189****5670",identity:"教师"},
-    {id:14,seq:64,name:"蒋昊",phone:"15266778899",appliedAt:"2026-09-07 11:05:21",lastFollowAt:"2026-09-07 11:30:00",region:["广东省","广州市","越秀区"],type:"申请成为合伙人",followRecord:"课程顾问合作已终止，已关闭",nextFollowAt:"",status:"已关闭",partner:"课程顾问",expireAt:"2027-07-15",closeReason:"课程顾问合作已终止",referrer:"蒋丽 152****8899",identity:"家长"},
-    {id:15,seq:63,name:"曾雪",phone:"13399887766",appliedAt:"2026-09-06 15:44:58",lastFollowAt:"",region:["北京市","北京市","东城区"],type:"申请成为合伙人",followRecord:"",nextFollowAt:"",status:"未跟进",referrer:"曾毅 133****7766",identity:"教师"},
-    {id:16,seq:62,name:"彭一鸣",phone:"18122334455",appliedAt:"2026-09-05 10:12:09",lastFollowAt:"2026-09-05 10:40:00",region:["上海市","上海市","闵行区"],type:"申请成为合伙人",followRecord:"已完成资料初审",followMethod:"电话",nextFollowAt:"2026-09-16 11:00",status:"已成交",partner:"俱乐部",quota:20,referrer:"彭敏 181****4455",identity:"机构人员"},
-    {id:17,seq:61,name:"唐可",phone:"15677889900",appliedAt:"2026-09-04 17:30:00",lastFollowAt:"2026-09-04 18:00:00",region:["浙江省","宁波市","鄞州区"],type:"申请成为合伙人",followRecord:"客户希望周末再联系",followMethod:"微信",nextFollowAt:"2026-09-20 10:00",status:"跟进中",referrer:"唐敏 156****9900",identity:"家长"},
-    {id:18,seq:60,name:"韩雪",phone:"13944556677",appliedAt:"2026-09-03 09:15:33",lastFollowAt:"2026-09-03 09:40:00",region:["江苏省","苏州市","姑苏区"],type:"申请成为合伙人",followRecord:"已发送入驻指引",followMethod:"微信",nextFollowAt:"2026-09-18 14:00",status:"已成交",partner:"课程顾问",expireAt:"2027-09-03",referrer:"平台运营 公开邀约",identity:"教师"}
+    {id:1,seq:77,name:"芦笛",phone:"17611185912",appliedAt:"2026-09-15 10:12:22",lastFollowAt:"2026-09-15 10:20:00",region:["上海市","上海市","浦东新区"],type:"加盟校开通",followRecord:"已电话沟通，等待补充资料",followMethod:"电话",nextFollowAt:"2026-09-18 10:00",status:"跟进中",referrer:"王小敏 138****2211",identity:"教师"},
+    {id:2,seq:76,name:"王雨桐",phone:"13811452276",appliedAt:"2026-09-14 16:40:03",lastFollowAt:"2026-09-14 17:05:00",region:["广东省","深圳市","南山区"],type:"加盟校开通",followRecord:"已添加微信，待确认合作意向",followMethod:"微信",nextFollowAt:"2026-09-17 15:00",status:"跟进中",referrer:"李强 139****8802",identity:"家长"},
+    {id:3,seq:75,name:"陈思远",phone:"13905671234",appliedAt:"2026-09-14 11:21:18",lastFollowAt:"2026-09-14 11:40:00",region:["浙江省","杭州市","西湖区"],type:"加盟校开通",followRecord:"已发送资料清单",followMethod:"微信",nextFollowAt:"2026-09-16 14:30",status:"跟进中",referrer:"陈晨 158****3321",identity:"机构人员"},
+    {id:4,seq:74,name:"赵敏",phone:"15822334455",appliedAt:"2026-09-13 09:05:47",lastFollowAt:"2026-09-13 10:10:00",region:["北京市","北京市","朝阳区"],type:"加盟校开通",followRecord:"已确认合作细节，准备签约",followMethod:"线下",nextFollowAt:"2026-09-19 10:00",status:"已成交",partner:"课程顾问",expireAt:"2027-09-19",referrer:"平台运营 公开邀约",identity:"教师"},
+    {id:5,seq:73,name:"林晓峰",phone:"18677889900",appliedAt:"2026-09-12 19:32:10",lastFollowAt:"2026-09-12 19:50:00",region:["江苏省","苏州市","工业园区"],type:"加盟校开通",followRecord:"联系方式暂时无法接通",followMethod:"电话",nextFollowAt:"2026-09-16 09:30",status:"跟进中",referrer:"周舟 186****1190",identity:"家长"},
+    {id:6,seq:72,name:"周佳琪",phone:"13566778899",appliedAt:"2026-09-12 15:48:26",lastFollowAt:"2026-09-12 16:12:00",region:["广东省","广州市","天河区"],type:"自主申请",followRecord:"加盟校合作到期未续约，已关闭",followMethod:"电话",nextFollowAt:"",status:"已关闭",partner:"加盟校",quota:10,closeReason:"加盟校合作到期未续约",referrer:"刘洋 135****6621",identity:"教师"},
+    {id:7,seq:71,name:"郑凯",phone:"17788990011",appliedAt:"2026-09-11 08:56:41",lastFollowAt:"2026-09-11 09:30:00",region:["上海市","上海市","徐汇区"],type:"加盟校开通",followRecord:"已完成首次沟通",followMethod:"线下",nextFollowAt:"2026-09-18 16:00",status:"跟进中",referrer:"吴倩 177****0098",identity:"机构人员"},
+    {id:8,seq:70,name:"孙悦",phone:"18812345678",appliedAt:"2026-09-10 14:20:33",lastFollowAt:"2026-09-10 15:00:00",region:["北京市","北京市","海淀区"],type:"加盟校开通",followRecord:"已安排线下见面",followMethod:"线下",nextFollowAt:"2026-09-20 11:00",status:"跟进中",referrer:"平台运营 公开邀约",identity:"家长"},
+    {id:9,seq:69,name:"何俊杰",phone:"15987654321",appliedAt:"2026-09-10 10:10:10",lastFollowAt:"2026-09-10 10:40:00",region:["浙江省","宁波市","海曙区"],type:"自主申请",followRecord:"客户主动咨询合作政策",followMethod:"电话",nextFollowAt:"2026-09-17 10:30",status:"已成交",partner:"加盟校",quota:10,referrer:"何俊 159****3210",identity:"教师"},
+    {id:10,seq:68,name:"吴婷婷",phone:"13611223344",appliedAt:"2026-09-09 16:25:12",lastFollowAt:"2026-09-09 17:00:00",region:["广东省","深圳市","福田区"],type:"加盟校开通",followRecord:"已发送合作方案",followMethod:"微信",nextFollowAt:"2026-09-16 15:30",status:"跟进中",referrer:"张弛 136****7788",identity:"家长"},
+    {id:11,seq:67,name:"徐子墨",phone:"15033445566",appliedAt:"2026-09-09 09:18:42",lastFollowAt:"",region:["上海市","上海市","静安区"],type:"加盟校开通",followRecord:"",nextFollowAt:"",status:"未跟进",referrer:"徐倩 150****2231",identity:"教师"},
+    {id:12,seq:66,name:"高文博",phone:"13755667788",appliedAt:"2026-09-08 18:40:05",lastFollowAt:"2026-09-08 19:10:00",region:["江苏省","南京市","鼓楼区"],type:"加盟校开通",followRecord:"客户希望了解分润政策",followMethod:"电话",nextFollowAt:"2026-09-18 10:00",status:"跟进中",referrer:"平台运营 公开邀约",identity:"机构人员"},
+    {id:13,seq:65,name:"罗雨欣",phone:"18912345670",appliedAt:"2026-09-08 13:22:36",lastFollowAt:"2026-09-08 14:00:00",region:["浙江省","杭州市","滨江区"],type:"加盟校开通",followRecord:"已确认合作，待签署协议",followMethod:"线下",nextFollowAt:"2026-09-19 15:00",status:"已成交",partner:"课程顾问",expireAt:"2027-09-08",referrer:"罗成 189****5670",identity:"教师"},
+    {id:14,seq:64,name:"蒋昊",phone:"15266778899",appliedAt:"2026-09-07 11:05:21",lastFollowAt:"2026-09-07 11:30:00",region:["广东省","广州市","越秀区"],type:"自主申请",followRecord:"课程顾问合作已终止，已关闭",nextFollowAt:"",status:"已关闭",partner:"课程顾问",expireAt:"2027-07-15",closeReason:"课程顾问合作已终止",referrer:"蒋丽 152****8899",identity:"家长"},
+    {id:15,seq:63,name:"曾雪",phone:"13399887766",appliedAt:"2026-09-06 15:44:58",lastFollowAt:"",region:["北京市","北京市","东城区"],type:"加盟校开通",followRecord:"",nextFollowAt:"",status:"未跟进",referrer:"曾毅 133****7766",identity:"教师"},
+    {id:16,seq:62,name:"彭一鸣",phone:"18122334455",appliedAt:"2026-09-05 10:12:09",lastFollowAt:"2026-09-05 10:40:00",region:["上海市","上海市","闵行区"],type:"自主申请",followRecord:"已完成资料初审",followMethod:"电话",nextFollowAt:"2026-09-16 11:00",status:"已成交",partner:"加盟校",quota:20,referrer:"彭敏 181****4455",identity:"机构人员"},
+    {id:17,seq:61,name:"唐可",phone:"15677889900",appliedAt:"2026-09-04 17:30:00",lastFollowAt:"2026-09-04 18:00:00",region:["浙江省","宁波市","鄞州区"],type:"加盟校开通",followRecord:"客户希望周末再联系",followMethod:"微信",nextFollowAt:"2026-09-20 10:00",status:"跟进中",referrer:"唐敏 156****9900",identity:"家长"},
+    {id:18,seq:60,name:"韩雪",phone:"13944556677",appliedAt:"2026-09-03 09:15:33",lastFollowAt:"2026-09-03 09:40:00",region:["江苏省","苏州市","姑苏区"],type:"加盟校开通",followRecord:"已发送入驻指引",followMethod:"微信",nextFollowAt:"2026-09-18 14:00",status:"已成交",partner:"课程顾问",expireAt:"2027-09-03",referrer:"平台运营 公开邀约",identity:"教师"}
   ];
   const CURRENT_OPERATOR = "王小敏";
   const records = seedData.map(function(item){
@@ -244,12 +266,35 @@
     if (record.status === "已关闭") return record.partnerBeforeClose || record.partner || "-";
     return record.partner || "-";
   }
+  function referrerHtml(record) {
+    const raw = String(record.referrer || "").trim();
+    if (!raw || /平台运营|系统|公开邀约/.test(raw)) return "-";
+    const parts = raw.split(/\s+/);
+    const name = parts.shift();
+    const phone = parts.join(" ");
+    return '<div class="partner-cell"><span class="partner-cell-main">' + escapeHtml(name) + '</span>' + (phone ? '<span class="partner-cell-sub">' + escapeHtml(phone) + '</span>' : '') + '</div>';
+  }
   function partnerCellTitle(record) {
     const value = partnerCell(record);
     if (record.status === "已关闭") return value === "-" ? "关闭前未成为合伙人" : "关闭前合作类型：" + value;
     return value === "-" ? "" : value;
   }
-  function partnerText(record) { if (!record.partner) return "-"; return record.partner === "俱乐部" ? "俱乐部 · 名额 " + (record.quota || 0) + " 个" : "课程顾问 · " + (record.expireAt || "-") + " 到期"; }
+  function partnerCellHtml(record) {
+    const value = partnerCell(record);
+    if (value === "-" || value === "课程顾问") return value === "-" ? "-" : '<div class="partner-cell"><span class="partner-cell-main">课程顾问</span><span class="partner-cell-sub">到期时间 ' + escapeHtml(record.expireAt || "-") + '</span></div>';
+    const gift = record.giftQuota || 0;
+    return '<div class="partner-cell"><span class="partner-cell-main">加盟校</span><span class="partner-cell-sub">' + escapeHtml(quotaText(record.quota, gift)) + '</span></div>';
+  }
+  function giftText(gift) { return gift > 0 ? "（含赠送 " + gift + " 个）" : ""; }
+  function quotaText(total, gift) { return "名额 " + (total || 0) + " 个" + giftText(gift); }
+  function syncPartnerQuotaTip() {
+    const record = getRecord(currentRecordId);
+    const total = Number(document.getElementById("partnerQuota").value) || 0;
+    const input = document.getElementById("partnerGiftQuota");
+    const gift = partnerMode === "reopen" ? (record && record.giftQuota || 0) : (input.validity.valid ? Number(input.value) || 0 : 0);
+    document.getElementById("partnerQuotaTip").textContent = gift > 0 ? "合计" + quotaText(total + (partnerMode === "reopen" ? 0 : gift), gift) : "默认 10 个";
+  }
+  function partnerText(record) { if (!record.partner) return "-"; return record.partner === "加盟校" ? "加盟校 · " + quotaText(record.quota, record.giftQuota) : "课程顾问 · " + (record.expireAt || "-") + " 到期"; }
   function addTimeline(record, title, text, person) { record.timeline = record.timeline || []; record.timeline.unshift({time:nowText(), title:title, text:text, person:person || CURRENT_OPERATOR}); }
   function pad2(value) { return String(value).padStart(2,"0"); }
   function dateText(date) { return date.getFullYear() + "-" + pad2(date.getMonth()+1) + "-" + pad2(date.getDate()); }
@@ -287,17 +332,15 @@
   }
   function rowHtml(record) {
     const historyCount = (record.followUps || []).length + (record.timeline || []).length;
-    const historyLabel = record.followRecord || (historyCount ? "查看记录" : "");
     return '<tr>' +
-      '<td>' + record.seq + '</td>' +
       '<td class="ellipsis" title="' + escapeHtml(record.name) + '">' + escapeHtml(record.name) + '</td>' +
-      '<td class="col-partner" title="' + escapeHtml(partnerCellTitle(record)) + '">' + escapeHtml(partnerCell(record)) + '</td>' +
       '<td class="phone">' + escapeHtml(record.phone) + '</td>' +
-      '<td>' + escapeHtml(record.appliedAt) + '</td>' +
+      '<td class="col-partner" title="' + escapeHtml(partnerCellTitle(record)) + '">' + partnerCellHtml(record) + '</td>' +
+      '<td>' + referrerHtml(record) + '</td>' +
       '<td class="col-region"><div class="ellipsis" title="' + escapeHtml(regionText(record)) + '">' + escapeHtml(regionText(record)) + '</div></td>' +
+      '<td>' + escapeHtml(record.appliedAt) + '</td>' +
       '<td class="col-type"><div class="ellipsis" title="' + escapeHtml(record.type) + '">' + escapeHtml(record.type) + '</div></td>' +
-      '<td class="col-follow">' + (historyCount ? '<button class="follow-link" type="button" data-action="followList" data-id="' + record.id + '" title="查看全部跟进与状态记录（' + historyCount + ' 条）">' + escapeHtml(historyLabel) + '</button>' : "-") + '</td>' +
-      '<td class="col-next">' + (record.nextFollowAt ? escapeHtml(record.nextFollowAt) : "-") + '</td>' +
+      '<td class="col-follow">' + (historyCount ? '<button class="follow-link" type="button" data-action="followList" data-id="' + record.id + '" title="查看全部跟进与状态记录（' + historyCount + ' 条）">查看详情</button>' : "-") + '</td>' +
       '<td>' + statusTag(record) + '</td>' +
       '<td><div class="actions-cell">' + actionHtml(record) + '</div></td>' +
     '</tr>';
@@ -445,11 +488,37 @@
     }
     const action = confirmAction; if (action) action();
   }
+  function readGiftQuota(id) {
+    const input = document.getElementById(id);
+    const value = input.value === "" ? 0 : Number(input.value);
+    if (!input.validity.valid || !Number.isInteger(value) || value < 0 || value > 999) {
+      input.reportValidity();
+      input.focus();
+      return null;
+    }
+    return value;
+  }
+  function isSchoolOpened(record) { return record && record.type === "加盟校开通"; }
+  function validatePartnerRole(record, role) {
+    if (isSchoolOpened(record) && role !== "课程顾问") {
+      showToast("加盟校开通的记录只能成为课程顾问", "warning");
+      return false;
+    }
+    return true;
+  }
   function syncPartnerFields() {
+    const restricted = isSchoolOpened(getRecord(currentRecordId));
+    const schoolRadio = document.querySelector('input[name="partnerRole"][value="加盟校"]');
+    schoolRadio.disabled = restricted;
+    schoolRadio.closest(".radio-card").hidden = restricted;
+    schoolRadio.closest(".radio-card").style.display = restricted ? "none" : "";
+    if (restricted) document.querySelector('input[name="partnerRole"][value="课程顾问"]').checked = true;
     const role = document.querySelector('input[name="partnerRole"]:checked').value;
     document.querySelectorAll("#partnerRoles .radio-card").forEach(function(card){ card.classList.toggle("selected", card.getAttribute("data-role") === role); });
     document.getElementById("partnerExpireRow").classList.toggle("hidden-row", role !== "课程顾问");
-    document.getElementById("partnerQuotaRow").classList.toggle("hidden-row", role !== "俱乐部");
+    document.getElementById("partnerQuotaRow").classList.toggle("hidden-row", role !== "加盟校");
+    document.getElementById("partnerGiftRow").classList.toggle("hidden-row", role !== "加盟校" || partnerMode === "reopen");
+    syncPartnerQuotaTip();
   }
   function openPartner(id) {
     const record = getRecord(id); if (!record || !isPending(record)) return;
@@ -460,6 +529,7 @@
     document.querySelector('input[name="partnerRole"][value="课程顾问"]').checked = true;
     document.getElementById("partnerExpire").value = defaultExpire();
     document.getElementById("partnerQuota").value = 10;
+    document.getElementById("partnerGiftQuota").value = "";
     document.getElementById("partnerSave").textContent = "确认成为合伙人";
     syncPartnerFields();
     partnerOverlay.classList.add("show");
@@ -483,18 +553,24 @@
   function savePartner() {
     const record = getRecord(currentRecordId); if (!record) return;
     const role = document.querySelector('input[name="partnerRole"]:checked').value;
+    if (!validatePartnerRole(record, role)) return;
     const isReopen = partnerMode === "reopen";
     const eventTitle = isReopen ? "重新开启" : "成为合伙人";
+    const gift = role === "加盟校" && !isReopen ? readGiftQuota("partnerGiftQuota") : 0;
+    if (gift === null) return;
     record.partner = role;
     record.status = "已成交";
     if (role === "课程顾问") {
       record.expireAt = document.getElementById("partnerExpire").value || defaultExpire();
       delete record.quota;
+      delete record.giftQuota;
       addTimeline(record, eventTitle, isReopen ? "重新开启为课程顾问，服务到期时间 " + record.expireAt + "。" : "已成为课程顾问，服务到期时间 " + record.expireAt + "。");
     } else {
-      record.quota = Number(document.getElementById("partnerQuota").value) || 10;
+      const quota = Number(document.getElementById("partnerQuota").value) || 10;
+      record.quota = quota + gift;
+      record.giftQuota = isReopen ? Math.min(record.giftQuota || 0, record.quota) : gift;
       delete record.expireAt;
-      addTimeline(record, eventTitle, isReopen ? "重新开启为俱乐部，名额 " + record.quota + " 个。" : "已加入俱乐部，名额 " + record.quota + " 个。");
+      addTimeline(record, eventTitle, (isReopen ? "重新开启为加盟校，" : "已加入加盟校，") + quotaText(record.quota, record.giftQuota) + "。");
     }
     if (isReopen) {
       record.reopenedAt = nowText();
@@ -509,9 +585,16 @@
       : "「" + name + "」已成为合伙人 · " + role + "，状态更新为已成交");
   }
   function syncIdentityFields() {
+    const restricted = isSchoolOpened(getRecord(currentRecordId));
+    const schoolOption = document.querySelector('#identitySelect option[value="加盟校"]');
+    schoolOption.disabled = restricted;
+    schoolOption.hidden = restricted;
+    if (restricted) document.getElementById("identitySelect").value = "课程顾问";
     const role = document.getElementById("identitySelect").value;
     document.getElementById("identityExpireRow").classList.toggle("hidden-row", role !== "课程顾问");
-    document.getElementById("identityQuotaRow").classList.toggle("hidden-row", role !== "俱乐部");
+    document.getElementById("identityQuotaRow").classList.toggle("hidden-row", role !== "加盟校");
+    const record = getRecord(currentRecordId);
+    document.getElementById("identityQuotaTip").textContent = record && record.giftQuota > 0 ? "总名额" + giftText(record.giftQuota) : "默认 10 个";
   }
   function openIdentity(id) {
     const record = getRecord(id); if (!record || record.status !== "已成交") return;
@@ -528,15 +611,22 @@
   function saveIdentity() {
     const record = getRecord(currentRecordId); if (!record) return;
     const role = document.getElementById("identitySelect").value;
+    if (!validatePartnerRole(record, role)) return;
+    if (role === "加盟校" && (Number(document.getElementById("identityQuota").value) || 10) < (record.giftQuota || 0)) {
+      showToast("加盟校总名额不能少于已包含的赠送名额", "warning");
+      document.getElementById("identityQuota").focus();
+      return;
+    }
     record.partner = role;
     if (role === "课程顾问") {
       record.expireAt = document.getElementById("identityExpire").value || defaultExpire();
       delete record.quota;
+      delete record.giftQuota;
       addTimeline(record, "修改身份", "合伙人身份调整为课程顾问，到期时间 " + record.expireAt + "。");
     } else {
       record.quota = Number(document.getElementById("identityQuota").value) || 10;
       delete record.expireAt;
-      addTimeline(record, "修改身份", "合伙人身份调整为俱乐部，名额 " + record.quota + " 个。");
+      addTimeline(record, "修改身份", "合伙人身份调整为加盟校，" + quotaText(record.quota, record.giftQuota) + "。");
     }
     closeIdentity();
     afterRecordChange(record, "「" + record.name + "」身份已更新为 " + role);
@@ -547,19 +637,26 @@
   }
   function syncRenewFields() {
     const record = getRecord(currentRecordId); if (!record) return;
-    const isClub = record.partner === "俱乐部";
+    const restricted = isSchoolOpened(record);
+    const upgradeRadio = document.querySelector('input[name="renewMode"][value="upgrade"]');
+    upgradeRadio.disabled = restricted;
+    if (restricted) document.querySelector('input[name="renewMode"][value="renew"]').checked = true;
+    const isClub = record.partner === "加盟校";
     const upgrade = !isClub && renewMode() === "upgrade";
-    document.getElementById("renewModeRow").classList.toggle("hidden-row", isClub);
+    document.getElementById("renewModeRow").classList.toggle("hidden-row", isClub || restricted);
     document.querySelectorAll("#renewModes .radio-card").forEach(function(card){ card.classList.toggle("selected", card.getAttribute("data-mode") === renewMode()); });
     document.getElementById("renewCourseRow").classList.toggle("hidden-row", isClub || upgrade);
     document.getElementById("renewClubRow").classList.toggle("hidden-row", !isClub && !upgrade);
     document.getElementById("renewQuotaLabel").textContent = upgrade ? "升级名额" : "续费名额";
-    document.getElementById("renewQuotaTip").textContent = upgrade ? "默认 10 个，升级后按俱乐部名额合作" : "默认 10 个，在原名额基础上增加";
-    const add = Number(document.getElementById("renewQuota").value) || 0;
+    document.getElementById("renewQuotaTip").textContent = upgrade ? "默认 10 个，升级后按加盟校名额合作" : "默认 10 个，在原名额基础上增加";
+    document.getElementById("renewGiftRow").classList.toggle("hidden-row", !isClub && !upgrade);
+    const giftInput = document.getElementById("renewGiftQuota");
+    const gift = giftInput.validity.valid ? Number(giftInput.value) || 0 : 0;
+    const add = (Number(document.getElementById("renewQuota").value) || 0) + gift;
     if (isClub) {
-      document.getElementById("renewPreview").textContent = "名额 " + (record.quota || 0) + " → " + ((record.quota || 0) + add) + " 个";
+      document.getElementById("renewPreview").textContent = quotaText(record.quota, record.giftQuota) + " → " + quotaText((record.quota || 0) + add, (record.giftQuota || 0) + gift);
     } else if (upgrade) {
-      document.getElementById("renewPreview").textContent = "课程顾问 → 俱乐部，名额 " + add + " 个；原到期时间 " + (record.expireAt || "-") + " 不再适用";
+      document.getElementById("renewPreview").textContent = "课程顾问 → 加盟校，" + quotaText(add, gift) + "；原到期时间 " + (record.expireAt || "-") + " 不再适用";
     } else {
       const years = Number(document.getElementById("renewYears").value) || 1;
       document.getElementById("renewPreview").textContent = "到期时间 " + (record.expireAt || "-") + " → " + addYears(record.expireAt, years);
@@ -573,6 +670,7 @@
     document.getElementById("renewCurrent").textContent = partnerText(record);
     document.getElementById("renewYears").value = "1";
     document.getElementById("renewQuota").value = 10;
+    document.getElementById("renewGiftQuota").value = "";
     const renewRadio = document.querySelector('input[name="renewMode"][value="renew"]');
     if (renewRadio) renewRadio.checked = true;
     syncRenewFields();
@@ -581,20 +679,25 @@
   function closeRenew() { renewOverlay.classList.remove("show"); currentRecordId = null; }
   function saveRenew() {
     const record = getRecord(currentRecordId); if (!record) return;
-    const upgrade = record.partner !== "俱乐部" && renewMode() === "upgrade";
+    const upgrade = record.partner !== "加盟校" && renewMode() === "upgrade";
+    if (!validatePartnerRole(record, upgrade ? "加盟校" : record.partner)) return;
+    const gift = record.partner === "加盟校" || upgrade ? readGiftQuota("renewGiftQuota") : 0;
+    if (gift === null) return;
     if (upgrade) {
       const quota = Number(document.getElementById("renewQuota").value) || 10;
-      record.partner = "俱乐部";
-      record.quota = quota;
-      addTimeline(record, "升级", "由课程顾问升级为俱乐部，名额 " + quota + " 个。");
+      record.partner = "加盟校";
+      record.quota = quota + gift;
+      record.giftQuota = gift;
+      addTimeline(record, "升级", "由课程顾问升级为加盟校，" + quotaText(record.quota, record.giftQuota) + "。");
       closeRenew();
-      afterRecordChange(record, "「" + record.name + "」已升级为俱乐部 · 名额 " + quota + " 个");
+      afterRecordChange(record, "「" + record.name + "」已升级为加盟校 · " + quotaText(record.quota, record.giftQuota));
       return;
     }
-    if (record.partner === "俱乐部") {
+    if (record.partner === "加盟校") {
       const add = Number(document.getElementById("renewQuota").value) || 0;
-      record.quota = (record.quota || 0) + add;
-      addTimeline(record, "续费", "俱乐部名额 +" + add + "，当前共 " + record.quota + " 个。");
+      record.quota = (record.quota || 0) + add + gift;
+      record.giftQuota = (record.giftQuota || 0) + gift;
+      addTimeline(record, "续费", "加盟校续费，新增" + quotaText(add + gift, gift) + "，当前" + quotaText(record.quota, record.giftQuota) + "。");
     } else {
       const years = Number(document.getElementById("renewYears").value) || 1;
       record.expireAt = addYears(record.expireAt, years);
@@ -646,7 +749,7 @@
   columnMenu.addEventListener("change", function(event) {
     const checkbox = event.target.closest("input[data-col]"); if (!checkbox) return;
     const key = checkbox.getAttribute("data-col");
-    const map = {partner:"col-partner",region:"col-region",type:"col-type",follow:"col-follow",next:"col-next"};
+    const map = {partner:"col-partner",region:"col-region",type:"col-type",follow:"col-follow"};
     tableCard.classList.toggle("hide-" + key, !checkbox.checked);
     document.querySelectorAll("." + map[key]).forEach(function(el){ el.style.display = checkbox.checked ? "" : "none"; });
   });
@@ -696,11 +799,14 @@
   document.getElementById("renewClose").addEventListener("click", closeRenew);
   document.getElementById("renewCancel").addEventListener("click", closeRenew);
   document.getElementById("renewSave").addEventListener("click", saveRenew);
+  document.getElementById("partnerQuota").addEventListener("input", syncPartnerQuotaTip);
+  document.getElementById("partnerGiftQuota").addEventListener("input", syncPartnerQuotaTip);
   document.getElementById("partnerRoles").addEventListener("change", syncPartnerFields);
   document.getElementById("identitySelect").addEventListener("change", syncIdentityFields);
   document.getElementById("renewModes").addEventListener("change", syncRenewFields);
   document.getElementById("renewYears").addEventListener("change", syncRenewFields);
   document.getElementById("renewQuota").addEventListener("input", syncRenewFields);
+  document.getElementById("renewGiftQuota").addEventListener("input", syncRenewFields);
   partnerOverlay.addEventListener("click", function(event){ if (event.target === partnerOverlay) closePartner(); });
   identityOverlay.addEventListener("click", function(event){ if (event.target === identityOverlay) closeIdentity(); });
   renewOverlay.addEventListener("click", function(event){ if (event.target === renewOverlay) closeRenew(); });
@@ -714,12 +820,64 @@
       const submenu = item.nextElementSibling;
       if (submenu && submenu.classList.contains("submenu")) { item.classList.toggle("open"); submenu.classList.toggle("open"); return; }
       if (item.tagName === "A") return;
-      if (name !== "合伙人申请") showToast("当前原型仅演示“合伙人申请”列表", "info");
+      const config = name === "税率配置" ? "taxConfigPage" : name === "提现设置" ? "withdrawConfigPage" : "";
+      if (config) { document.querySelectorAll(".config-page-wrap").forEach(function(wrap){ wrap.classList.toggle("show", wrap.id === (config === "taxConfigPage" ? "taxConfigWrap" : "withdrawConfigWrap")); }); document.querySelector(".content-layout").style.display = "none"; document.querySelectorAll(".submenu-item").forEach(function(link){ link.classList.toggle("active", link === item); }); return; }
+      if (name === "合伙人申请") { document.querySelectorAll(".config-page-wrap").forEach(function(wrap){ wrap.classList.remove("show"); }); document.querySelector(".content-layout").style.display = ""; }
     });
   });
-  document.getElementById("navRule").addEventListener("click", function(event){
-    if (location.protocol === "file:") { event.preventDefault(); showToast("本地直接打开无法跳转到分润规则页，线上地址：https://17611185912l-cmd.github.io/fenxiao/", "info"); }
-  });
+  document.getElementById("addTaxTier").addEventListener("click", function(){ const row=document.createElement("tr"); row.innerHTML='<td><input type="number" min="0" step="0.01" value=""></td><td><input type="number" min="0" step="0.01" value=""></td><td><input value="A*80%"></td><td><input type="number" min="0" max="100" step="0.01" value="20"></td><td><input value="(A*80%）*20%"></td><td><button class="btn text tax-remove" type="button">删除</button></td>'; document.getElementById("taxTierBody").appendChild(row); });
+  document.getElementById("taxTierBody").addEventListener("click", function(event){ if(event.target.classList.contains("tax-remove")){ event.target.closest("tr").remove(); } });
+  ["taxEnabled", "withdrawEnabled"].forEach(function(id){ document.getElementById(id).addEventListener("change", function(){ showToast(this.checked ? "配置已启用" : "配置已停用", "success"); }); });
+  document.querySelectorAll("[data-config-edit]").forEach(function(button){ button.addEventListener("click", function(){
+    const page = document.getElementById(button.getAttribute("data-config-edit") === "tax" ? "taxConfigPage" : "withdrawConfigPage");
+    page.querySelectorAll("input").forEach(function(input){ if (input.type !== "checkbox") input.readOnly = false; });
+    if (button.getAttribute("data-config-edit") === "tax") { document.getElementById("addTaxTier").disabled = false; document.getElementById("addTaxTier").hidden = false; document.querySelectorAll(".tax-remove").forEach(function(btn){ btn.disabled = false; btn.hidden = false; }); }
+    button.hidden = true;
+    page.querySelector("[data-config-save]").hidden = false;
+  }); });
+  function validateTaxConfig(){
+    const rows=Array.from(document.querySelectorAll("#taxTierBody tr"));
+    if(!rows.length) return "至少保留一个税率阶梯";
+    const tiers=[];
+    for(let i=0;i<rows.length;i++){
+      const cells=rows[i].querySelectorAll("td");
+      const lower=Number(cells[0].querySelector("input").value), upperText=cells[1].querySelector("input").value.trim(), upper=upperText===""?null:Number(upperText);
+      const taxable=cells[2].querySelector("input").value.trim(), rateText=cells[3].querySelector("input").value.trim(), rate=Number(rateText), formula=cells[4].querySelector("input").value.trim();
+      if(!Number.isFinite(lower)||lower<0) return `第${i+1}档：金额下限必须为非负数`;
+      if(upper!==null&&(!Number.isFinite(upper)||upper<=lower)) return `第${i+1}档：金额上限必须大于下限`;
+      if(upper===null&&i!==rows.length-1) return `第${i+1}档：只有最后一档可以不填写上限`;
+      if(upper===null&&i===0&&rows.length>1) return "无上限档必须放在最后一档";
+      if(rateText===""||!Number.isFinite(rate)||rate<0||rate>100||!/^\d+(\.\d{1,2})?$/.test(rateText)) return `第${i+1}档：税率需为0–100之间、最多两位小数的数字`;
+      if(!taxable) return `第${i+1}档：应纳税额不能为空`;
+      if(!formula) return `第${i+1}档：计算公式不能为空`;
+      tiers.push({lower,upper});
+    }
+    for(let i=0;i<tiers.length;i++){
+      if(i===0&&tiers[i].lower!==0) return "第一档金额下限必须从0开始";
+      if(i>0&&tiers[i].lower!==tiers[i-1].upper) return `第${i+1}档：金额下限必须与上一档上限相同，确保连续且不重叠`;
+      if(i<tiers.length-1&&tiers[i].upper===null) return "无上限档必须放在最后一档";
+      if(i===tiers.length-1&&tiers[i].upper!==null) return "最后一档金额上限请留空，表示无上限";
+    }
+    return "";
+  }
+  function validateWithdrawConfig(){
+    const money=[['单笔最低金额','withdrawMin'],['单笔最高金额','withdrawMax'],['每日提现金额上限','dailyAmount']];
+    for(const [label,id] of money){const input=document.getElementById(id),value=input.value.trim(),number=Number(value);if(value===""||!Number.isFinite(number)||number<0||!/^\d+(\.\d{1,2})?$/.test(value))return `${label}需为非负数字，最多两位小数`;}
+    const count=document.getElementById("dailyCount").value.trim();if(!/^\d+$/.test(count)||Number(count)<1)return "每日提现次数上限必须为正整数";
+    if(Number(document.getElementById("withdrawMax").value)<Number(document.getElementById("withdrawMin").value))return "单笔最高金额不能低于单笔最低金额";
+    if(Number(document.getElementById("dailyAmount").value)<Number(document.getElementById("withdrawMin").value))return "每日提现金额上限不能低于单笔最低金额";
+    return "";
+  }
+  document.querySelectorAll("[data-config-save]").forEach(function(button){ button.addEventListener("click", function(){
+    const page = button.closest(".admin-config-page");
+    const error=button.getAttribute("data-config-save")==="tax"?validateTaxConfig():validateWithdrawConfig();
+    if(error){showToast(error,"error");return;}
+    page.querySelectorAll("input").forEach(function(input){ if (input.type !== "checkbox") input.readOnly = true; });
+    if (button.getAttribute("data-config-save") === "tax") { document.getElementById("addTaxTier").disabled = true; document.getElementById("addTaxTier").hidden = true; document.querySelectorAll(".tax-remove").forEach(function(btn){ btn.disabled = true; btn.hidden = true; }); }
+    button.hidden = true;
+    page.querySelector("[data-config-edit]").hidden = false;
+    showToast("配置已保存", "success");
+  }); });
   document.addEventListener("keydown", function(event){ if (event.key !== "Escape") return; if (followListOverlay.classList.contains("show")) closeFollowList(); else if (followOverlay.classList.contains("show")) closeFollow(); else if (partnerOverlay.classList.contains("show")) closePartner(); else if (identityOverlay.classList.contains("show")) closeIdentity(); else if (renewOverlay.classList.contains("show")) closeRenew(); else if (confirmOverlay.classList.contains("show")) closeConfirm(); else if (tableCard.classList.contains("fullscreen")) tableCard.classList.remove("fullscreen"); else columnMenu.hidden = true; });
   applyFilters();
 })();
