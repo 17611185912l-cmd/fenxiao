@@ -197,6 +197,7 @@
               <li>修改身份时仅切换合伙人身份；重新开启加盟校时支持填写赠送名额。</li>
               <li>成为合伙人、修改身份、续费、重新开启弹窗均新增选填备注，并记录到跟进详情。</li>
               <li>名额字段统一调整为「开通名额」。</li>
+              <li>已是加盟校的记录隐藏「修改身份」；其他申请类型均可通过「修改身份」切换为加盟校，并配置开通名额和赠送名额。</li>
             </ul>
           </section>
           <div class="help-context"><span>当前状态</span><strong id="helpContext">当前为合伙人申请列表。</strong></div>
@@ -209,7 +210,7 @@
 <div class="modal-overlay" id="followOverlay"><div class="modal wide" id="followModal" role="dialog" aria-modal="true" aria-labelledby="followTitle"><div class="modal-head"><h3 id="followTitle">新增跟进记录</h3><div class="modal-head-tools"><button class="head-tool" type="button" id="followFull" title="全屏" aria-label="全屏"><svg class="icon"><use href="#i-expand"></use></svg></button><button class="modal-close" type="button" id="followClose" aria-label="关闭">×</button></div></div><div class="modal-body"><div class="modal-row"><label class="required" for="followMethod">跟进方式</label><div class="modal-control"><select id="followMethod"><option value="电话" selected>电话</option><option value="微信">微信</option><option value="线下">线下沟通</option><option value="其他">其他</option></select></div></div><div class="modal-row"><label class="required" for="followContent">跟进内容</label><div class="modal-control" id="followContentWrap"><div class="count-wrap"><textarea id="followContent" maxlength="500" placeholder="请输入跟进内容"></textarea><span class="char-count" id="followCount">0 / 500</span></div><div class="modal-error" id="followError">请输入跟进内容</div></div></div><div class="modal-row"><label for="followNextTime">下次跟进时间</label><div class="modal-control"><div class="datetime-wrap" id="followNextWrap"><svg class="icon dt-ico"><use href="#i-clock"></use></svg><input id="followNextTime" type="datetime-local"><span class="dt-placeholder">可选</span></div></div></div></div><div class="modal-foot"><button class="btn" type="button" id="followCancel">取消</button><button class="btn primary" type="button" id="followSave">确认</button></div></div></div>
 <div class="modal-overlay" id="confirmOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="confirmTitle"><div class="modal-head"><h3 id="confirmTitle">操作确认</h3><button class="modal-close" type="button" id="confirmClose" aria-label="关闭">×</button></div><div class="modal-body"><p class="confirm-text" id="confirmText">-</p><div class="confirm-tip" id="confirmTip">-</div><div class="modal-row hidden-row" id="confirmReasonRow"><label class="required" for="confirmReason">关闭原因</label><div class="modal-control" id="confirmReasonWrap"><textarea id="confirmReason" maxlength="100" placeholder="请输入关闭原因，如：客户主动放弃合作 / 合作到期未续约 / 违规终止合作"></textarea><div class="modal-error" id="confirmReasonError">请输入关闭原因</div></div></div></div><div class="modal-foot"><button class="btn" type="button" id="confirmCancel">取消</button><button class="btn primary" type="button" id="confirmOk">确认</button></div></div></div>
 <div class="modal-overlay" id="partnerOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="partnerTitle"><div class="modal-head"><h3 id="partnerTitle">成为合伙人</h3><button class="modal-close" type="button" id="partnerClose" aria-label="关闭">×</button></div><div class="modal-body"><div class="modal-row"><label>申请人</label><div class="readonly-value" id="partnerApplicant">-</div></div><div class="modal-row"><label class="required">合伙人身份</label><div class="modal-control"><div class="radio-cards" id="partnerRoles"><label class="radio-card selected" data-role="课程顾问"><input type="radio" name="partnerRole" value="课程顾问" checked><span class="rc-title">课程顾问</span><span class="rc-tip">时间，默认一年</span></label><label class="radio-card" data-role="加盟校"><input type="radio" name="partnerRole" value="加盟校"><span class="rc-title">加盟校</span><span class="rc-tip">开通名额，默认 10 个</span></label></div></div></div><div class="modal-row" id="partnerExpireRow"><label for="partnerExpire">到期时间</label><div class="modal-control"><input id="partnerExpire" type="date"><div class="modal-tip">默认一年，可手动调整</div></div></div><div class="modal-row hidden-row" id="partnerQuotaRow"><label for="partnerQuota">开通名额</label><div class="modal-control"><input id="partnerQuota" type="number" min="1" max="999" value="10"><div class="modal-tip" id="partnerQuotaTip">默认 10 个</div></div></div><div class="modal-row hidden-row" id="partnerGiftRow"><label for="partnerGiftQuota">赠送名额</label><div class="modal-control"><input id="partnerGiftQuota" type="number" min="0" max="999" step="1" placeholder="选填"><div class="modal-tip">非必填，不填则不赠送</div></div></div><div class="modal-row"><label for="partnerRemark">备注</label><div class="modal-control"><textarea id="partnerRemark" maxlength="500" placeholder="请输入备注（选填，最多500字）"></textarea></div></div></div><div class="modal-foot"><button class="btn" type="button" id="partnerCancel">取消</button><button class="btn primary" type="button" id="partnerSave">确认成为合伙人</button></div></div></div>
-<div class="modal-overlay" id="identityOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="identityTitle"><div class="modal-head"><h3 id="identityTitle">修改身份</h3><button class="modal-close" type="button" id="identityClose" aria-label="关闭">×</button></div><div class="modal-body"><div class="modal-row"><label>申请人</label><div class="readonly-value" id="identityApplicant">-</div></div><div class="modal-row"><label>当前身份</label><div class="readonly-value" id="identityCurrent">-</div></div><div class="modal-row"><label class="required" for="identitySelect">新身份</label><div class="modal-control"><select id="identitySelect"><option value="课程顾问">课程顾问</option><option value="加盟校">加盟校</option></select></div></div><div class="modal-row"><label for="identityRemark">备注</label><div class="modal-control"><textarea id="identityRemark" maxlength="500" placeholder="请输入备注（选填，最多500字）"></textarea></div></div></div><div class="modal-foot"><button class="btn" type="button" id="identityCancel">取消</button><button class="btn primary" type="button" id="identitySave">保存身份</button></div></div></div>
+<div class="modal-overlay" id="identityOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="identityTitle"><div class="modal-head"><h3 id="identityTitle">修改身份</h3><button class="modal-close" type="button" id="identityClose" aria-label="关闭">×</button></div><div class="modal-body"><div class="modal-row"><label>申请人</label><div class="readonly-value" id="identityApplicant">-</div></div><div class="modal-row"><label>当前身份</label><div class="readonly-value" id="identityCurrent">-</div></div><div class="modal-row"><label class="required" for="identitySelect">新身份</label><div class="modal-control"><select id="identitySelect"><option value="课程顾问">课程顾问</option><option value="加盟校">加盟校</option></select></div></div><div class="modal-row hidden-row" id="identityQuotaRow"><label class="required" for="identityQuota">开通名额</label><div class="modal-control"><input id="identityQuota" type="number" min="1" max="999" value="10"><div class="modal-tip" id="identityQuotaTip">默认 10 个</div></div></div><div class="modal-row hidden-row" id="identityGiftRow"><label for="identityGiftQuota">赠送名额</label><div class="modal-control"><input id="identityGiftQuota" type="number" min="0" max="999" step="1" placeholder="选填"><div class="modal-tip">非必填，不填则不赠送</div></div></div><div class="modal-row"><label for="identityRemark">备注</label><div class="modal-control"><textarea id="identityRemark" maxlength="500" placeholder="请输入备注（选填，最多500字）"></textarea></div></div></div><div class="modal-foot"><button class="btn" type="button" id="identityCancel">取消</button><button class="btn primary" type="button" id="identitySave">保存身份</button></div></div></div>
 <div class="modal-overlay" id="renewOverlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="renewTitle"><div class="modal-head"><h3 id="renewTitle">续费</h3><button class="modal-close" type="button" id="renewClose" aria-label="关闭">×</button></div><div class="modal-body"><div class="modal-row"><label>申请人</label><div class="readonly-value" id="renewApplicant">-</div></div><div class="modal-row"><label>当前身份</label><div class="readonly-value" id="renewCurrent">-</div></div><div class="modal-row" id="renewModeRow"><label>续费方式</label><div class="modal-control"><div class="radio-cards" id="renewModes"><label class="radio-card selected" data-mode="renew"><input type="radio" name="renewMode" value="renew" checked><span class="rc-title">续费课程顾问</span><span class="rc-tip">到期时间顺延，身份不变</span></label><label class="radio-card" data-mode="upgrade"><input type="radio" name="renewMode" value="upgrade"><span class="rc-title">升级至加盟校</span><span class="rc-tip">身份变更为加盟校，按名额合作</span></label></div></div></div><div class="modal-row" id="renewCourseRow"><label for="renewYears">续费时长</label><div class="modal-control"><select id="renewYears"><option value="1" selected>1 年</option><option value="2">2 年</option><option value="3">3 年</option></select><div class="modal-tip">默认 1 年，续费后到期时间顺延</div></div></div><div class="modal-row hidden-row" id="renewClubRow"><label for="renewQuota" id="renewQuotaLabel">开通名额</label><div class="modal-control"><input id="renewQuota" type="number" min="1" max="999" value="10"><div class="modal-tip" id="renewQuotaTip">默认 10 个，在原名额基础上增加</div></div></div><div class="modal-row hidden-row" id="renewGiftRow"><label for="renewGiftQuota">赠送名额</label><div class="modal-control"><input id="renewGiftQuota" type="number" min="0" max="999" step="1" placeholder="选填"><div class="modal-tip">非必填，不填则不赠送</div></div></div><div class="modal-row"><label>续费后</label><div class="readonly-value" id="renewPreview">-</div></div><div class="modal-row"><label for="renewRemark">备注</label><div class="modal-control"><textarea id="renewRemark" maxlength="500" placeholder="请输入备注（选填，最多500字）"></textarea></div></div></div><div class="modal-foot"><button class="btn" type="button" id="renewCancel">取消</button><button class="btn primary" type="button" id="renewSave">确认续费</button></div></div></div>
 <div class="modal-overlay" id="followListOverlay"><div class="modal wide" id="followListModal" role="dialog" aria-modal="true" aria-labelledby="followListTitle"><div class="modal-head"><h3 id="followListTitle">跟进与状态记录</h3><div class="modal-head-tools"><button class="head-tool" type="button" id="followListFull" title="全屏" aria-label="全屏"><svg class="icon"><use href="#i-expand"></use></svg></button><button class="modal-close" type="button" id="followListClose" aria-label="关闭">×</button></div></div><div class="modal-body"><div class="follow-sub" id="followListSub">-</div><div class="follow-table-wrap"><table class="follow-table"><colgroup><col style="width:170px"><col style="width:120px"><col style="width:110px"><col></colgroup><thead><tr><th>记录时间</th><th>记录类型</th><th>操作人</th><th>记录内容</th></tr></thead><tbody id="followListBody"></tbody></table><div class="follow-empty" id="followListEmpty" hidden>暂无跟进或状态记录</div></div></div><div class="modal-foot"><button class="btn" type="button" id="followListFootClose">关闭</button></div></div></div>
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="toast-dot"></span><span id="toastText"></span></div>
@@ -341,7 +342,7 @@
         '<button class="action-link" type="button" data-action="partner" data-id="' + record.id + '">成为合伙人</button>';
     }
     if (record.status === "已成交") {
-      return '<button class="action-link" type="button" data-action="identity" data-id="' + record.id + '">修改身份</button>' +
+      return (record.partner !== "加盟校" ? '<button class="action-link" type="button" data-action="identity" data-id="' + record.id + '">修改身份</button>' : '') +
         '<button class="action-link" type="button" data-action="renew" data-id="' + record.id + '">续费</button>' +
         '<button class="action-link" type="button" data-action="close" data-id="' + record.id + '">关闭</button>';
     }
@@ -606,12 +607,20 @@
   }
 
   function syncIdentityFields() {
-    const restricted = isSchoolOpened(getRecord(currentRecordId));
+    const restricted = false;
     const schoolOption = document.querySelector('#identitySelect option[value="加盟校"]');
-    schoolOption.disabled = restricted;
-    schoolOption.hidden = restricted;
-    if (restricted) document.getElementById("identitySelect").value = "课程顾问";
-
+    schoolOption.disabled = false;
+    schoolOption.hidden = false;
+    const role = document.getElementById("identitySelect").value;
+    document.getElementById("identityQuotaRow").classList.toggle("hidden-row", role !== "加盟校");
+    document.getElementById("identityGiftRow").classList.toggle("hidden-row", role !== "加盟校");
+    syncIdentityQuotaTip();
+  }
+  function syncIdentityQuotaTip() {
+    const quota = Number(document.getElementById("identityQuota").value) || 0;
+    const input = document.getElementById("identityGiftQuota");
+    const gift = input.validity.valid ? Number(input.value) || 0 : 0;
+    document.getElementById("identityQuotaTip").textContent = gift > 0 ? "合计" + quotaText(quota + gift, gift) : "默认 10 个";
   }
   function openIdentity(id) {
     const record = getRecord(id); if (!record || record.status !== "已成交") return;
@@ -620,6 +629,8 @@
     document.getElementById("identityApplicant").textContent = record.name + " · " + record.phone;
     document.getElementById("identityCurrent").textContent = record.partner || "-";
     document.getElementById("identitySelect").value = record.partner || "课程顾问";
+    document.getElementById("identityQuota").value = record.partner === "加盟校" ? Math.max(1, (record.quota || 10) - (record.giftQuota || 0)) : 10;
+    document.getElementById("identityGiftQuota").value = record.partner === "加盟校" && record.giftQuota ? record.giftQuota : "";
     syncIdentityFields();
     identityOverlay.classList.add("show");
   }
@@ -627,9 +638,26 @@
   function saveIdentity() {
     const record = getRecord(currentRecordId); if (!record) return;
     const role = document.getElementById("identitySelect").value;
-    if (!validatePartnerRole(record, role)) return;
+    const gift = role === "加盟校" ? readGiftQuota("identityGiftQuota") : 0;
+    if (gift === null) return;
+    const quotaInput = document.getElementById("identityQuota");
+    const quota = Number(quotaInput.value);
+    if (role === "加盟校" && (!quotaInput.validity.valid || !Number.isInteger(quota) || quota < 1 || quota > 999)) {
+      quotaInput.reportValidity();
+      quotaInput.focus();
+      return;
+    }
     record.partner = role;
-    addTimeline(record, "修改身份", "合伙人身份调整为" + role + "。" + operationRemark("identityRemark"));
+    if (role === "加盟校") {
+      record.quota = quota + gift;
+      record.giftQuota = gift;
+      delete record.expireAt;
+      addTimeline(record, "修改身份", "合伙人身份调整为加盟校，" + quotaText(record.quota, gift) + "。" + operationRemark("identityRemark"));
+    } else {
+      delete record.quota;
+      delete record.giftQuota;
+      addTimeline(record, "修改身份", "合伙人身份调整为课程顾问。" + operationRemark("identityRemark"));
+    }
     closeIdentity();
     afterRecordChange(record, "「" + record.name + "」身份已更新为 " + role);
   }
@@ -808,6 +836,8 @@
   document.getElementById("partnerGiftQuota").addEventListener("input", syncPartnerQuotaTip);
   document.getElementById("partnerRoles").addEventListener("change", syncPartnerFields);
   document.getElementById("identitySelect").addEventListener("change", syncIdentityFields);
+  document.getElementById("identityQuota").addEventListener("input", syncIdentityQuotaTip);
+  document.getElementById("identityGiftQuota").addEventListener("input", syncIdentityQuotaTip);
   document.getElementById("renewModes").addEventListener("change", syncRenewFields);
   document.getElementById("renewYears").addEventListener("change", syncRenewFields);
   document.getElementById("renewQuota").addEventListener("input", syncRenewFields);
