@@ -540,15 +540,10 @@
         </div>
       </section>
 
-      <section class="screen" id="billScreen" aria-label="我的账单">
+      <section class="screen" id="withdrawScreen" aria-label="提现">
         <div class="statusbar"><span>23:58 ◢</span><span class="status-icons"><span class="signal">▮▮▮</span><span>⌁</span><span class="battery"></span></span></div>
-        <header class="navbar"><button class="back" id="closeBill" type="button" aria-label="返回创客中心"></button><strong class="manage-title">我的账单</strong><span class="capsule" aria-hidden="true"><span class="dots">•••</span><span class="mini-circle"></span></span></header>
+        <header class="navbar"><button class="back" id="closeWithdraw" type="button" aria-label="返回上一页"></button><strong class="manage-title">提现</strong></header>
         <div class="scroll bill-scroll">
-          <div class="bill-finance-card" id="billFinanceCard">
-          <section class="bill-income-summary" id="billIncomeSummary" aria-label="累计收益" hidden>
-            <span class="label">累计收益（元）</span><strong class="earnings-total-value number" id="billIncomeTotal"></strong>
-            <button class="bill-withdraw-toggle" id="billWithdrawToggle" type="button" aria-expanded="false" aria-controls="billWithdrawCard">展开提现 <span aria-hidden="true">⌄</span></button>
-          </section>
           <section class="withdraw-card" id="billWithdrawCard" aria-label="提现操作">
             <div class="withdraw-summary"><span class="withdraw-summary-label">可提现佣金（元）</span><strong class="withdraw-summary-value number" id="withdrawAvailable">3,678.92</strong></div>
             <div class="earnings-secondary"><div><span>待结算（元）</span><strong class="number">112,386.50</strong></div><div><span>已提现（元）</span><strong class="number">556,420.00</strong></div></div>
@@ -572,9 +567,23 @@
 
             </form>
           </section>
+<h3 class="withdraw-record-title">提现记录</h3>          <section class="bill-panel" id="withdrawPanel" role="tabpanel" aria-label="提现记录">
+
+            <div class="bill-record-list" id="withdrawRecordList"></div>
+          </section>
+        </div>
+      </section>
+      <section class="screen" id="billScreen" aria-label="我的账单">
+        <div class="statusbar"><span>23:58 ◢</span><span class="status-icons"><span class="signal">▮▮▮</span><span>⌁</span><span class="battery"></span></span></div>
+        <header class="navbar"><button class="back" id="closeBill" type="button" aria-label="返回创客中心"></button><strong class="manage-title">我的账单</strong><span class="capsule" aria-hidden="true"><span class="dots">•••</span><span class="mini-circle"></span></span></header>
+        <div class="scroll bill-scroll">
+          <div class="bill-finance-card" id="billFinanceCard">
+          <section class="bill-income-summary" id="billIncomeSummary" aria-label="累计收益" hidden>
+            <span class="label">累计收益（元）</span><strong class="earnings-total-value number" id="billIncomeTotal"></strong>
+            <button class="bill-withdraw-toggle" id="billWithdrawToggle" type="button">立即提现 <span aria-hidden="true">›</span></button>
+          </section>
           </div>
           <div class="bill-sticky-tools">
-            <div class="bill-tabs" role="tablist" aria-label="账单类型"><button class="bill-tab active" id="commissionTab" type="button" role="tab" aria-selected="true" aria-controls="commissionPanel" data-bill-tab="commission">分润明细</button><button class="bill-tab" id="withdrawTab" type="button" role="tab" aria-selected="false" aria-controls="withdrawPanel" data-bill-tab="withdraw">提现记录</button></div>
             <div class="bill-filter-wrap" id="commissionFilterWrap">
               <nav class="bill-filters" aria-label="分润业务类型">
                 <button class="bill-filter active" type="button" data-commission-filter="all">全部</button><button class="bill-filter" type="button" data-commission-filter="school">加盟校</button><button class="bill-filter" type="button" data-commission-filter="partner">课程顾问</button><button class="bill-filter" type="button" data-commission-filter="trial">体验课</button><button class="bill-filter" type="button" data-commission-filter="formal">正式课</button><button class="bill-filter" type="button" data-commission-filter="teacher">招聘老师</button>
@@ -582,14 +591,11 @@
             </div>
             <div class="commission-filter-summary" id="commissionFilterSummary" aria-live="polite">分润明细 · 0 笔</div>
           </div>
-          <section class="bill-panel" id="commissionPanel" role="tabpanel" aria-labelledby="commissionTab">
+          <section class="bill-panel" id="commissionPanel" aria-label="分润明细">
 
             <div class="bill-record-list" id="commissionList"></div>
           </section>
-          <section class="bill-panel" id="withdrawPanel" role="tabpanel" aria-labelledby="withdrawTab" hidden>
 
-            <div class="bill-record-list" id="withdrawRecordList"></div>
-          </section>
         </div>
       </section>
 
@@ -1160,8 +1166,12 @@
     }
     function openManage(){overviewScreen.classList.add('leaving');overviewScreen.classList.remove('active');manageScreen.classList.add('active');manageScreen.querySelector('.scroll').scrollTop=0}
     function closeManage(){overviewScreen.classList.remove('leaving');overviewScreen.classList.add('active');manageScreen.classList.remove('active')}
-    function setBillWithdrawExpanded(expanded){document.querySelector('#billWithdrawCard').hidden=!expanded;const toggle=document.querySelector('#billWithdrawToggle');toggle.setAttribute('aria-expanded',String(expanded));toggle.innerHTML=expanded?'收起提现 <span aria-hidden="true">⌃</span>':'展开提现 <span aria-hidden="true">⌄</span>'}
-    function openBill(mode='withdraw'){resetBill();const incomeMode=mode==='income';document.querySelector('#billFinanceCard').classList.add('income-mode');document.querySelector('#billIncomeSummary').hidden=false;document.querySelector('#billIncomeTotal').textContent=document.querySelector('.earnings-total-value').textContent;setBillWithdrawExpanded(!incomeMode);overviewScreen.classList.add('leaving');overviewScreen.classList.remove('active');billScreen.classList.add('active');billScreen.querySelector('.scroll').scrollTop=0}
+    const withdrawScreen=document.querySelector('#withdrawScreen');
+    let withdrawReturnScreen=overviewScreen;
+    function openWithdraw(){withdrawReturnScreen=billScreen.classList.contains('active')?billScreen:overviewScreen;resetBill();document.querySelector('#billWithdrawCard').hidden=false;withdrawReturnScreen.classList.remove('active');withdrawScreen.classList.add('active');withdrawScreen.querySelector('.scroll').scrollTop=0}
+    function closeWithdraw(){withdrawScreen.classList.remove('active');withdrawReturnScreen.classList.add('active')}
+    document.querySelector('#closeWithdraw').addEventListener('click',closeWithdraw);
+    function openBill(mode='income'){if(mode==='withdraw'){openWithdraw();return;}resetBill();document.querySelector('#billFinanceCard').classList.add('income-mode');document.querySelector('#billIncomeSummary').hidden=false;document.querySelector('#billIncomeTotal').textContent=document.querySelector('.earnings-total-value').textContent;overviewScreen.classList.add('leaving');overviewScreen.classList.remove('active');billScreen.classList.add('active');billScreen.querySelector('.scroll').scrollTop=0}
     function closeBill(){overviewScreen.classList.remove('leaving');overviewScreen.classList.add('active');billScreen.classList.remove('active')}
     function openTransferRecord(){renderTransferRecords();overviewScreen.classList.add('leaving');overviewScreen.classList.remove('active');transferRecordScreen.classList.add('active');transferRecordScreen.querySelector('.scroll').scrollTop=0}
     function closeTransferRecord(){overviewScreen.classList.remove('leaving');overviewScreen.classList.add('active');transferRecordScreen.classList.remove('active')}
@@ -1195,7 +1205,7 @@ if(!canManageMember(memberDetailCurrentItem))return;openReleasePublic(memberDeta
     document.querySelector('#closeManage').addEventListener('click',closeManage);
     document.querySelector('#openBill').addEventListener('click',()=>openBill('withdraw'));
     document.querySelector('#openIncomeDetails').addEventListener('click',()=>openBill('income'));
-    document.querySelector('#billWithdrawToggle').addEventListener('click',()=>setBillWithdrawExpanded(document.querySelector('#billWithdrawCard').hidden));
+    document.querySelector('#billWithdrawToggle').addEventListener('click',openWithdraw);
     document.querySelector('#closeBill').addEventListener('click',closeBill);
     document.querySelectorAll('[data-open-transfer-record]').forEach(button=>button.addEventListener('click',openTransferRecord));
     document.querySelector('#closeTransferRecord').addEventListener('click',closeTransferRecord);
@@ -1589,7 +1599,7 @@ if(!canManageMember(memberDetailCurrentItem))return;openReleasePublic(memberDeta
       list.innerHTML=visible.length?visible.map(item=>`<article class="bill-record-item commission-record-item"><img class="commission-record-icon" src="${platformCommissionIcons[item.icon]}" alt=""><div><div class="bill-record-title">${item.title}</div><div class="bill-record-time commission-record-detail">${maskUserNamesInText(item.detail)}</div></div><div class="bill-record-side"><strong class="bill-record-money">+¥${item.amount}</strong>${list===commissionList?`<span class="bill-record-status ${item.status}">${item.statusLabel}</span>`:''}</div></article>`).join(''):'<div class="empty-result">暂无该业务类型的分润明细</div>';
     }
     function renderWithdrawRecords(){withdrawRecordList.innerHTML=withdrawRecords.map(item=>`<article class="bill-record-item"><div><div class="bill-record-title">${item.method}</div><div class="bill-record-time">${item.date}</div></div><div class="bill-record-side"><strong class="bill-record-money">¥${item.amount}</strong></div></article>`).join('')}
-    function setBillTab(value){document.querySelectorAll('[data-bill-tab]').forEach(tab=>{const active=tab.dataset.billTab===value;tab.classList.toggle('active',active);tab.setAttribute('aria-selected',String(active))});document.querySelector('#commissionPanel').hidden=value!=='commission';document.querySelector('#withdrawPanel').hidden=value!=='withdraw';commissionFilterWrap.hidden=value!=='commission'}
+    function setBillTab(value){document.querySelectorAll('[data-bill-tab]').forEach(tab=>{const active=tab.dataset.billTab===value;tab.classList.toggle('active',active);tab.setAttribute('aria-selected',String(active))});document.querySelector('#commissionPanel').hidden=value!=='commission';commissionFilterWrap.hidden=value!=='commission'}
     function clearWithdrawError(){withdrawAmount.removeAttribute('aria-invalid');withdrawMessage.hidden=true;withdrawMessage.textContent=''}
     function calculateWithdrawal(value){const grossCents=Math.round(value*100);const taxCents=value>800?Math.round(grossCents*.08):0;return {gross:grossCents/100,tax:taxCents/100,net:(grossCents-taxCents)/100}}
     function updateWithdrawTaxNotice(){const value=Number(withdrawAmount.value);const valid=Number.isFinite(value)&&value>0;withdrawTaxNotice.hidden=false;const amounts=calculateWithdrawal(valid?value:0);withdrawGrossAmount.textContent=`¥${amounts.gross.toFixed(2)}`;withdrawTaxAmount.textContent=`¥${amounts.tax.toFixed(2)}`;withdrawNetAmount.textContent=`¥${amounts.net.toFixed(2)}`;document.querySelector('#withdrawTaxSummary').textContent=amounts.tax>0?`含代扣税费 ¥${amounts.tax.toFixed(2)}`:'无代扣税费';return amounts}
@@ -1632,7 +1642,7 @@ if(!canManageMember(memberDetailCurrentItem))return;openReleasePublic(memberDeta
     const partnerFlow=setupPhoneFlow({screen:partnerScreen,phoneId:'partnerPhone',messageId:'partnerPhoneMessage',resultId:'partnerQueryResult',resultPhoneId:'partnerResultPhone',queryId:'queryPartner',formId:'partnerForm',submitMessage:phone=>`已提交 ${phone} 的课程顾问开通申请，等待平台审批`});
     document.querySelector('#openPartner').addEventListener('click',()=>openDetail(partnerFlow.screen,partnerFlow.reset));
     document.querySelector('#closePartner').addEventListener('click',()=>closeDetail(partnerFlow.screen));
-    document.addEventListener('keydown',event=>{if(event.key!=='Escape'||!revisitSheet.hidden||!teamHalfSheet.hidden||!followTransferDialog.hidden||!releasePublicDialog.hidden)return;if(imDetailScreen.classList.contains('active'))closeImDetail();else if(followRecordScreen.classList.contains('active'))closeFollowRecord();else if(transferRecordScreen.classList.contains('active'))closeTransferRecord();else if(billScreen.classList.contains('active'))closeBill();else if(partnerScreen.classList.contains('active'))closeDetail(partnerScreen);else if(manageScreen.classList.contains('active'))closeManage()});
+    document.addEventListener('keydown',event=>{if(event.key!=='Escape'||!revisitSheet.hidden||!teamHalfSheet.hidden||!followTransferDialog.hidden||!releasePublicDialog.hidden)return;if(withdrawScreen.classList.contains('active'))closeWithdraw();else if(imDetailScreen.classList.contains('active'))closeImDetail();else if(followRecordScreen.classList.contains('active'))closeFollowRecord();else if(transferRecordScreen.classList.contains('active'))closeTransferRecord();else if(billScreen.classList.contains('active'))closeBill();else if(partnerScreen.classList.contains('active'))closeDetail(partnerScreen);else if(manageScreen.classList.contains('active'))closeManage()});
   </script>
 
 <script src="渠道商创客中心_页面说明.js"></script>
