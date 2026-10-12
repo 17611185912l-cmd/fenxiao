@@ -392,6 +392,8 @@
     /* 暂时隐藏公海与 IM 导航，保留页面及交互代码，恢复时移除此规则即可。 */
     .tabs [data-tab="sea"],.tabs [data-tab="im"]{display:none!important}
       .member-card .card-actions [data-transfer-follow-up]{order:-2}
+.bank-fields{margin:12px 0;padding:12px;border:1px solid var(--line);border-radius:10px;min-width:0}.bank-fields legend{font-size:13px;font-weight:700}.bank-fields label{display:grid;grid-template-columns:80px minmax(0,1fr);align-items:center;gap:8px;margin:8px 0;font-size:12px}.bank-fields input{box-sizing:border-box;min-width:0;width:100%;height:36px;border:1px solid var(--line);border-radius:6px;padding:0 8px;font:inherit;background:#fff}.bank-fields input[aria-invalid=true]{border-color:#c44}
+.bank-fields select{width:100%;min-width:0;height:36px;border:1px solid var(--line);border-radius:6px;background:#fff;font-size:12px}.bank-fields button{padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:var(--soft);color:var(--accent);cursor:pointer}.bank-fields [hidden]{display:none!important}
 </style>
 </head>
 <body>
@@ -550,7 +552,11 @@
             <form class="withdraw-body" id="withdrawForm" novalidate>
               <label class="withdraw-amount-row" for="withdrawAmount"><span class="withdraw-amount-wrap"><span class="withdraw-currency">¥</span><input class="withdraw-input" id="withdrawAmount" type="text" inputmode="decimal" value="3678.92" aria-label="提现金额" aria-describedby="withdrawMessage withdrawTaxSummary"></span><button class="withdraw-all" id="withdrawAll" type="button">全部提现</button></label>
               <div class="partner-error" id="withdrawMessage" role="alert" hidden></div>
-              <div class="payout-methods" role="group" aria-label="提现方式"><button class="payout-method" type="button" data-payout="wechat">微信零钱</button><button class="payout-method active" type="button" data-payout="bank">银行卡</button></div>
+              <fieldset class="bank-fields"><legend>提现至银行卡</legend><div id="savedBankWrap" hidden><p id="savedBankSummary" style="font-size:13px;line-height:1.8;white-space:pre-line"></p><button type="button" id="editSavedBank">修改</button></div><div id="bankEditor">
+<label>开户银行<input id="withdrawBank" placeholder="请输入开户银行" autocomplete="off"></label>
+<label>开户人姓名<input id="withdrawHolder" placeholder="请输入开户人姓名" autocomplete="off"></label>
+<label>银行卡号<input id="withdrawCard" placeholder="请输入银行卡号" inputmode="numeric" autocomplete="off"></label><button type="button" id="saveBank">保存并使用</button> <button type="button" id="cancelBankEdit" hidden>取消</button></div>
+</fieldset>
               <div class="withdraw-net-summary" aria-live="polite"><span>预计到账 <output id="withdrawNetAmount">¥0.00</output></span><span id="withdrawTaxSummary">无代扣税费</span></div>
               <details class="withdraw-details" id="withdrawDetails">
                 <summary>提现规则与税费明细<span class="withdraw-expand" aria-hidden="true"></span></summary>
@@ -1589,7 +1595,23 @@ if(!canManageMember(memberDetailCurrentItem))return;openReleasePublic(memberDeta
     let withdrawAvailableAmount=Number(document.querySelector('.earnings-withdraw-value')?.textContent.replace(/[^\d.]/g,''))||3678.92;
     let withdrawTodayCount=0;
     let withdrawTodayAmount=0;
-    let payoutMethod='bank';
+    const bankInputs=['withdrawBank','withdrawHolder','withdrawCard'].map(id=>document.getElementById(id));
+    const [bankInput,holderInput,cardInput]=bankInputs;
+    function bankError(input,message){input.setAttribute('aria-invalid','true');withdrawMessage.textContent=message;withdrawMessage.hidden=false;input.focus();return false}
+    bankInputs.forEach(input=>input.addEventListener('input',()=>{input.removeAttribute('aria-invalid');withdrawMessage.hidden=true}));
+    function validateBankDetails(){if(!bankInput.value.trim())return bankError(bankInput,'请输入开户银行');if(!holderInput.value.trim())return bankError(holderInput,'请输入开户人姓名');if(!/^\d{16,19}$/.test(cardInput.value.replace(/\s/g,'')))return bankError(cardInput,'请输入16至19位银行卡号');return true}
+    const bankStorageKey='creator-center-banks-v1-_老师家长';
+    let savedBanks=[];try{const stored=JSON.parse(localStorage.getItem(bankStorageKey)||'[]');if(Array.isArray(stored))savedBanks=stored.filter(x=>x&&typeof x.bank==='string'&&typeof x.holder==='string'&&/^\d{16,19}$/.test(x.card))}catch(e){}
+    savedBanks=savedBanks.slice(0,1);
+    const bankSummary=document.getElementById('savedBankSummary'),bankEditor=document.getElementById('bankEditor');
+    function useSavedBank(){const item=savedBanks[0];if(!item)return;bankInput.value=item.bank;holderInput.value=item.holder;cardInput.value=item.card;bankEditor.hidden=true;withdrawMessage.hidden=true;bankInputs.forEach(input=>input.removeAttribute('aria-invalid'))}
+    function renderSavedBanks(){document.getElementById('savedBankWrap').hidden=!savedBanks.length;if(savedBanks.length){const item=savedBanks[0];bankSummary.textContent='开户银行：'+item.bank+'\n开户人姓名：'+item.holder.slice(0,1)+'*'+'\n银行卡号：**** **** **** '+item.card.slice(-4);useSavedBank()}}
+    document.getElementById('editSavedBank').addEventListener('click',()=>{bankEditor.hidden=false;document.getElementById('cancelBankEdit').hidden=false;bankInput.focus()});
+    document.getElementById('cancelBankEdit').addEventListener('click',useSavedBank);
+    document.getElementById('saveBank').addEventListener('click',()=>{if(!validateBankDetails())return;const item={bank:bankInput.value.trim(),holder:holderInput.value.trim(),card:cardInput.value.replace(/\s/g,'')};try{localStorage.setItem(bankStorageKey,JSON.stringify([item]))}catch(e){return bankError(bankInput,'保存失败，请检查浏览器存储权限后重试')}savedBanks=[item];renderSavedBanks();showToast('银行卡已保存，之后提现将直接使用')});
+    renderSavedBanks();
+
+
     function renderCommissions(filter='all',records=commissionRecords,list=commissionList,summary=null){
       const visible=filter==='all'?records:records.filter(item=>item.type===filter);
       if(summary)summary.textContent=`${visible.length} 笔记录`;
@@ -1617,15 +1639,14 @@ if(!canManageMember(memberDetailCurrentItem))return;openReleasePublic(memberDeta
       renderCommissions(type,records,document.querySelector('#memberCommissionList'));
     }
     document.querySelectorAll('[data-member-commission-filter]').forEach(button=>button.addEventListener('click',()=>setMemberCommissionFilter(button.dataset.memberCommissionFilter)));
-    function resetBill(){withdrawAmount.value=maxWithdrawableNow().toFixed(2);clearWithdrawError();updateWithdrawTaxNotice();updateWithdrawLimitState();payoutMethod='bank';document.querySelectorAll('[data-payout]').forEach(button=>button.classList.toggle('active',button.dataset.payout==='bank'));setCommissionFilter('all');setBillTab('commission');billScreen.querySelector('.scroll').scrollTop=0}
+    function resetBill(){withdrawAmount.value=maxWithdrawableNow().toFixed(2);clearWithdrawError();updateWithdrawTaxNotice();updateWithdrawLimitState();document.querySelectorAll('[data-payout]').forEach(button=>button.classList.toggle('active',button.dataset.payout==='bank'));setCommissionFilter('all');setBillTab('commission');billScreen.querySelector('.scroll').scrollTop=0}
     renderCommissions();
     renderWithdrawRecords();
     document.querySelectorAll('[data-bill-tab]').forEach(tab=>tab.addEventListener('click',()=>setBillTab(tab.dataset.billTab)));
     document.querySelectorAll('[data-commission-filter]').forEach(button=>button.addEventListener('click',()=>setCommissionFilter(button.dataset.commissionFilter)));
-    document.querySelectorAll('[data-payout]').forEach(button=>button.addEventListener('click',()=>{payoutMethod=button.dataset.payout;document.querySelectorAll('[data-payout]').forEach(item=>item.classList.toggle('active',item===button))}));
     document.querySelector('#withdrawAll').addEventListener('click',()=>{withdrawAmount.value=maxWithdrawableNow().toFixed(2);clearWithdrawError();updateWithdrawTaxNotice();withdrawAmount.focus()});
     withdrawAmount.addEventListener('input',()=>{const cleaned=withdrawAmount.value.replace(/[^\d.]/g,'');const parts=cleaned.split('.');withdrawAmount.value=parts.length>1?`${parts.shift()}.${parts.join('').slice(0,2)}`:parts[0];clearWithdrawError();updateWithdrawTaxNotice()});
-    document.querySelector('#withdrawForm').addEventListener('submit',event=>{event.preventDefault();const value=Number(withdrawAmount.value);let message='';if(!withdrawAmount.value||!Number.isFinite(value))message='请输入提现金额';else if(withdrawTodayCount>=withdrawLimits.dailyCount)message='今日提现次数已达3次，请明日再试';else if(value<withdrawLimits.singleMin)message='单笔提现金额不能低于10元';else if(value>withdrawLimits.singleMax)message='单笔提现金额不能超过2000元';else if(value>withdrawAvailableAmount)message='提现金额不能超过可提现佣金';else if(withdrawTodayAmount+value>withdrawLimits.dailyAmount)message=`今日剩余可提现额度为¥${Math.max(0,withdrawLimits.dailyAmount-withdrawTodayAmount).toFixed(2)}`;if(message){withdrawAmount.setAttribute('aria-invalid','true');withdrawMessage.textContent=message;withdrawMessage.hidden=false;withdrawAmount.focus();return}const amounts=calculateWithdrawal(value);const destination=payoutMethod==='bank'?'银行卡':'微信零钱';withdrawAvailableAmount=Math.max(0,Math.round((withdrawAvailableAmount-value)*100)/100);withdrawTodayCount+=1;withdrawTodayAmount=Math.round((withdrawTodayAmount+value)*100)/100;withdrawRecords.unshift({method:`提现至${destination}`,date:'刚刚',amount:amounts.gross.toFixed(2),tax:amounts.tax,net:amounts.net,status:'审核中',tone:'reviewing'});renderWithdrawRecords();updateWithdrawLimitState();withdrawAmount.value=maxWithdrawableNow()>=withdrawLimits.singleMin?maxWithdrawableNow().toFixed(2):'';updateWithdrawTaxNotice();const result=value>800?`已提交¥${amounts.gross.toFixed(2)}，扣税¥${amounts.tax.toFixed(2)}，预计到账¥${amounts.net.toFixed(2)}至${destination}`:`已提交¥${amounts.gross.toFixed(2)}至${destination}`;showToast(result)});
+    document.querySelector('#withdrawForm').addEventListener('submit',event=>{event.preventDefault();const value=Number(withdrawAmount.value);let message='';if(!withdrawAmount.value||!Number.isFinite(value))message='请输入提现金额';else if(withdrawTodayCount>=withdrawLimits.dailyCount)message='今日提现次数已达3次，请明日再试';else if(value<withdrawLimits.singleMin)message='单笔提现金额不能低于10元';else if(value>withdrawLimits.singleMax)message='单笔提现金额不能超过2000元';else if(value>withdrawAvailableAmount)message='提现金额不能超过可提现佣金';else if(withdrawTodayAmount+value>withdrawLimits.dailyAmount)message=`今日剩余可提现额度为¥${Math.max(0,withdrawLimits.dailyAmount-withdrawTodayAmount).toFixed(2)}`;if(message){withdrawAmount.setAttribute('aria-invalid','true');withdrawMessage.textContent=message;withdrawMessage.hidden=false;withdrawAmount.focus();return}if(!bankEditor.hidden){bankError(bankInput,'请先保存银行卡信息，或取消修改后使用已保存的银行卡');return}const amounts=calculateWithdrawal(value);if(!validateBankDetails())return;const destination=bankInput.value.trim()+'（尾号'+cardInput.value.replace(/\s/g,'').slice(-4)+'）';withdrawAvailableAmount=Math.max(0,Math.round((withdrawAvailableAmount-value)*100)/100);withdrawTodayCount+=1;withdrawTodayAmount=Math.round((withdrawTodayAmount+value)*100)/100;withdrawRecords.unshift({method:`提现至${destination}`,date:'刚刚',amount:amounts.gross.toFixed(2),tax:amounts.tax,net:amounts.net,status:'审核中',tone:'reviewing'});renderWithdrawRecords();updateWithdrawLimitState();withdrawAmount.value=maxWithdrawableNow()>=withdrawLimits.singleMin?maxWithdrawableNow().toFixed(2):'';updateWithdrawTaxNotice();const result=value>800?`已提交¥${amounts.gross.toFixed(2)}，扣税¥${amounts.tax.toFixed(2)}，预计到账¥${amounts.net.toFixed(2)}至${destination}`:`已提交¥${amounts.gross.toFixed(2)}至${destination}`;showToast(result)});
     function setupPhoneFlow({screen,phoneId,messageId,resultId,resultPhoneId,queryId,formId,submitMessage,extraReset,extraValidate}){
       const phone=document.querySelector(`#${phoneId}`);
       const message=document.querySelector(`#${messageId}`);
