@@ -64,7 +64,7 @@
     .member-list .card-actions [data-transfer-follow-up],.cooperation-list .card-actions [data-transfer-follow-up]{order:0}.member-list .card-actions [data-follow-record],.cooperation-list .card-actions [data-follow-record]{order:1}.member-list .card-actions .revisit-action,.cooperation-list .card-actions .revisit-action{order:2}.member-list .card-actions> :last-child,.cooperation-list .card-actions> :last-child{order:-1}
     .follow-record-scroll.public-detail .follow-record-profile{border-radius:14px}
     .sea-member-card{padding:13px 12px}
-
+  
     /* Brand palette inspired by the supplied logo: green, blue and orange. */
     :root{--brand-blue:#2956a0;--brand-blue-soft:#edf2fb;--brand-orange:#ee902b;--brand-orange-ink:#98530d}
     .tab.active{color:var(--ink)}
@@ -184,7 +184,7 @@
     .team-view .team-sticky-filters{position:sticky;top:0;z-index:20;display:flow-root;margin:0 0 4px;padding:2px 0 4px;background:var(--page);box-shadow:none}
     .team-view .team-sticky-filters .team-member-tabs{position:static;margin:0;box-shadow:none}
     .team-view .team-sticky-filters .identity-tabs{margin:6px 0 0}
-
+  
     /* 页面底色、白色卡片与可交互控件保持清晰层次。 */
     :root{--page:#e9efed;--surface:#fff;--soft:#dcece5;--line:#ccd9d3}
     .income-card,[data-view="team"]>.income-card{background:#fff;border:1px solid var(--line);box-shadow:0 3px 10px rgba(35,65,52,.06)}
@@ -196,7 +196,7 @@
     .filter-select,.card-action:not(.sea-claim){background:#fff;border-color:#bccfc5}
     .card-action.revisit-action,.card-action.restore-action{background:#dcece5;border-color:#8bb4a2;color:#24554e}
     .filter-select:hover,.card-action:hover{border-color:var(--accent);box-shadow:0 1px 4px rgba(35,65,52,.1)}
-
+  
     /* 独立的不透明遮挡层覆盖滚动容器顶部留白，不依赖装饰阴影。 */
     .team-view .team-sticky-filters::before{content:"";position:absolute;z-index:-1;top:-6px;bottom:-2px;left:-14px;right:-14px;background:var(--page);pointer-events:none}
       /* 销售/顾问团队首页使用更紧凑的模块间距。 */
@@ -205,7 +205,7 @@
     [data-view="team"]>.income-card .income-list>div{min-height:53px;padding-block:8px;gap:4px}
     .team-view .team-member-tab{height:42px}
     .team-view .member-list{margin-top:2px;gap:6px}
-
+  
     /* 全局用户卡片紧凑布局；保留标签独立空间和操作按钮高度。 */
     .member-card,.team-view .member-card,.team-member-card{padding:32px 10px 8px}
     .member-card>.member-head,.team-view .member-card>.member-head,.team-member-card>.member-head{padding-top:0;gap:7px}
@@ -224,7 +224,7 @@
     .follow-record-profile.compact-profile{padding-top:8px}
     .follow-record-profile .follow-record-meta{margin-top:1px}
     .manage-member-card{min-height:70px;padding:10px 12px}
-
+    
     /* 提现表单：核心操作常显，限额与税费规则按需展开。 */
     .withdraw-summary{padding:11px 15px}
     .withdraw-summary-value{font-size:27px;line-height:32px;margin-top:1px}
@@ -250,7 +250,7 @@
     .withdraw-tax-rule{font-size:10px;line-height:16px;color:#875200;margin:0}
     .withdraw-submit{height:39px;margin-top:9px}
     .withdraw-hint{margin-top:6px;font-size:9px;line-height:14px}
-
+  
     /* 提现卡片进一步压缩，保留必要信息与操作。 */
     .withdraw-summary{padding:9px 14px}
     .withdraw-summary-value{font-size:25px;line-height:29px}
@@ -263,7 +263,7 @@
     .withdraw-tax-notice{margin-top:6px}
     .withdraw-submit{height:37px;margin-top:7px}
     .withdraw-hint{display:none}
-
+  
     /* 提现卡片按参考稿重排：品牌色摘要、右侧金额、单行预计到账。 */
     .withdraw-card{border-radius:18px}
     .withdraw-summary{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2px 10px;padding:9px 15px;background:linear-gradient(120deg,var(--accent),var(--accent-dark));color:#fff}
@@ -283,7 +283,7 @@
     .withdraw-tax-brief{padding-bottom:6px;color:var(--muted)}
     .withdraw-tax-brief output{color:var(--muted)}
     .withdraw-submit{height:40px;margin-top:8px;border-radius:999px;background:linear-gradient(120deg,var(--accent),var(--accent-dark));box-shadow:none}
-
+  
     .withdraw-summary-value{grid-row:1}
     .withdraw-summary-note{grid-column:1/-1}
     .withdraw-card .withdraw-tax-notice{display:flex;align-items:center;justify-content:space-between;gap:6px;margin:8px 0 0;padding:5px 0 9px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;font-size:11px;color:var(--ink)}
@@ -299,7 +299,7 @@
     .withdraw-rules .withdraw-tax-rows{padding-bottom:9px}
     .withdraw-submit:hover,.withdraw-submit:focus-visible{background:var(--accent-dark)}
     @media(max-width:360px){.withdraw-summary-value{font-size:26px}.withdraw-result-main{gap:4px}.withdraw-result-main output{font-size:16px}.withdraw-result-tax{font-size:9px}}
-
+  
     /* Compact billing tabs, filters and transaction cards. */
     .bill-sticky-tools{margin-top:6px;padding-top:6px;padding-bottom:4px;box-shadow:none}
     .bill-sticky-tools #commissionFilterWrap{margin-top:5px}
@@ -313,14 +313,14 @@
     .commission-record-item{grid-template-columns:30px minmax(0,1fr) auto}
     .commission-record-icon{width:30px;height:30px;border-radius:8px}
     .bill-record-time{margin-top:3px;line-height:15px}
-
+  
     /* Restore separate withdrawal-limit and tax-detail disclosures. */
     .withdraw-card .withdraw-tax-notice{display:block;margin-top:6px;padding:0 10px;border:1px solid #efcc91;border-radius:9px;background:#fff8eb;color:#875200;font-size:11px}
     .withdraw-card .withdraw-tax-notice[hidden]{display:none}
     .withdraw-tax-notice .withdraw-disclosure>summary{color:#875200}
     .withdraw-card .withdraw-tax-brief,.withdraw-card .withdraw-tax-brief output{color:#875200}
     .withdraw-card .withdraw-limits{margin-top:6px;border-color:var(--line);background:#f4f7f5}
-
+  
     /* Withdrawal layout aligned with the Lingbang reference, retaining brand colors. */
     .withdraw-body{padding:10px 14px 12px}
     .withdraw-summary{padding:8px 14px;gap:1px 8px}
@@ -352,7 +352,7 @@
     .withdraw-details .withdraw-tax-row output{color:var(--ink)}
     .withdraw-details .withdraw-tax-row.tax output{color:var(--accent)}
     .withdraw-submit{height:40px;margin-top:5px}
-
+  
     /* Release-to-public-pool is unavailable for every demo role. */
     #memberDetailRelease,[data-release-public],[data-toast="释放公海"]{display:none!important}
     .member-card .card-actions:has(>.card-action:nth-child(3):last-child){grid-template-columns:repeat(3,minmax(0,1fr))!important}
@@ -375,7 +375,7 @@
       .bill-income-summary{padding:14px 16px 0;margin-bottom:8px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(110deg,#e7f1ee,#f6faf8)}
     .bill-income-summary>.label{color:var(--accent-dark);font-weight:650}
     .bill-withdraw-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:34px;margin-top:10px;padding:0;border:0;border-top:1px solid var(--line);background:transparent;color:var(--accent);font-size:12px;font-weight:650;cursor:pointer}
-
+  
     /* One continuous finance card in income-detail mode. */
     .bill-finance-card.income-mode{overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
     .bill-finance-card.income-mode .bill-income-summary{margin:0;border:0;border-radius:0;padding:14px 16px 0;background:linear-gradient(110deg,#e7f1ee,#f6faf8)}
@@ -385,9 +385,9 @@
     .bill-finance-card.income-mode .withdraw-summary-label{font-size:12px;color:var(--muted)}
     .bill-finance-card.income-mode .withdraw-summary-note{color:var(--muted)}
     .bill-finance-card.income-mode .bill-withdraw-toggle{min-height:36px}
-
+  
     [data-view="team"]>.income-card.earnings-overview{padding:0;background:#fff}
-
+  
     .team-view .team-member-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}
     .team-view .team-member-tab{padding-left:1px;padding-right:1px;white-space:nowrap;font-size:11px}
 
@@ -566,11 +566,11 @@
                 </div>
               </details>
               <button class="withdraw-submit" type="submit">确认提现</button>
-
+              
             </form>
           </section>
 <h3 class="withdraw-record-title">提现记录</h3>          <section class="bill-panel" id="withdrawPanel" role="tabpanel" aria-label="提现记录">
-
+            
             <div class="bill-record-list" id="withdrawRecordList"></div>
           </section>
         </div>
@@ -594,7 +594,7 @@
             <div class="commission-filter-summary" id="commissionFilterSummary" aria-live="polite">分润明细 · 0 笔</div>
           </div>
           <section class="bill-panel" id="commissionPanel" aria-label="分润明细">
-
+            
             <div class="bill-record-list" id="commissionList"></div>
           </section>
 
@@ -616,7 +616,7 @@
             <span class="member-level" data-level="一星" id="followRecordLevel">一星</span><span class="first-star-owner" id="detailFirstStarOwner" hidden></span>
             <span class="follow-record-avatar" id="followRecordAvatar" aria-hidden="true">林</span>
             <div class="follow-record-user"><div class="follow-record-name"><span id="followRecordName">林*满</span><span class="profile-role-tags" id="followRecordRole"><span class="role-tag" data-identity="parent">家长</span></span></div><div class="follow-record-meta"><span id="followRecordCity">陕西·西安</span><a class="follow-record-phone" id="followRecordPhone" href="tel:12000000002"><span id="followRecordPhoneText">12000000002</span><svg class="phone-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.8 9 3.2l2 5-1.7 1.4a14 14 0 0 0 5.1 5.1L15.8 13l5 2-.6 2.4c-.3 1.3-1.5 2.2-2.8 2.1A15.8 15.8 0 0 1 4.5 6.6c-.1-1.3.8-2.5 2.1-2.8Z"/></svg></a></div></div>
-
+            
             <div class="profile-profit" id="memberProfileProfit"><span>累计分润</span><strong id="memberDetailProfit">¥ 0.00</strong></div>
           </article>
           <section class="member-detail-summary" id="memberDetailSummary" aria-label="成员业务概况"><button class="member-detail-stat member-detail-team" id="memberDetailTeam" type="button" aria-label="查看该成员的团队，团队人数8人，今日新增2人"><span class="member-detail-team-value"><span>团队人数</span><strong>8人</strong></span><span class="member-detail-team-value member-detail-today"><span>今日新增</span><strong id="memberDetailToday">2人</strong></span></button></section>
@@ -1195,7 +1195,7 @@ renderTransferRecords();overviewScreen.classList.add('leaving');overviewScreen.c
     function renderMemberDetailTab(tabName){if(tabName!=='browse'&&memberDetailCurrentItem&&memberDetailCurrentItem._detailPool==='public')tabName='browse';const isCommission=tabName==='commission';document.querySelector('#memberCommissionPanel').hidden=!isCommission;memberDetailListTitle.closest('.follow-record-heading').hidden=isCommission||memberDetailCurrentItem?._detailPool==='public';followRecordList.hidden=isCommission||memberDetailCurrentItem?._detailPool==='public';if(isCommission){memberDetailTabs.forEach(tab=>{const active=tab.dataset.memberDetailTab===tabName;tab.classList.toggle('active',active);tab.setAttribute('aria-selected',String(active))});setMemberCommissionFilter('all');return;}const config=memberDetailConfig[tabName]||memberDetailConfig.follow;memberDetailTabs.forEach(tab=>{const active=tab.dataset.memberDetailTab===tabName;tab.classList.toggle('active',active);tab.setAttribute('aria-selected',String(active))});memberDetailListTitle.textContent=config.title;const records=config.source(memberDetailCurrentItem);followRecordCount.textContent=`${records.length} 条记录`;followRecordList.innerHTML=records.length?records.map(record=>`<article class="detail-record-card"><div class="detail-record-top">${(tabName==='browse'||tabName==='purchase')&&record.kind?`<span class="detail-record-kind">${escapeHtmlText(record.kind)}</span>`:''}<time class="detail-record-time">${escapeHtmlText(record.time)}</time></div><div class="detail-record-title">${escapeHtmlText(maskUserNamesInText(record.title))}</div><p class="detail-record-content">${escapeHtmlText(maskUserNamesInText(record.content))}</p><div class="detail-record-meta"><span>${escapeHtmlText(maskUserNamesInText(record.meta||''))}</span>${record.amount?`<strong class="detail-record-amount">${escapeHtmlText(record.amount)}</strong>`:''}</div></article>`).join(''):`<div class="empty-result">${config.empty}<br>暂无可展示内容</div>`}
     function renderFollowRecord(item){const dealClosed=item.deal==='closed';const isPublic=item._detailPool==='public';const canTransfer=false;const displayName=maskUserName(item.name);memberDetailCurrentItem=item;followRecordAvatar.textContent=item.name.slice(0,1);followRecordName.textContent=displayName;followRecordLevel.dataset.level=item.level;followRecordLevel.textContent=( !item.transferredFollow&&['一星','二星'].includes(item.level))?item.level:'';followRecordLevel.hidden=!( !item.transferredFollow&&['一星','二星'].includes(item.level));followRecordLevel.closest('.follow-record-profile').classList.toggle('compact-profile',followRecordLevel.hidden);const ownerLabel=document.querySelector('#detailFirstStarOwner');ownerLabel.textContent=firstStarOwnerText(item);ownerLabel.hidden=item.level!=='二星'||item.transferredFollow;followRecordRole.innerHTML=identityTags(item);followRecordCity.textContent=item.city||'陕西·西安';const maskedPhone=isPublic||item.level!=='一星';document.querySelector('#followRecordPhoneText').textContent=maskedPhone?maskPhone(item.phone):item.phone;followRecordPhone.classList.toggle('masked',maskedPhone);followRecordPhone.querySelector('.phone-icon').hidden=maskedPhone;if(maskedPhone){followRecordPhone.removeAttribute('href');followRecordPhone.setAttribute('aria-label',`${displayName}的电话已脱敏`)}else{followRecordPhone.href=`tel:${item.phone}`;followRecordPhone.setAttribute('aria-label',`拨打${displayName}的电话 ${item.phone}`)}memberDetailProfit.textContent=item.profit||'¥ 0.00';memberDetailSummary.hidden=isPublic||item.level!=='一星'||item.transferredFollow;document.querySelector('#memberProfileProfit').hidden=isPublic;memberDetailPurchaseTab.hidden=isPublic;memberDetailFollowTab.hidden=isPublic;memberDetailTablist.hidden=isPublic;memberDetailTablist.classList.toggle('single',isPublic);memberDetailListTitle.closest('.follow-record-heading').hidden=isPublic;followRecordList.hidden=isPublic;followRecordScreen.querySelector('.follow-record-scroll').classList.toggle('public-detail',isPublic);memberDetailToday.textContent='2人';memberDetailTeam.setAttribute('aria-label',`查看${displayName}的团队，团队人数8人，今日新增2人`);memberDetailActions.classList.toggle('single',isPublic);memberDetailActions.classList.toggle('two',!isPublic&&!canTransfer);memberDetailActions.classList.remove('four');memberDetailRevisit.hidden=!canAddRevisit(item);memberDetailTransfer.hidden=!canTransfer;memberDetailRelease.hidden=true;memberDetailClaim.hidden=!isPublic||item.level==='二星';const actionCount=[memberDetailRelease,memberDetailTransfer,memberDetailRevisit,memberDetailClaim].filter(button=>!button.hidden).length;memberDetailActions.classList.toggle('single',actionCount===1);memberDetailActions.classList.toggle('two',actionCount===2);memberDetailActions.hidden=actionCount===0;const claimRestriction=isPublic?getSeaClaimRestriction(item):{blocked:false,remainingDays:0};memberDetailClaim.disabled=claimRestriction.blocked;memberDetailClaim.textContent=claimRestriction.blocked?`${claimRestriction.remainingDays}天后可认领`:'认领';memberDetailClaim.setAttribute('aria-label',claimRestriction.blocked?`当前用户需等待${claimRestriction.remainingDays}天后才能再次认领`:'认领该客户');renderMemberDetailTab(isPublic?'browse':'follow')}
     function openMemberDetailTeam(){if(!memberDetailCurrentItem||memberDetailCurrentItem.level==='二星')return;openTeamSheet(memberDetailTeam,{name:memberDetailCurrentItem.name,phone:memberDetailCurrentItem.phone,pool:memberDetailCurrentItem._detailPool,todayAdded:'1'})}
-    function openMemberDetailTransfer(){if(!canManageMember(memberDetailCurrentItem)||!memberDetailCurrentItem.canTransfer)return;openFollowTransfer(memberDetailTransfer,{name:memberDetailCurrentItem.name,phone:memberDetailCurrentItem.phone,pool:memberDetailCurrentItem._detailPool})}
+    function openMemberDetailTransfer(){if(!canManageMember(memberDetailCurrentItem)||!memberDetailCurrentItem.canTransfer||memberDetailCurrentItem.transferredFollow)return;openFollowTransfer(memberDetailTransfer,{name:memberDetailCurrentItem.name,phone:memberDetailCurrentItem.phone,pool:memberDetailCurrentItem._detailPool})}
     function releaseMemberFromDetail(){return; // Unavailable for this role.
 if(!canManageMember(memberDetailCurrentItem))return;openReleasePublic(memberDetailRelease,{name:memberDetailCurrentItem.name,phone:memberDetailCurrentItem.phone,pool:memberDetailCurrentItem._detailPool})}
     function claimMemberFromDetail(){if(!memberDetailCurrentItem||memberDetailCurrentItem.level==='二星')return;const phone=memberDetailCurrentItem.phone;const card=seaMemberList.querySelector(`.sea-member-card[data-phone="${phone}"]`);if(!card||!claimSeaMember(card))return;closeFollowRecord();activatePool('private')}
@@ -1373,7 +1373,8 @@ if(!canManageMember(memberDetailCurrentItem))return;openReleasePublic(memberDeta
     }));
     function renderMembers(){
       // 二星列表不提供转移记录和批量转移入口。
-      document.querySelectorAll('[data-pool-panel="private"] .count-actions').forEach(actions=>{actions.hidden=teamMemberType==='star2'});
+      // 转跟进成员不可再次转移，也不提供转移记录和批量转移入口。
+      document.querySelectorAll('[data-pool-panel="private"] .count-actions').forEach(actions=>{actions.hidden=teamMemberType==='star2'||teamMemberType==='transferred'});
       const identity=identityFilter.dataset.value;
       document.querySelectorAll('[data-role-identity]').forEach(button=>{const selected=button.dataset.roleIdentity===identity;button.classList.toggle('active',selected);button.setAttribute('aria-pressed',String(selected))});
       document.querySelector('.team-view').classList.toggle('consultant-mode',teamMemberType==='consultant');
@@ -1465,7 +1466,7 @@ if(!canManageMember(memberDetailCurrentItem))return;openReleasePublic(memberDeta
     function updatePoolCounts(){const movedFromPrivate=members.filter(item=>item.movedFromPrivateThisSession).length;const movedToShared=allMemberRecords().filter(item=>item.movedToSharedThisSession).length;const claimed=members.filter(item=>item.claimedFromSea).length;document.querySelector('#privatePoolCount').textContent=218-movedFromPrivate+claimed-releasedPoolCounts.private;document.querySelector('#sharedPoolCount').textContent=89+movedToShared-releasedPoolCounts.shared;document.querySelector('#cooperationPoolCount').textContent=12-releasedPoolCounts.cooperation}
     function updateBatchToolbar(){document.querySelectorAll('[data-batch-toolbar]').forEach(toolbar=>{const active=toolbar.dataset.batchToolbar===batchModePool;toolbar.hidden=!active;if(active){toolbar.querySelector('strong').textContent=batchSelectedPhones.size;toolbar.querySelector('[data-open-batch-transfer]').disabled=!batchSelectedPhones.size}});document.querySelectorAll('[data-start-batch]').forEach(button=>button.hidden=button.dataset.startBatch===batchModePool)}
     function renderBatchPool(){renderMembers();renderCooperationMembers();renderSharedMembers();updateBatchToolbar()}
-    function startBatchMode(pool){if(teamMemberType==='star2')return;return; // Not available for teacher/parent.
+    function startBatchMode(pool){if(teamMemberType==='star2'||teamMemberType==='transferred')return;return; // Not available for teacher/parent.
 batchModePool=pool;batchSelectedPhones.clear();renderBatchPool()}
     function cancelBatchMode(){batchModePool='';batchSelectedPhones.clear();renderBatchPool()}
     function toggleBatchMember(card){const phone=card?.dataset.phone;if(!phone)return;if(batchSelectedPhones.has(phone))batchSelectedPhones.delete(phone);else batchSelectedPhones.add(phone);renderBatchPool()}
@@ -1517,7 +1518,7 @@ batchModePool=pool;batchSelectedPhones.clear();renderBatchPool()}
     revisitPhrases.querySelectorAll('.revisit-phrase-option').forEach(option=>option.addEventListener('click',()=>{revisitContent.value=option.textContent.trim().slice(0,200);updateRevisitState();revisitPhrases.hidden=true;revisitContent.focus({preventScroll:true})}));
     submitRevisit.addEventListener('click',submitRevisitRecord);
     releasePublicForm.addEventListener('submit',event=>{event.preventDefault();const reason=releasePublicForm.querySelector('[name="releaseReason"]:checked')?.value;if(!reason){releaseReasonMessage.textContent='请选择释放原因';confirmReleasePublic.disabled=true;releasePublicForm.querySelector('[name="releaseReason"]').focus();return}const description=releasePublicDescription.value.trim();const exists=[members,cooperationMembers].some(list=>list.some(item=>item.phone===releasePublicCurrentPhone&&(!releasePublicCurrentPool||item.pool===releasePublicCurrentPool)));if(!exists){releaseReasonMessage.textContent='未找到当前客户';return}openReleaseConfirm(reason,description)});
-    followTransferForm.addEventListener('submit',event=>{event.preventDefault();if(confirmFollowTransfer.disabled)return;const receiver=followTransferResultPhone.textContent;const transferMode=followTransferMode;const transferFromDetail=followTransferFromDetail;const targets=transferMode==='batch'?allMemberRecords().filter(item=>batchSelectedPhones.has(item.phone)&&item.canTransfer):allMemberRecords().filter(item=>item.phone===followTransferCurrentPhone&&(!followTransferCurrentPool||item.pool===followTransferCurrentPool));const targetCount=targets.length;const singleName=maskUserName(targets[0]?.name||followTransferCurrentMember);closeFollowTransfer();setTimeout(()=>{targets.forEach(item=>{const wasPrivate=item.pool==='private';item.pool='shared';item.canTransfer=false;item.movedToSharedThisSession=true;if(wasPrivate)item.movedFromPrivateThisSession=true;item.flowText=`由我转移给李*（${receiver}），进入共享池`;item.flowTime='刚刚';transferRecords.unshift({date:formatTransferDate(new Date()),memberName:item.name,memberPhone:item.phone,receiverName:'李*',receiverPhone:receiver})});batchModePool='';batchSelectedPhones.clear();renderMembers();renderCooperationMembers();renderSharedMembers();renderTransferRecords();updatePoolCounts();updateBatchToolbar();if(transferFromDetail)closeFollowRecord();activatePool('shared');showToast(transferMode==='batch'?`已将${targetCount}名用户批量转移给李*（${receiver}）`:`已将${singleName}转移给李*（${receiver}），用户已进入共享池`)},240)});
+    followTransferForm.addEventListener('submit',event=>{event.preventDefault();if(confirmFollowTransfer.disabled)return;const receiver=followTransferResultPhone.textContent;const transferMode=followTransferMode;const transferFromDetail=followTransferFromDetail;const targets=transferMode==='batch'?allMemberRecords().filter(item=>batchSelectedPhones.has(item.phone)&&item.canTransfer&&!item.transferredFollow):allMemberRecords().filter(item=>item.phone===followTransferCurrentPhone&&(!followTransferCurrentPool||item.pool===followTransferCurrentPool));const targetCount=targets.length;const singleName=maskUserName(targets[0]?.name||followTransferCurrentMember);closeFollowTransfer();setTimeout(()=>{targets.forEach(item=>{const wasPrivate=item.pool==='private';item.pool='shared';item.canTransfer=false;item.movedToSharedThisSession=true;if(wasPrivate)item.movedFromPrivateThisSession=true;item.flowText=`由我转移给李*（${receiver}），进入共享池`;item.flowTime='刚刚';transferRecords.unshift({date:formatTransferDate(new Date()),memberName:item.name,memberPhone:item.phone,receiverName:'李*',receiverPhone:receiver})});batchModePool='';batchSelectedPhones.clear();renderMembers();renderCooperationMembers();renderSharedMembers();renderTransferRecords();updatePoolCounts();updateBatchToolbar();if(transferFromDetail)closeFollowRecord();activatePool('shared');showToast(transferMode==='batch'?`已将${targetCount}名用户批量转移给李*（${receiver}）`:`已将${singleName}转移给李*（${receiver}），用户已进入共享池`)},240)});
     document.addEventListener('keydown',event=>{if(event.key!=='Escape')return;if(!iphoneKeyboard.hidden){revisitContent.blur();hideIphoneKeyboard()}else if(!revisitSheet.hidden)closeRevisit();else if(!releaseConfirmDialog.hidden)closeReleaseConfirm();else if(!releasePublicDialog.hidden)closeReleasePublic();else if(!followTransferDialog.hidden)closeFollowTransfer();else if(!teamHalfSheet.hidden)closeTeamSheet()});
     const filterControls=[...document.querySelectorAll('.filter-field')].map(field=>({field,trigger:field.querySelector('.filter-select'),menu:field.querySelector('.filter-menu'),text:field.querySelector('.filter-select span')})).filter(control=>control.trigger&&control.menu&&control.text);
     const filterControlByTrigger=new Map(filterControls.map(control=>[control.trigger,control]));

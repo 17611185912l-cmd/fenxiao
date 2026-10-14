@@ -64,7 +64,7 @@
     .member-list .card-actions [data-transfer-follow-up],.cooperation-list .card-actions [data-transfer-follow-up]{order:0}.member-list .card-actions [data-follow-record],.cooperation-list .card-actions [data-follow-record]{order:1}.member-list .card-actions .revisit-action,.cooperation-list .card-actions .revisit-action{order:2}.member-list .card-actions> :last-child,.cooperation-list .card-actions> :last-child{order:-1}
     .follow-record-scroll.public-detail .follow-record-profile{border-radius:14px}
     .sea-member-card{padding:13px 12px}
-
+  
     /* Brand palette inspired by the supplied logo: green, blue and orange. */
     :root{--brand-blue:#2956a0;--brand-blue-soft:#edf2fb;--brand-orange:#ee902b;--brand-orange-ink:#98530d}
     .tab.active{color:var(--ink)}
@@ -154,7 +154,7 @@
     .role-tag[data-identity="consultant"]{background:#eee8f5;color:#70538c}
     .role-tag[data-identity="teacher"]{background:#e5edf7;color:#476b94}
     .role-tag[data-identity="parent"]{background:#f7e9e6;color:#956157}
-
+  
     /* 页面底色、白色卡片与可交互控件保持清晰层次。 */
     :root{--page:#e9efed;--surface:#fff;--soft:#dcece5;--line:#ccd9d3}
     .income-card,[data-view="team"]>.income-card{background:#fff;border:1px solid var(--line);box-shadow:0 3px 10px rgba(35,65,52,.06)}
@@ -166,10 +166,10 @@
     .filter-select,.card-action:not(.sea-claim){background:#fff;border-color:#bccfc5}
     .card-action.revisit-action,.card-action.restore-action{background:#dcece5;border-color:#8bb4a2;color:#24554e}
     .filter-select:hover,.card-action:hover{border-color:var(--accent);box-shadow:0 1px 4px rgba(35,65,52,.1)}
-
+  
     /* 独立的不透明遮挡层覆盖滚动容器顶部留白，不依赖装饰阴影。 */
     .team-view>.team-member-tabs::before{content:"";position:absolute;z-index:-1;top:-16px;bottom:-6px;left:-14px;right:-14px;background:var(--page);pointer-events:none}
-
+  
     /* 全局用户卡片紧凑布局；保留标签独立空间和操作按钮高度。 */
     .member-card,.team-view .member-card,.team-member-card{padding:32px 10px 8px}
     .member-card>.member-head,.team-view .member-card>.member-head,.team-member-card>.member-head{padding-top:0;gap:7px}
@@ -188,7 +188,7 @@
     .follow-record-profile.compact-profile{padding-top:8px}
     .follow-record-profile .follow-record-meta{margin-top:1px}
     .manage-member-card{min-height:70px;padding:10px 12px}
-
+    
     /* 提现表单：核心操作常显，限额与税费规则按需展开。 */
     .withdraw-summary{padding:11px 15px}
     .withdraw-summary-value{font-size:27px;line-height:32px;margin-top:1px}
@@ -214,7 +214,7 @@
     .withdraw-tax-rule{font-size:10px;line-height:16px;color:#875200;margin:0}
     .withdraw-submit{height:39px;margin-top:9px}
     .withdraw-hint{margin-top:6px;font-size:9px;line-height:14px}
-
+  
     /* 提现卡片进一步压缩，保留必要信息与操作。 */
     .withdraw-summary{padding:9px 14px}
     .withdraw-summary-value{font-size:25px;line-height:29px}
@@ -227,7 +227,7 @@
     .withdraw-tax-notice{margin-top:6px}
     .withdraw-submit{height:37px;margin-top:7px}
     .withdraw-hint{display:none}
-
+  
     /* 提现卡片按参考稿重排：品牌色摘要、右侧金额、单行预计到账。 */
     .withdraw-card{border-radius:18px}
     .withdraw-summary{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2px 10px;padding:9px 15px;background:linear-gradient(120deg,var(--accent),var(--accent-dark));color:#fff}
@@ -247,7 +247,7 @@
     .withdraw-tax-brief{padding-bottom:6px;color:var(--muted)}
     .withdraw-tax-brief output{color:var(--muted)}
     .withdraw-submit{height:40px;margin-top:8px;border-radius:999px;background:linear-gradient(120deg,var(--accent),var(--accent-dark));box-shadow:none}
-
+  
     .withdraw-summary-value{grid-row:1}
     .withdraw-summary-note{grid-column:1/-1}
     .withdraw-card .withdraw-tax-notice{display:flex;align-items:center;justify-content:space-between;gap:6px;margin:8px 0 0;padding:5px 0 9px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;font-size:11px;color:var(--ink)}
@@ -263,7 +263,7 @@
     .withdraw-rules .withdraw-tax-rows{padding-bottom:9px}
     .withdraw-submit:hover,.withdraw-submit:focus-visible{background:var(--accent-dark)}
     @media(max-width:360px){.withdraw-summary-value{font-size:26px}.withdraw-result-main{gap:4px}.withdraw-result-main output{font-size:16px}.withdraw-result-tax{font-size:9px}}
-
+  
     /* Compact billing tabs, filters and transaction cards. */
     .bill-sticky-tools{margin-top:6px;padding-top:6px;padding-bottom:4px;box-shadow:none}
     .bill-sticky-tools #commissionFilterWrap{margin-top:5px}
@@ -277,14 +277,14 @@
     .commission-record-item{grid-template-columns:30px minmax(0,1fr) auto}
     .commission-record-icon{width:30px;height:30px;border-radius:8px}
     .bill-record-time{margin-top:3px;line-height:15px}
-
+  
     /* Restore separate withdrawal-limit and tax-detail disclosures. */
     .withdraw-card .withdraw-tax-notice{display:block;margin-top:6px;padding:0 10px;border:1px solid #efcc91;border-radius:9px;background:#fff8eb;color:#875200;font-size:11px}
     .withdraw-card .withdraw-tax-notice[hidden]{display:none}
     .withdraw-tax-notice .withdraw-disclosure>summary{color:#875200}
     .withdraw-card .withdraw-tax-brief,.withdraw-card .withdraw-tax-brief output{color:#875200}
     .withdraw-card .withdraw-limits{margin-top:6px;border-color:var(--line);background:#f4f7f5}
-
+  
     /* Withdrawal layout aligned with the Lingbang reference, retaining brand colors. */
     .withdraw-body{padding:10px 14px 12px}
     .withdraw-summary{padding:8px 14px;gap:1px 8px}
@@ -316,13 +316,13 @@
     .withdraw-details .withdraw-tax-row output{color:var(--ink)}
     .withdraw-details .withdraw-tax-row.tax output{color:var(--accent)}
     .withdraw-submit{height:40px;margin-top:5px}
-
+  
     /* Release-to-public-pool is unavailable for every demo role. */
     #memberDetailRelease,[data-release-public],[data-toast="释放公海"]{display:none!important}
     .member-card .card-actions:has(>.card-action:nth-child(3):last-child){grid-template-columns:repeat(3,minmax(0,1fr))!important}
     .member-card .card-actions:has(>.card-action:nth-child(2):last-child){grid-template-columns:repeat(2,minmax(0,1fr))!important}
     .member-card .card-actions:has(>.card-action:only-child){grid-template-columns:minmax(0,1fr)!important}
-
+  
     /* Overview earnings: cumulative income first, with two explicit bill entries. */
     .income-card.earnings-overview{padding:0;overflow:hidden;background:#fff}
     .earnings-total{padding:13px 16px 12px;background:linear-gradient(110deg,#e7f1ee,#f6faf8)}
@@ -340,7 +340,7 @@
       .bill-income-summary{padding:14px 16px 0;margin-bottom:8px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(110deg,#e7f1ee,#f6faf8)}
     .bill-income-summary>.label{color:var(--accent-dark);font-weight:650}
     .bill-withdraw-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:34px;margin-top:10px;padding:0;border:0;border-top:1px solid var(--line);background:transparent;color:var(--accent);font-size:12px;font-weight:650;cursor:pointer}
-
+  
     /* One continuous finance card in income-detail mode. */
     .bill-finance-card.income-mode{overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
     .bill-finance-card.income-mode .bill-income-summary{margin:0;border:0;border-radius:0;padding:14px 16px 0;background:linear-gradient(110deg,#e7f1ee,#f6faf8)}
@@ -350,7 +350,7 @@
     .bill-finance-card.income-mode .withdraw-summary-label{font-size:12px;color:var(--muted)}
     .bill-finance-card.income-mode .withdraw-summary-note{color:var(--muted)}
     .bill-finance-card.income-mode .bill-withdraw-toggle{min-height:36px}
-
+  
     .team-view .team-member-tabs{grid-template-columns:repeat(4,minmax(0,1fr))}
     .team-view .team-member-tab{padding-left:2px;padding-right:2px;white-space:nowrap}
 
@@ -384,7 +384,7 @@
               <article class="wire-card income-card earnings-overview">
                 <div class="earnings-total"><div class="earnings-heading"><span class="label">累计收益（元）</span><button class="link-button" id="openIncomeDetails" type="button">查看收益明细 ›</button></div><strong class="earnings-total-value number"><small class="currency">¥</small>812,386.50</strong></div>
                 <div class="earnings-withdraw"><div><span class="label">可提现（元）</span><strong class="earnings-withdraw-value number"><small class="currency">¥</small>255,386.50</strong></div><button class="white-button" id="openBill" type="button">立即提现</button></div>
-
+                
               </article>
               <h2 class="section-label">新增收益</h2>
               <section class="metric-grid two" aria-label="新增收益">
@@ -536,11 +536,11 @@
                 </div>
               </details>
               <button class="withdraw-submit" type="submit">确认提现</button>
-
+              
             </form>
           </section>
 <h3 class="withdraw-record-title">提现记录</h3>          <section class="bill-panel" id="withdrawPanel" role="tabpanel" aria-label="提现记录">
-
+            
             <div class="bill-record-list" id="withdrawRecordList"></div>
           </section>
         </div>
@@ -564,7 +564,7 @@
             <div class="commission-filter-summary" id="commissionFilterSummary" aria-live="polite">分润明细 · 0 笔</div>
           </div>
           <section class="bill-panel" id="commissionPanel" aria-label="分润明细">
-
+            
             <div class="bill-record-list" id="commissionList"></div>
           </section>
 
@@ -586,7 +586,7 @@
             <span class="member-level" data-level="一星" id="followRecordLevel">一星</span><span class="first-star-owner" id="detailFirstStarOwner" hidden></span>
             <span class="follow-record-avatar" id="followRecordAvatar" aria-hidden="true">林</span>
             <div class="follow-record-user"><div class="follow-record-name"><span id="followRecordName">林*满</span><span class="profile-role-tags" id="followRecordRole"><span class="role-tag" data-identity="parent">家长</span></span></div><div class="follow-record-meta"><span id="followRecordCity">陕西·西安</span><a class="follow-record-phone" id="followRecordPhone" href="tel:12000000002"><span id="followRecordPhoneText">12000000002</span><svg class="phone-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.8 9 3.2l2 5-1.7 1.4a14 14 0 0 0 5.1 5.1L15.8 13l5 2-.6 2.4c-.3 1.3-1.5 2.2-2.8 2.1A15.8 15.8 0 0 1 4.5 6.6c-.1-1.3.8-2.5 2.1-2.8Z"/></svg></a></div></div>
-
+            
             <div class="profile-profit" id="memberProfileProfit"><span>累计分润</span><strong id="memberDetailProfit">¥ 0.00</strong></div>
           </article>
           <section class="member-detail-summary" id="memberDetailSummary" aria-label="成员业务概况"><button class="member-detail-stat member-detail-team" id="memberDetailTeam" type="button" aria-label="查看该成员的团队，团队人数8人，今日新增2人"><span class="member-detail-team-value"><span>团队人数</span><strong>8人</strong></span><span class="member-detail-team-value member-detail-today"><span>今日新增</span><strong id="memberDetailToday">2人</strong></span></button></section>
@@ -1144,7 +1144,7 @@
     document.querySelector('#closeWithdraw').addEventListener('click',closeWithdraw);
     function openBill(mode='income'){if(mode==='withdraw'){openWithdraw();return;}resetBill();document.querySelector('#billFinanceCard').classList.add('income-mode');document.querySelector('#billIncomeSummary').hidden=false;document.querySelector('#billIncomeTotal').textContent=document.querySelector('.earnings-total-value').textContent;overviewScreen.classList.add('leaving');overviewScreen.classList.remove('active');billScreen.classList.add('active');billScreen.querySelector('.scroll').scrollTop=0}
     function closeBill(){overviewScreen.classList.remove('leaving');overviewScreen.classList.add('active');billScreen.classList.remove('active')}
-    function openTransferRecord(){if(teamMemberType==='star2')return;renderTransferRecords();overviewScreen.classList.add('leaving');overviewScreen.classList.remove('active');transferRecordScreen.classList.add('active');transferRecordScreen.querySelector('.scroll').scrollTop=0}
+    function openTransferRecord(){if(teamMemberType==='star2'||teamMemberType==='transferred')return;renderTransferRecords();overviewScreen.classList.add('leaving');overviewScreen.classList.remove('active');transferRecordScreen.classList.add('active');transferRecordScreen.querySelector('.scroll').scrollTop=0}
     function closeTransferRecord(){overviewScreen.classList.remove('leaving');overviewScreen.classList.add('active');transferRecordScreen.classList.remove('active')}
     function renderImFunnel(container,data){container.innerHTML=imFunnelStages.map((stage,index)=>{const connect=index===0?'':`<div class="im-funnel-connect" style="--funnel-width:${stage.width}"><span class="im-funnel-connect-line"></span><span class="im-funnel-connect-chip">${imFunnelRateLabels[index-1]}<strong>${formatFunnelRate(data[stage.key],data[imFunnelStages[index-1].key])}</strong></span><span class="im-funnel-connect-line"></span></div>`;return connect+`<div class="im-funnel-stage ${stage.className}" style="--funnel-width:${stage.width}"><span class="im-funnel-stage-label">${stage.label}</span><span class="im-funnel-stage-value"><strong>${data[stage.key]}</strong><small>人</small></span></div>`}).join('')+`<div class="im-funnel-loss"><i>流失</i>暂无意向<strong>${data.invalid}</strong>人<em>占沟通客户 ${formatFunnelRate(data.invalid,data.communication)}</em></div><div class="im-funnel-total">整体成交转化率<strong>${formatFunnelRate(data.closed,data.communication)}</strong></div>`}
     function renderImEmployees(){const totals=imEmployees.reduce((result,item)=>{imMetricConfig.forEach(metric=>result[metric.key]+=item[metric.key]);return result},{communication:0,interested:0,closed:0,invalid:0});renderImFunnel(imTeamFunnel,totals);document.querySelector('#imEmployeeCount').textContent=`${imEmployees.length}人`;imEmployeeList.innerHTML=imEmployees.map(item=>{const displayName=maskUserName(item.name);return `<button class="im-employee-card" type="button" data-im-employee="${item.id}" aria-label="查看${displayName}的IM数据"><span class="im-employee-head"><span class="im-employee-avatar">${item.name.slice(0,1)}</span><span class="im-employee-main"><span class="im-employee-name">${displayName}<span class="im-employee-id">${item.id}</span></span><span class="im-employee-role">${item.role}</span></span><span class="im-employee-arrow" aria-hidden="true"></span></span><span class="im-employee-metrics">${imMetricConfig.map(metric=>`<span class="im-employee-metric"><span>${metric.label}</span><strong>${item[metric.key]}</strong></span>`).join('')}</span></button>`}).join('')}
@@ -1159,9 +1159,9 @@
     function purchaseRecordsFor(item){if(!['closed','cooperation'].includes(item.deal))return[];return[{time:'08.20 14:32',kind:'课程订单',title:'购买《优AI英语阅读提升》',content:'订单已支付 · 已成交',meta:'订单号 YZB202608203286',amount:'¥ 1,280.00'},{time:'07.16 16:08',kind:'体验课订单',title:'购买《数学思维体验课》',content:'课程已完成上课',meta:'订单号 YZB202607163508',amount:'¥ 99.00'},{time:'06.30 11:36',kind:'服务订单',title:'购买学习规划服务',content:'服务已生效',meta:'订单号 YZB202606301126',amount:'¥ 299.00'}]}
     const memberDetailConfig={follow:{title:'跟进动态',empty:'暂无跟进记录',source:followRecordsFor},browse:{title:'浏览动态',empty:'暂无浏览记录',source:browseRecordsFor},purchase:{title:'购买动态',empty:'暂无购买记录',source:purchaseRecordsFor}};
     function renderMemberDetailTab(tabName){if(tabName!=='browse'&&memberDetailCurrentItem&&memberDetailCurrentItem._detailPool==='public')tabName='browse';const isCommission=tabName==='commission';document.querySelector('#memberCommissionPanel').hidden=!isCommission;memberDetailListTitle.closest('.follow-record-heading').hidden=isCommission||memberDetailCurrentItem?._detailPool==='public';followRecordList.hidden=isCommission||memberDetailCurrentItem?._detailPool==='public';if(isCommission){memberDetailTabs.forEach(tab=>{const active=tab.dataset.memberDetailTab===tabName;tab.classList.toggle('active',active);tab.setAttribute('aria-selected',String(active))});setMemberCommissionFilter('all');return;}const config=memberDetailConfig[tabName]||memberDetailConfig.follow;memberDetailTabs.forEach(tab=>{const active=tab.dataset.memberDetailTab===tabName;tab.classList.toggle('active',active);tab.setAttribute('aria-selected',String(active))});memberDetailListTitle.textContent=config.title;const records=config.source(memberDetailCurrentItem);followRecordCount.textContent=`${records.length} 条记录`;followRecordList.innerHTML=records.length?records.map(record=>`<article class="detail-record-card"><div class="detail-record-top">${(tabName==='browse'||tabName==='purchase')&&record.kind?`<span class="detail-record-kind">${escapeHtmlText(record.kind)}</span>`:''}<time class="detail-record-time">${escapeHtmlText(record.time)}</time></div><div class="detail-record-title">${escapeHtmlText(maskUserNamesInText(record.title))}</div><p class="detail-record-content">${escapeHtmlText(maskUserNamesInText(record.content))}</p><div class="detail-record-meta"><span>${escapeHtmlText(maskUserNamesInText(record.meta||''))}</span>${record.amount?`<strong class="detail-record-amount">${escapeHtmlText(record.amount)}</strong>`:''}</div></article>`).join(''):`<div class="empty-result">${config.empty}<br>暂无可展示内容</div>`}
-    function renderFollowRecord(item){const dealClosed=item.deal==='closed';const isPublic=item._detailPool==='public';const canTransfer=canManageMember(item)&&Boolean(item.canTransfer);const displayName=maskUserName(item.name);memberDetailCurrentItem=item;followRecordAvatar.textContent=item.name.slice(0,1);followRecordName.textContent=displayName;followRecordLevel.dataset.level=item.level;followRecordLevel.textContent=( !item.transferredFollow&&['一星','二星'].includes(item.level))?item.level:'';followRecordLevel.hidden=!( !item.transferredFollow&&['一星','二星'].includes(item.level));followRecordLevel.closest('.follow-record-profile').classList.toggle('compact-profile',followRecordLevel.hidden);const ownerLabel=document.querySelector('#detailFirstStarOwner');ownerLabel.textContent=firstStarOwnerText(item);ownerLabel.hidden=item.level!=='二星'||item.transferredFollow;followRecordRole.innerHTML=identityTags(item);followRecordCity.textContent=item.city||'陕西·西安';const maskedPhone=isPublic||item.level!=='一星';document.querySelector('#followRecordPhoneText').textContent=maskedPhone?maskPhone(item.phone):item.phone;followRecordPhone.classList.toggle('masked',maskedPhone);followRecordPhone.querySelector('.phone-icon').hidden=maskedPhone;if(maskedPhone){followRecordPhone.removeAttribute('href');followRecordPhone.setAttribute('aria-label',`${displayName}的电话已脱敏`)}else{followRecordPhone.href=`tel:${item.phone}`;followRecordPhone.setAttribute('aria-label',`拨打${displayName}的电话 ${item.phone}`)}memberDetailProfit.textContent=item.profit||'¥ 0.00';memberDetailSummary.hidden=isPublic||item.level!=='一星'||item.transferredFollow;document.querySelector('#memberProfileProfit').hidden=isPublic;memberDetailPurchaseTab.hidden=isPublic;memberDetailFollowTab.hidden=isPublic;memberDetailTablist.hidden=isPublic;memberDetailTablist.classList.toggle('single',isPublic);memberDetailListTitle.closest('.follow-record-heading').hidden=isPublic;followRecordList.hidden=isPublic;followRecordScreen.querySelector('.follow-record-scroll').classList.toggle('public-detail',isPublic);memberDetailToday.textContent='2人';memberDetailTeam.setAttribute('aria-label',`查看${displayName}的团队，团队人数8人，今日新增2人`);memberDetailActions.classList.toggle('single',isPublic);memberDetailActions.classList.toggle('two',!isPublic&&!canTransfer);memberDetailActions.classList.remove('four');memberDetailRevisit.hidden=!canAddRevisit(item);memberDetailTransfer.hidden=!canTransfer;memberDetailRelease.hidden=true;memberDetailClaim.hidden=!isPublic||item.level==='二星';const actionCount=[memberDetailRelease,memberDetailTransfer,memberDetailRevisit,memberDetailClaim].filter(button=>!button.hidden).length;memberDetailActions.classList.toggle('single',actionCount===1);memberDetailActions.classList.toggle('two',actionCount===2);memberDetailActions.hidden=actionCount===0;const claimRestriction=isPublic?getSeaClaimRestriction(item):{blocked:false,remainingDays:0};memberDetailClaim.disabled=claimRestriction.blocked;memberDetailClaim.textContent=claimRestriction.blocked?`${claimRestriction.remainingDays}天后可认领`:'认领';memberDetailClaim.setAttribute('aria-label',claimRestriction.blocked?`当前用户需等待${claimRestriction.remainingDays}天后才能再次认领`:'认领该客户');renderMemberDetailTab(isPublic?'browse':'follow')}
+    function renderFollowRecord(item){const dealClosed=item.deal==='closed';const isPublic=item._detailPool==='public';const canTransfer=canManageMember(item)&&Boolean(item.canTransfer)&&!item.transferredFollow;const displayName=maskUserName(item.name);memberDetailCurrentItem=item;followRecordAvatar.textContent=item.name.slice(0,1);followRecordName.textContent=displayName;followRecordLevel.dataset.level=item.level;followRecordLevel.textContent=( !item.transferredFollow&&['一星','二星'].includes(item.level))?item.level:'';followRecordLevel.hidden=!( !item.transferredFollow&&['一星','二星'].includes(item.level));followRecordLevel.closest('.follow-record-profile').classList.toggle('compact-profile',followRecordLevel.hidden);const ownerLabel=document.querySelector('#detailFirstStarOwner');ownerLabel.textContent=firstStarOwnerText(item);ownerLabel.hidden=item.level!=='二星'||item.transferredFollow;followRecordRole.innerHTML=identityTags(item);followRecordCity.textContent=item.city||'陕西·西安';const maskedPhone=isPublic||item.level!=='一星';document.querySelector('#followRecordPhoneText').textContent=maskedPhone?maskPhone(item.phone):item.phone;followRecordPhone.classList.toggle('masked',maskedPhone);followRecordPhone.querySelector('.phone-icon').hidden=maskedPhone;if(maskedPhone){followRecordPhone.removeAttribute('href');followRecordPhone.setAttribute('aria-label',`${displayName}的电话已脱敏`)}else{followRecordPhone.href=`tel:${item.phone}`;followRecordPhone.setAttribute('aria-label',`拨打${displayName}的电话 ${item.phone}`)}memberDetailProfit.textContent=item.profit||'¥ 0.00';memberDetailSummary.hidden=isPublic||item.level!=='一星'||item.transferredFollow;document.querySelector('#memberProfileProfit').hidden=isPublic;memberDetailPurchaseTab.hidden=isPublic;memberDetailFollowTab.hidden=isPublic;memberDetailTablist.hidden=isPublic;memberDetailTablist.classList.toggle('single',isPublic);memberDetailListTitle.closest('.follow-record-heading').hidden=isPublic;followRecordList.hidden=isPublic;followRecordScreen.querySelector('.follow-record-scroll').classList.toggle('public-detail',isPublic);memberDetailToday.textContent='2人';memberDetailTeam.setAttribute('aria-label',`查看${displayName}的团队，团队人数8人，今日新增2人`);memberDetailActions.classList.toggle('single',isPublic);memberDetailActions.classList.toggle('two',!isPublic&&!canTransfer);memberDetailActions.classList.remove('four');memberDetailRevisit.hidden=!canAddRevisit(item);memberDetailTransfer.hidden=!canTransfer;memberDetailRelease.hidden=true;memberDetailClaim.hidden=!isPublic||item.level==='二星';const actionCount=[memberDetailRelease,memberDetailTransfer,memberDetailRevisit,memberDetailClaim].filter(button=>!button.hidden).length;memberDetailActions.classList.toggle('single',actionCount===1);memberDetailActions.classList.toggle('two',actionCount===2);memberDetailActions.hidden=actionCount===0;const claimRestriction=isPublic?getSeaClaimRestriction(item):{blocked:false,remainingDays:0};memberDetailClaim.disabled=claimRestriction.blocked;memberDetailClaim.textContent=claimRestriction.blocked?`${claimRestriction.remainingDays}天后可认领`:'认领';memberDetailClaim.setAttribute('aria-label',claimRestriction.blocked?`当前用户需等待${claimRestriction.remainingDays}天后才能再次认领`:'认领该客户');renderMemberDetailTab(isPublic?'browse':'follow')}
     function openMemberDetailTeam(){if(!memberDetailCurrentItem||memberDetailCurrentItem.level==='二星')return;openTeamSheet(memberDetailTeam,{name:memberDetailCurrentItem.name,phone:memberDetailCurrentItem.phone,pool:memberDetailCurrentItem._detailPool,todayAdded:'1'})}
-    function openMemberDetailTransfer(){if(!canManageMember(memberDetailCurrentItem)||!memberDetailCurrentItem.canTransfer)return;openFollowTransfer(memberDetailTransfer,{name:memberDetailCurrentItem.name,phone:memberDetailCurrentItem.phone,pool:memberDetailCurrentItem._detailPool})}
+    function openMemberDetailTransfer(){if(!canManageMember(memberDetailCurrentItem)||!memberDetailCurrentItem.canTransfer||memberDetailCurrentItem.transferredFollow)return;openFollowTransfer(memberDetailTransfer,{name:memberDetailCurrentItem.name,phone:memberDetailCurrentItem.phone,pool:memberDetailCurrentItem._detailPool})}
     function releaseMemberFromDetail(){if(!canManageMember(memberDetailCurrentItem))return;openReleasePublic(memberDetailRelease,{name:memberDetailCurrentItem.name,phone:memberDetailCurrentItem.phone,pool:memberDetailCurrentItem._detailPool})}
     function claimMemberFromDetail(){if(!memberDetailCurrentItem||memberDetailCurrentItem.level==='二星')return;const phone=memberDetailCurrentItem.phone;const card=seaMemberList.querySelector(`.sea-member-card[data-phone="${phone}"]`);if(!card||!claimSeaMember(card))return;closeFollowRecord();activatePool('private')}
     function openFollowRecord(card){const phone=card?.dataset.phone;const pool=card?.dataset.pool||'';const records=pool==='public'?publicMembers:[...secondLevelMembers,...allMemberRecords(),...(typeof invitedConsultants!=='undefined'?invitedConsultants:[])];const item=records.find(record=>record.phone===phone&&(pool==='public'||!pool||!record.pool||record.pool===pool));if(!item)return;renderFollowRecord({...item,_detailPool:pool,_sourceItem:item});overviewScreen.classList.add('leaving');overviewScreen.classList.remove('active');followRecordScreen.classList.add('active');followRecordScreen.querySelector('.scroll').scrollTop=0}
@@ -1322,7 +1322,7 @@
     let teamMemberType='consultant';
     const teamMemberTabs=[...document.querySelectorAll('[data-member-type]')];
     teamMemberTabs.forEach(tab=>tab.addEventListener('click',()=>{if(batchModePool)cancelBatchMode();teamMemberType=tab.dataset.memberType;document.querySelector('.team-view').classList.toggle('consultant-mode',teamMemberType==='consultant');setFilterValue(filterControls?.find?.(control=>control.trigger?.id==='followFilter')||{},'all',false);setFilterValue(filterControlByTrigger.get(identityFilter),'all',false);teamMemberTabs.forEach(item=>item.classList.toggle('active',item===tab));renderMembers()}));
-    function memberCard(item){const displayName=maskUserName(item.name);const dealLabel=item.deal==='closed'?'已成交':'未成交';const selectable=canManageMember(item)&&batchModePool===item.pool&&item.canTransfer;const selected=batchSelectedPhones.has(item.phone);const selectButton=selectable?`<button class="batch-select-button" type="button" data-batch-select aria-label="选择${displayName}" aria-pressed="${selected}">${selected?'✓':''}</button>`:'';const transferAction=canManageMember(item)&&item.canTransfer?'<button class="card-action" type="button" data-transfer-follow-up>转移跟进</button>':'';const city=item.city||'陕西.西安';const followText=item.followText||'已电话沟通，家长有意向上……';const followTime=item.followTime||'今天 13:43';return `<article class="member-card${selectable?' batch-selectable':''}${selected?' batch-selected':''}${!( !item.transferredFollow&&['一星','二星'].includes(item.level))&&Number(item.days)<=0?' compact-card':''}" data-member="${item.name}" data-phone="${item.phone}" data-pool="${item.pool||''}" data-days="${item.days}" tabindex="${selectable?'-1':'0'}" role="link" aria-label="查看${displayName}的成员详情">${selectButton}${( !item.transferredFollow&&['一星','二星'].includes(item.level))?`<span class="member-level${item.level==='一星'?' primary-level':''}" data-level="${item.level}">${item.level}</span>`:''}${item.level==='二星'&&!item.transferredFollow?`<span class="first-star-owner">${firstStarOwnerText(item)}</span>`:''}${Number(item.days)>0?`<span class="inactive-days">${item.days}日未跟进</span>`:''}<div class="member-head"><span class="avatar">${item.name.slice(0,1)}</span><div><div class="member-name">${displayName}${identityTags(item)}</div><div class="member-meta"><span>${city}</span>${item.level!=='一星'?`<span class="phone-link phone-masked" aria-label="${displayName}的电话已脱敏"><span>${maskPhone(item.phone)}</span></span>`:`<a class="phone-link" href="tel:${item.phone}" aria-label="拨打${displayName}的电话 ${item.phone}"><span>${item.phone}</span><svg class="phone-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.8 9 3.2l2 5-1.7 1.4a14 14 0 0 0 5.1 5.1L15.8 13l5 2-.6 2.4c-.3 1.3-1.5 2.2-2.8 2.1A15.8 15.8 0 0 1 4.5 6.6c-.1-1.3.8-2.5 2.1-2.8Z"/></svg></a>`}</div></div><div class="member-profit">累计分润<strong>${formatMemberProfit(item.profit)}</strong></div></div><div class="trace"><div class="trace-row"><span>最近跟进</span><span class="trace-copy">${maskUserNamesInText(followText)}</span><span class="trace-time">${followTime}</span></div></div>${item.level==='一星'&&!item.transferredFollow?`<button class="team-summary" type="button" data-open-team-sheet aria-label="查看${displayName}的二星团队，团队人数8人，今日新增2人"><span>二星团队人数8人 今日新增2人</span></button>`:''}<div class="card-actions${item.canTransfer?'':' no-transfer'}${!canAddRevisit(item)&&!transferAction&&!canManageMember(item)?' single-follow-action':''}"><button class="card-action" type="button" data-follow-record>跟进记录</button>${canAddRevisit(item)?'<button class="card-action revisit-action" type="button" data-toast="添加回访">添加回访</button>':''}${transferAction}</div></article>`}
+    function memberCard(item){const displayName=maskUserName(item.name);const dealLabel=item.deal==='closed'?'已成交':'未成交';const selectable=canManageMember(item)&&batchModePool===item.pool&&item.canTransfer&&!item.transferredFollow;const selected=batchSelectedPhones.has(item.phone);const selectButton=selectable?`<button class="batch-select-button" type="button" data-batch-select aria-label="选择${displayName}" aria-pressed="${selected}">${selected?'✓':''}</button>`:'';const transferAction=canManageMember(item)&&item.canTransfer&&!item.transferredFollow?'<button class="card-action" type="button" data-transfer-follow-up>转移跟进</button>':'';const city=item.city||'陕西.西安';const followText=item.followText||'已电话沟通，家长有意向上……';const followTime=item.followTime||'今天 13:43';return `<article class="member-card${selectable?' batch-selectable':''}${selected?' batch-selected':''}${!( !item.transferredFollow&&['一星','二星'].includes(item.level))&&Number(item.days)<=0?' compact-card':''}" data-member="${item.name}" data-phone="${item.phone}" data-pool="${item.pool||''}" data-days="${item.days}" tabindex="${selectable?'-1':'0'}" role="link" aria-label="查看${displayName}的成员详情">${selectButton}${( !item.transferredFollow&&['一星','二星'].includes(item.level))?`<span class="member-level${item.level==='一星'?' primary-level':''}" data-level="${item.level}">${item.level}</span>`:''}${item.level==='二星'&&!item.transferredFollow?`<span class="first-star-owner">${firstStarOwnerText(item)}</span>`:''}${Number(item.days)>0?`<span class="inactive-days">${item.days}日未跟进</span>`:''}<div class="member-head"><span class="avatar">${item.name.slice(0,1)}</span><div><div class="member-name">${displayName}${identityTags(item)}</div><div class="member-meta"><span>${city}</span>${item.level!=='一星'?`<span class="phone-link phone-masked" aria-label="${displayName}的电话已脱敏"><span>${maskPhone(item.phone)}</span></span>`:`<a class="phone-link" href="tel:${item.phone}" aria-label="拨打${displayName}的电话 ${item.phone}"><span>${item.phone}</span><svg class="phone-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.8 9 3.2l2 5-1.7 1.4a14 14 0 0 0 5.1 5.1L15.8 13l5 2-.6 2.4c-.3 1.3-1.5 2.2-2.8 2.1A15.8 15.8 0 0 1 4.5 6.6c-.1-1.3.8-2.5 2.1-2.8Z"/></svg></a>`}</div></div><div class="member-profit">累计分润<strong>${formatMemberProfit(item.profit)}</strong></div></div><div class="trace"><div class="trace-row"><span>最近跟进</span><span class="trace-copy">${maskUserNamesInText(followText)}</span><span class="trace-time">${followTime}</span></div></div>${item.level==='一星'&&!item.transferredFollow?`<button class="team-summary" type="button" data-open-team-sheet aria-label="查看${displayName}的二星团队，团队人数8人，今日新增2人"><span>二星团队人数8人 今日新增2人</span></button>`:''}<div class="card-actions${item.canTransfer?'':' no-transfer'}${!canAddRevisit(item)&&!transferAction&&!canManageMember(item)?' single-follow-action':''}"><button class="card-action" type="button" data-follow-record>跟进记录</button>${canAddRevisit(item)?'<button class="card-action revisit-action" type="button" data-toast="添加回访">添加回访</button>':''}${transferAction}</div></article>`}
     const consultantScreen=document.querySelector('#consultantScreen');
     const consultantPageList=document.querySelector('#consultantPageList');
     function renderConsultantPage(){consultantPageList.innerHTML=invitedConsultants.map(item=>memberCard(item).replace('member-card','member-card consultant-page-card')).join('');consultantPageList.querySelectorAll('.team-summary').forEach(node=>node.remove());consultantPageList.querySelectorAll('.consultant-page-card').forEach(card=>{if(card.querySelectorAll('.card-actions .card-action').length===1)card.classList.add('single-action');const followButton=card.querySelector('[data-follow-record]');if(followButton)followButton.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();openFollowRecord(card)})});document.querySelector('#consultantPageCount').textContent=`${invitedConsultants.length}人`;prepareMemberActions(consultantPageList);}
@@ -1333,7 +1333,8 @@
     function prepareMemberActions(container){container.querySelectorAll('.team-summary span').forEach(summary=>summary.textContent='二星团队：8人 ｜ 今日新增：2人');container.querySelectorAll('[data-toast="添加回访"]').forEach(button=>{button.removeAttribute('data-toast');button.dataset.openRevisit=''});container.querySelectorAll('[data-toast="释放公海"]').forEach(button=>{button.removeAttribute('data-toast');button.dataset.releasePublic=''});container.querySelectorAll('[data-toast]').forEach(button=>button.addEventListener('click',()=>showToast(button.dataset.toast)))}
     function renderMembers(){
       // 二星列表不提供转移记录和批量转移入口。
-      document.querySelectorAll('[data-pool-panel="private"] .count-actions').forEach(actions=>{actions.hidden=teamMemberType==='star2'});
+      // 转跟进成员不可再次转移，也不提供转移记录和批量转移入口。
+      document.querySelectorAll('[data-pool-panel="private"] .count-actions').forEach(actions=>{actions.hidden=teamMemberType==='star2'||teamMemberType==='transferred'});
       const identity=identityFilter.dataset.value;
       document.querySelector('.team-view').classList.toggle('consultant-mode',teamMemberType==='consultant');
       document.querySelector('#identityField').hidden=teamMemberType==='consultant';
@@ -1420,7 +1421,7 @@
     function updatePoolCounts(){const movedFromPrivate=members.filter(item=>item.movedFromPrivateThisSession).length;const movedToShared=allMemberRecords().filter(item=>item.movedToSharedThisSession).length;const claimed=members.filter(item=>item.claimedFromSea).length;document.querySelector('#privatePoolCount').textContent=218-movedFromPrivate+claimed-releasedPoolCounts.private;document.querySelector('#sharedPoolCount').textContent=89+movedToShared-releasedPoolCounts.shared;document.querySelector('#cooperationPoolCount').textContent=12-releasedPoolCounts.cooperation}
     function updateBatchToolbar(){document.querySelectorAll('[data-batch-toolbar]').forEach(toolbar=>{const active=toolbar.dataset.batchToolbar===batchModePool;toolbar.hidden=!active;if(active){toolbar.querySelector('strong').textContent=batchSelectedPhones.size;toolbar.querySelector('[data-open-batch-transfer]').disabled=!batchSelectedPhones.size}});document.querySelectorAll('[data-start-batch]').forEach(button=>button.hidden=button.dataset.startBatch===batchModePool)}
     function renderBatchPool(){renderMembers();renderCooperationMembers();renderSharedMembers();updateBatchToolbar()}
-    function startBatchMode(pool){if(teamMemberType==='star2')return;batchModePool=pool;batchSelectedPhones.clear();renderBatchPool()}
+    function startBatchMode(pool){if(teamMemberType==='star2'||teamMemberType==='transferred')return;batchModePool=pool;batchSelectedPhones.clear();renderBatchPool()}
     function cancelBatchMode(){batchModePool='';batchSelectedPhones.clear();renderBatchPool()}
     function toggleBatchMember(card){const phone=card?.dataset.phone;if(!phone)return;if(batchSelectedPhones.has(phone))batchSelectedPhones.delete(phone);else batchSelectedPhones.add(phone);renderBatchPool()}
     function handleMemberListClick(event){const selectTrigger=event.target.closest('[data-batch-select]');if(selectTrigger){toggleBatchMember(selectTrigger.closest('.member-card'));return}if(batchModePool)return;const card=event.target.closest('.member-card');if(!card)return;const followRecordTrigger=event.target.closest('[data-follow-record]');if(followRecordTrigger){openFollowRecord(card);return}const revisitTrigger=event.target.closest('[data-open-revisit]');if(revisitTrigger){openRevisit(revisitTrigger);return}const teamTrigger=event.target.closest('[data-open-team-sheet]');if(teamTrigger){openTeamSheet(teamTrigger);return}const transferTrigger=event.target.closest('[data-transfer-follow-up]');if(transferTrigger){openFollowTransfer(transferTrigger);return}const releaseTrigger=event.target.closest('[data-release-public]');if(releaseTrigger){openReleasePublic(releaseTrigger);return}if(event.target.closest('button,a'))return;openFollowRecord(card)}
@@ -1471,7 +1472,7 @@
     revisitPhrases.querySelectorAll('.revisit-phrase-option').forEach(option=>option.addEventListener('click',()=>{revisitContent.value=option.textContent.trim().slice(0,200);updateRevisitState();revisitPhrases.hidden=true;revisitContent.focus({preventScroll:true})}));
     submitRevisit.addEventListener('click',submitRevisitRecord);
     releasePublicForm.addEventListener('submit',event=>{event.preventDefault();const reason=releasePublicForm.querySelector('[name="releaseReason"]:checked')?.value;if(!reason){releaseReasonMessage.textContent='请选择释放原因';confirmReleasePublic.disabled=true;releasePublicForm.querySelector('[name="releaseReason"]').focus();return}const description=releasePublicDescription.value.trim();const exists=[members,cooperationMembers].some(list=>list.some(item=>item.phone===releasePublicCurrentPhone&&(!releasePublicCurrentPool||item.pool===releasePublicCurrentPool)));if(!exists){releaseReasonMessage.textContent='未找到当前客户';return}openReleaseConfirm(reason,description)});
-    followTransferForm.addEventListener('submit',event=>{event.preventDefault();if(confirmFollowTransfer.disabled)return;const receiver=followTransferResultPhone.textContent;const transferMode=followTransferMode;const transferFromDetail=followTransferFromDetail;const targets=transferMode==='batch'?allMemberRecords().filter(item=>batchSelectedPhones.has(item.phone)&&item.canTransfer):allMemberRecords().filter(item=>item.phone===followTransferCurrentPhone&&(!followTransferCurrentPool||item.pool===followTransferCurrentPool));const targetCount=targets.length;const singleName=maskUserName(targets[0]?.name||followTransferCurrentMember);closeFollowTransfer();setTimeout(()=>{targets.forEach(item=>{const wasPrivate=item.pool==='private';item.pool='shared';item.canTransfer=false;item.movedToSharedThisSession=true;if(wasPrivate)item.movedFromPrivateThisSession=true;item.flowText=`由我转移给李*（${receiver}），进入共享池`;item.flowTime='刚刚';transferRecords.unshift({date:formatTransferDate(new Date()),memberName:item.name,memberPhone:item.phone,receiverName:'李*',receiverPhone:receiver})});batchModePool='';batchSelectedPhones.clear();renderMembers();renderCooperationMembers();renderSharedMembers();renderTransferRecords();updatePoolCounts();updateBatchToolbar();if(transferFromDetail)closeFollowRecord();activatePool('shared');showToast(transferMode==='batch'?`已将${targetCount}名用户批量转移给李*（${receiver}）`:`已将${singleName}转移给李*（${receiver}），用户已进入共享池`)},240)});
+    followTransferForm.addEventListener('submit',event=>{event.preventDefault();if(confirmFollowTransfer.disabled)return;const receiver=followTransferResultPhone.textContent;const transferMode=followTransferMode;const transferFromDetail=followTransferFromDetail;const targets=transferMode==='batch'?allMemberRecords().filter(item=>batchSelectedPhones.has(item.phone)&&item.canTransfer&&!item.transferredFollow):allMemberRecords().filter(item=>item.phone===followTransferCurrentPhone&&(!followTransferCurrentPool||item.pool===followTransferCurrentPool));const targetCount=targets.length;const singleName=maskUserName(targets[0]?.name||followTransferCurrentMember);closeFollowTransfer();setTimeout(()=>{targets.forEach(item=>{const wasPrivate=item.pool==='private';item.pool='shared';item.canTransfer=false;item.movedToSharedThisSession=true;if(wasPrivate)item.movedFromPrivateThisSession=true;item.flowText=`由我转移给李*（${receiver}），进入共享池`;item.flowTime='刚刚';transferRecords.unshift({date:formatTransferDate(new Date()),memberName:item.name,memberPhone:item.phone,receiverName:'李*',receiverPhone:receiver})});batchModePool='';batchSelectedPhones.clear();renderMembers();renderCooperationMembers();renderSharedMembers();renderTransferRecords();updatePoolCounts();updateBatchToolbar();if(transferFromDetail)closeFollowRecord();activatePool('shared');showToast(transferMode==='batch'?`已将${targetCount}名用户批量转移给李*（${receiver}）`:`已将${singleName}转移给李*（${receiver}），用户已进入共享池`)},240)});
     document.addEventListener('keydown',event=>{if(event.key!=='Escape')return;if(!iphoneKeyboard.hidden){revisitContent.blur();hideIphoneKeyboard()}else if(!revisitSheet.hidden)closeRevisit();else if(!releaseConfirmDialog.hidden)closeReleaseConfirm();else if(!releasePublicDialog.hidden)closeReleasePublic();else if(!followTransferDialog.hidden)closeFollowTransfer();else if(!teamHalfSheet.hidden)closeTeamSheet()});
     const filterControls=[...document.querySelectorAll('.filter-field')].map(field=>({field,trigger:field.querySelector('.filter-select'),menu:field.querySelector('.filter-menu'),text:field.querySelector('.filter-select span')})).filter(control=>control.trigger&&control.menu&&control.text);
     const filterControlByTrigger=new Map(filterControls.map(control=>[control.trigger,control]));
