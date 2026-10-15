@@ -395,6 +395,7 @@
     .tabs [data-tab="sea"],.tabs [data-tab="im"]{display:none!important}
   .bank-fields{margin:12px 0;padding:12px;border:1px solid var(--line);border-radius:10px;min-width:0}.bank-fields legend{font-size:13px;font-weight:700}.bank-fields label{display:grid;grid-template-columns:80px minmax(0,1fr);align-items:center;gap:8px;margin:8px 0;font-size:12px}.bank-fields input{box-sizing:border-box;min-width:0;width:100%;height:36px;border:1px solid var(--line);border-radius:6px;padding:0 8px;font:inherit;background:#fff}.bank-fields input[aria-invalid=true]{border-color:#c44}
 .bank-fields select{width:100%;min-width:0;height:36px;border:1px solid var(--line);border-radius:6px;background:#fff;font-size:12px}.bank-fields button{padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:var(--soft);color:var(--accent);cursor:pointer}.bank-fields [hidden]{display:none!important}
+.team-view.second-star-mode .identity-tabs{display:flex}.team-view.second-star-mode .identity-tabs button{flex:1}.team-view.second-star-mode [data-role-identity="all"]{order:0}.team-view.second-star-mode [data-role-identity="parent"]{order:1}.team-view.second-star-mode [data-role-identity="teacher"]{order:2}.team-view.second-star-mode [data-role-identity="school"],.team-view.second-star-mode [data-role-identity="consultant"]{display:none}
 </style>
 </head>
 <body>
@@ -1372,6 +1373,7 @@ if(!canManageMember(memberDetailCurrentItem))return;openReleasePublic(memberDeta
       renderMembers();
     }));
     function renderMembers(){
+      document.querySelector('.team-view').classList.toggle('second-star-mode',teamMemberType==='star2');
       // 二星列表不提供转移记录和批量转移入口。
       // 转跟进成员不可再次转移，也不提供转移记录和批量转移入口。
       document.querySelectorAll('[data-pool-panel="private"] .count-actions').forEach(actions=>{actions.hidden=teamMemberType==='star2'||teamMemberType==='transferred'});
