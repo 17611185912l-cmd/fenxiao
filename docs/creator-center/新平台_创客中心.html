@@ -358,6 +358,7 @@
     .tabs [data-tab="sea"],.tabs [data-tab="im"]{display:none!important}
   .bank-fields{margin:12px 0;padding:12px;border:1px solid var(--line);border-radius:10px;min-width:0}.bank-fields legend{font-size:13px;font-weight:700}.bank-fields label{display:grid;grid-template-columns:80px minmax(0,1fr);align-items:center;gap:8px;margin:8px 0;font-size:12px}.bank-fields input{box-sizing:border-box;min-width:0;width:100%;height:36px;border:1px solid var(--line);border-radius:6px;padding:0 8px;font:inherit;background:#fff}.bank-fields input[aria-invalid=true]{border-color:#c44}
 .bank-fields select{width:100%;min-width:0;height:36px;border:1px solid var(--line);border-radius:6px;background:#fff;font-size:12px}.bank-fields button{padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:var(--soft);color:var(--accent);cursor:pointer}.bank-fields [hidden]{display:none!important}
+.second-star-identities{display:flex;gap:6px;margin-top:10px}.second-star-identities[hidden]{display:none}.second-star-identities button{flex:1;min-width:0;height:30px;padding:0 6px;border:1px solid #c6d5ce;border-radius:8px;background:#fff;color:#596b63;font-size:11px;white-space:nowrap;cursor:pointer}.second-star-identities button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}.team-view.second-star-mode .team-tools{display:none}
 </style>
 </head>
 <body>
@@ -411,6 +412,7 @@
               <button class="team-consultant-summary" id="mainConsultantSummary" type="button" hidden aria-expanded="false"><span><strong>课程顾问</strong></span><b><i id="mainConsultantCount">0</i><em>今日新增 <span id="mainConsultantToday">0</span></em></b><span class="team-summary-arrow" aria-hidden="true">›</span></button>
               <section class="team-consultant-panel" id="mainConsultantPanel" hidden aria-label="课程顾问列表"><div class="team-consultant-panel-head"><strong>课程顾问列表</strong><button type="button" id="mainConsultantBack">返回团队</button></div><div class="team-consultant-list" id="mainConsultantList"></div></section>
               <!-- 四个筛选项统一使用页面自有 listbox。 -->
+              <div class="second-star-identities" aria-label="二星成员身份筛选" hidden><button type="button" data-second-identity="all" aria-pressed="false">全部</button><button type="button" data-second-identity="parent" aria-pressed="false">家长</button><button type="button" data-second-identity="teacher" aria-pressed="false">老师</button><button type="button" data-second-identity="consultant" aria-pressed="false">课程顾问</button></div>
               <div class="team-tools" aria-label="团队筛选条件">
                 <div class="filter-field" id="identityField"><span id="identityLabel">身份</span><button class="filter-select" id="identityFilter" type="button" data-value="all" data-default-text="身份" aria-labelledby="identityLabel identityFilterText" aria-haspopup="listbox" aria-expanded="false"><span id="identityFilterText">身份</span></button><div class="filter-menu" id="identityMenu" role="listbox" aria-label="身份" hidden><button class="filter-option active" type="button" role="option" aria-selected="true" data-option-value="all">全部</button><button class="filter-option" type="button" role="option" aria-selected="false" data-option-value="parent">家长</button><button class="filter-option" type="button" role="option" aria-selected="false" data-option-value="teacher">老师</button><button class="filter-option" type="button" role="option" aria-selected="false" data-option-value="consultant">课程顾问</button></div></div>
                 <div class="filter-field" id="followField"><span id="followLabel">跟进情况</span><button class="filter-select" id="followFilter" type="button" data-value="3" data-default-text="跟进情况" aria-labelledby="followLabel followFilterText" aria-haspopup="listbox" aria-expanded="false"><span id="followFilterText">3日未跟进</span></button><div class="filter-menu" id="followMenu" role="listbox" aria-label="跟进情况" hidden><button class="filter-option" type="button" role="option" aria-selected="false" data-option-value="all">全部</button><button class="filter-option active" type="button" role="option" aria-selected="true" data-option-value="3">3日未跟进</button><button class="filter-option" type="button" role="option" aria-selected="false" data-option-value="7">7日未跟进</button><button class="filter-option" type="button" role="option" aria-selected="false" data-option-value="14">14日未跟进</button><button class="filter-option" type="button" role="option" aria-selected="false" data-option-value="30">30日未跟进</button></div></div>
@@ -1331,7 +1333,11 @@
     mainConsultantSummary.addEventListener('click',openConsultantPage);
     document.querySelector('#closeConsultantScreen').addEventListener('click',closeConsultantPage);
     function prepareMemberActions(container){container.querySelectorAll('.team-summary span').forEach(summary=>summary.textContent='二星团队：8人 ｜ 今日新增：2人');container.querySelectorAll('[data-toast="添加回访"]').forEach(button=>{button.removeAttribute('data-toast');button.dataset.openRevisit=''});container.querySelectorAll('[data-toast="释放公海"]').forEach(button=>{button.removeAttribute('data-toast');button.dataset.releasePublic=''});container.querySelectorAll('[data-toast]').forEach(button=>button.addEventListener('click',()=>showToast(button.dataset.toast)))}
+    document.querySelectorAll('[data-second-identity]').forEach(button=>button.addEventListener('click',()=>{setFilterValue(filterControlByTrigger.get(identityFilter),button.dataset.secondIdentity,false);renderMembers()}));
     function renderMembers(){
+      document.querySelector('.team-view').classList.toggle('second-star-mode',teamMemberType==='star2');
+      document.querySelector('.second-star-identities').hidden=teamMemberType!=='star2';
+      document.querySelectorAll('[data-second-identity]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.secondIdentity===identityFilter.dataset.value)));
       // 二星列表不提供转移记录和批量转移入口。
       // 转跟进成员不可再次转移，也不提供转移记录和批量转移入口。
       document.querySelectorAll('[data-pool-panel="private"] .count-actions').forEach(actions=>{actions.hidden=teamMemberType==='star2'||teamMemberType==='transferred'});
@@ -1339,8 +1345,8 @@
       document.querySelector('.team-view').classList.toggle('consultant-mode',teamMemberType==='consultant');
       document.querySelector('#identityField').hidden=teamMemberType==='consultant';
       document.querySelector('.team-tools').classList.toggle('consultant-mode',teamMemberType==='consultant');
-      const follow=followFilter.dataset.value;
-      const direction=sortFilter.dataset.value;
+      const follow=teamMemberType==='star2'?'all':followFilter.dataset.value;
+      const direction=teamMemberType==='star2'?'default':sortFilter.dataset.value;
       const secondStarMembers=[...secondLevelMembers,...members.filter(item=>item.level==='二星')].filter((item,index,array)=>array.findIndex(candidate=>candidate.phone===item.phone)===index);
       const source=teamMemberType==='consultant'?invitedConsultants:teamMemberType==='star2'?secondStarMembers:members;
       const visible=source.filter(item=>(teamMemberType!=='star1'||item.pool==='private')&&(teamMemberType==='consultant'||matchesIdentity(item,identity))&&(follow==='all'||item.days===Number(follow))&&((teamMemberType==='consultant'&&identityList(item).includes('consultant'))||(teamMemberType==='star1'&&item.level==='一星'&&!item.transferredFollow)||(teamMemberType==='star2'&&item.level==='二星')||(teamMemberType==='transferred'&&item.transferredFollow&&item.pool==='private')));
