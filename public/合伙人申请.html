@@ -629,7 +629,7 @@ render();connectCustomerState();
                 <ul>
                   <li>添加跟进：任何状态均可点击打开弹窗，填写跟进方式和跟进内容，可选填下次跟进时间。保存后更新最近跟进并追加明细；未跟进变为跟进中，跟进中、已成交、已关闭保持原状态，不影响合作身份、名额、到期时间或关闭原因。</li>
                   <li>成为合伙人：课程顾问按到期时间合作，加盟校按开通名额合作。</li>
-                  <li>续费：课程顾问可续费或升级至加盟校，加盟校按开通名额续费。</li>
+                  <li>续费：只按当前合作类型处理，不区分自主申请、加盟校开通或手动新增。加盟校直接按名额续费；课程顾问可选择续费课程顾问或升级至加盟校。</li>
                   <li>关闭：必须填写关闭原因；重新开启时只能按原有身份填写条件。</li>
                 </ul>
               </section>
@@ -711,6 +711,7 @@ render();connectCustomerState();
             <summary>补充说明 · 身份状态与统一校验</summary>
             <div class="help-group-body"><section class="help-block"><ul>
               <li>「成为合伙人」只用于待处理记录；加盟校开通来源首次开通仅可选课程顾问。手动开通及修改身份可选加盟校，已为加盟校时不显示修改身份。</li>
+              <li>续费只看当前合作类型，不按申请来源限制。「加盟校」直接填写开通名额和选填赠送名额，在原有名额上累加，不显示身份选择。「课程顾问」默认续费课程顾问，可切换为加盟校；选择课程顾问时填写续费年限，选择加盟校时填写开通名额和选填赠送名额，显示变更后的身份和名额预览，确认后转为加盟校，原到期时间不再适用。两种方式均可选填备注并记录操作历史。无论自主申请、加盟校开通或手动新增，均执行同一规则；加盟校开通来源修改为加盟校后也能正常按名额续费。</li>
               <li>成为合伙人、修改身份、续费和重新开启共用名额校验：开通名额必填且为1–999的整数，赠送名额选填且为0–999的整数，留空按0；不接受负数、小数或超限值。总名额包含赠送名额，续费加盟校时在原总名额及赠送名额上累加。</li>
               <li>课程顾问首次开通或重新开启必须填写今天或之后的有效到期日期。续费只允许1、2或3年，未到期从原到期日顺延，已到期或缺少有效到期日从今天起算；闰年2月29日顺延至非闰年时取2月末。升级加盟校后原到期时间不再适用。</li>
               <li>已关闭记录保留原合作身份但停止生效；课程顾问超过到期日标明「已到期」，保留身份且不重复开通，应使用续费。用户列表和详情同步展示已关闭或已到期提示，不将其误认为仍有效。</li>
@@ -1610,13 +1611,9 @@ render();connectCustomerState();
   }
   function syncRenewFields() {
     const record = getRecord(currentRecordId); if (!record) return;
-    const restricted = isSchoolOpened(record);
-    const upgradeRadio = document.querySelector('input[name="renewMode"][value="upgrade"]');
-    upgradeRadio.disabled = restricted;
-    if (restricted) document.querySelector('input[name="renewMode"][value="renew"]').checked = true;
     const isClub = record.partner === "加盟校";
     const upgrade = !isClub && renewMode() === "upgrade";
-    document.getElementById("renewModeRow").classList.toggle("hidden-row", isClub || restricted);
+    document.getElementById("renewModeRow").classList.toggle("hidden-row", isClub);
     document.querySelectorAll("#renewModes .radio-card").forEach(function(card){ card.classList.toggle("selected", card.getAttribute("data-mode") === renewMode()); });
     document.getElementById("renewCourseRow").classList.toggle("hidden-row", isClub || upgrade);
     document.getElementById("renewClubRow").classList.toggle("hidden-row", !isClub && !upgrade);
@@ -1653,8 +1650,10 @@ render();connectCustomerState();
   function closeRenew() { renewOverlay.classList.remove("show"); currentRecordId = null; }
   function saveRenew() {
     const record = getRecord(currentRecordId); if (!record || record.status !== "已成交") return;
-    const upgrade = record.partner !== "加盟校" && renewMode() === "upgrade";
-    if (!validatePartnerRole(record, upgrade ? "加盟校" : record.partner)) return;
+    if (!["课程顾问", "加盟校"].includes(record.partner)) { showToast("当前合作类型无效，无法续费", "error"); return; }
+    const mode = renewMode();
+    if (record.partner === "课程顾问" && !["renew", "upgrade"].includes(mode)) { showToast("请选择有效的续费身份", "error"); return; }
+    const upgrade = record.partner === "课程顾问" && mode === "upgrade";
     const gift = record.partner === "加盟校" || upgrade ? readGiftQuota("renewGiftQuota") : 0;
     const quota = record.partner === "加盟校" || upgrade ? readQuota("renewQuota", false) : 0;
     const years = Number(document.getElementById("renewYears").value);
