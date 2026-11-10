@@ -737,29 +737,49 @@ render();connectCustomerState();
 <script>
 (function(){
   const seedData = [
-    {id:1,name:"芦笛",phone:"17611185912",appliedAt:"2026-09-15 10:12:22",lastFollowAt:"2026-09-15 10:20:00",region:["上海市","上海市","浦东新区"],type:"加盟校开通",followRecord:"已电话沟通，等待补充资料",followMethod:"电话",nextFollowAt:"2026-09-18 10:00",status:"跟进中",referrer:"王小敏 138****2211",identity:"教师"},
-    {id:2,name:"王雨桐",phone:"13811452276",appliedAt:"2026-09-14 16:40:03",lastFollowAt:"2026-09-14 17:05:00",region:["广东省","深圳市","南山区"],type:"加盟校开通",followRecord:"已添加微信，待确认合作意向",followMethod:"微信",nextFollowAt:"2026-09-17 15:00",status:"跟进中",referrer:"李强 139****8802",identity:"家长"},
-    {id:3,name:"陈思远",phone:"13905671234",appliedAt:"2026-09-14 11:21:18",lastFollowAt:"2026-09-14 11:40:00",region:["浙江省","杭州市","西湖区"],type:"加盟校开通",followRecord:"已发送资料清单",followMethod:"微信",nextFollowAt:"2026-09-16 14:30",status:"跟进中",referrer:"陈晨 158****3321",identity:"机构人员"},
+    {id:1,referrerId:"710001",name:"芦笛",phone:"17611185912",appliedAt:"2026-09-15 10:12:22",lastFollowAt:"2026-09-15 10:20:00",region:["上海市","上海市","浦东新区"],type:"加盟校开通",followRecord:"已电话沟通，等待补充资料",followMethod:"电话",nextFollowAt:"2026-09-18 10:00",status:"跟进中",referrer:"王小敏 138****2211",identity:"教师"},
+    {id:2,referrerId:"710002",name:"王雨桐",phone:"13811452276",appliedAt:"2026-09-14 16:40:03",lastFollowAt:"2026-09-14 17:05:00",region:["广东省","深圳市","南山区"],type:"加盟校开通",followRecord:"已添加微信，待确认合作意向",followMethod:"微信",nextFollowAt:"2026-09-17 15:00",status:"跟进中",referrer:"李强 139****8802",identity:"家长"},
+    {id:3,referrerId:"710003",name:"陈思远",phone:"13905671234",appliedAt:"2026-09-14 11:21:18",lastFollowAt:"2026-09-14 11:40:00",region:["浙江省","杭州市","西湖区"],type:"加盟校开通",followRecord:"已发送资料清单",followMethod:"微信",nextFollowAt:"2026-09-16 14:30",status:"跟进中",referrer:"陈晨 158****3321",identity:"机构人员"},
     {id:4,name:"赵敏",phone:"15822334455",appliedAt:"2026-09-13 09:05:47",lastFollowAt:"2026-09-13 10:10:00",region:["北京市","北京市","朝阳区"],type:"加盟校开通",followRecord:"已确认合作细节，准备签约",followMethod:"线下",nextFollowAt:"2026-09-19 10:00",status:"已成交",partner:"课程顾问",expireAt:"2027-09-19",referrer:"",identity:"教师"},
-    {id:5,name:"林晓峰",phone:"18677889900",appliedAt:"2026-09-12 19:32:10",lastFollowAt:"2026-09-12 19:50:00",region:["江苏省","苏州市","工业园区"],type:"加盟校开通",followRecord:"联系方式暂时无法接通",followMethod:"电话",nextFollowAt:"2026-09-16 09:30",status:"跟进中",referrer:"周舟 186****1190",identity:"家长"},
-    {id:6,name:"周佳琪",phone:"13566778899",appliedAt:"2026-09-12 15:48:26",lastFollowAt:"2026-09-12 16:12:00",region:["广东省","广州市","天河区"],type:"自主申请",followRecord:"加盟校合作到期未续约，已关闭",followMethod:"电话",nextFollowAt:"",status:"已关闭",partner:"加盟校",quota:10,closeReason:"加盟校合作到期未续约",referrer:"刘洋 135****6621",identity:"教师"},
-    {id:7,name:"郑凯",phone:"17788990011",appliedAt:"2026-09-11 08:56:41",lastFollowAt:"2026-09-11 09:30:00",region:["上海市","上海市","徐汇区"],type:"加盟校开通",followRecord:"已完成首次沟通",followMethod:"线下",nextFollowAt:"2026-09-18 16:00",status:"跟进中",referrer:"吴倩 177****0098",identity:"机构人员"},
+    {id:5,referrerId:"710004",name:"林晓峰",phone:"18677889900",appliedAt:"2026-09-12 19:32:10",lastFollowAt:"2026-09-12 19:50:00",region:["江苏省","苏州市","工业园区"],type:"加盟校开通",followRecord:"联系方式暂时无法接通",followMethod:"电话",nextFollowAt:"2026-09-16 09:30",status:"跟进中",referrer:"周舟 186****1190",identity:"家长"},
+    {id:6,referrerId:"710005",name:"周佳琪",phone:"13566778899",appliedAt:"2026-09-12 15:48:26",lastFollowAt:"2026-09-12 16:12:00",region:["广东省","广州市","天河区"],type:"自主申请",followRecord:"加盟校合作到期未续约，已关闭",followMethod:"电话",nextFollowAt:"",status:"已关闭",partner:"加盟校",quota:10,closeReason:"加盟校合作到期未续约",referrer:"刘洋 135****6621",identity:"教师"},
+    {id:7,referrerId:"710006",name:"郑凯",phone:"17788990011",appliedAt:"2026-09-11 08:56:41",lastFollowAt:"2026-09-11 09:30:00",region:["上海市","上海市","徐汇区"],type:"加盟校开通",followRecord:"已完成首次沟通",followMethod:"线下",nextFollowAt:"2026-09-18 16:00",status:"跟进中",referrer:"吴倩 177****0098",identity:"机构人员"},
     {id:8,name:"孙悦",phone:"18812345678",appliedAt:"2026-09-10 14:20:33",lastFollowAt:"2026-09-10 15:00:00",region:["北京市","北京市","海淀区"],type:"加盟校开通",followRecord:"已安排线下见面",followMethod:"线下",nextFollowAt:"2026-09-20 11:00",status:"跟进中",referrer:"",identity:"家长"},
-    {id:9,name:"何俊杰",phone:"15987654321",appliedAt:"2026-09-10 10:10:10",lastFollowAt:"2026-09-10 10:40:00",region:["浙江省","宁波市","海曙区"],type:"自主申请",followRecord:"客户主动咨询合作政策",followMethod:"电话",nextFollowAt:"2026-09-17 10:30",status:"已成交",partner:"加盟校",quota:10,referrer:"何俊 159****3210",identity:"教师"},
-    {id:10,name:"吴婷婷",phone:"13611223344",appliedAt:"2026-09-09 16:25:12",lastFollowAt:"2026-09-09 17:00:00",region:["广东省","深圳市","福田区"],type:"加盟校开通",followRecord:"已发送合作方案",followMethod:"微信",nextFollowAt:"2026-09-16 15:30",status:"跟进中",referrer:"张弛 136****7788",identity:"家长"},
-    {id:11,name:"徐子墨",phone:"15033445566",appliedAt:"2026-09-09 09:18:42",lastFollowAt:"",region:["上海市","上海市","静安区"],type:"加盟校开通",followRecord:"",nextFollowAt:"",status:"未跟进",referrer:"徐倩 150****2231",identity:"教师"},
+    {id:9,referrerId:"710007",name:"何俊杰",phone:"15987654321",appliedAt:"2026-09-10 10:10:10",lastFollowAt:"2026-09-10 10:40:00",region:["浙江省","宁波市","海曙区"],type:"自主申请",followRecord:"客户主动咨询合作政策",followMethod:"电话",nextFollowAt:"2026-09-17 10:30",status:"已成交",partner:"加盟校",quota:10,referrer:"何俊 159****3210",identity:"教师"},
+    {id:10,referrerId:"710008",name:"吴婷婷",phone:"13611223344",appliedAt:"2026-09-09 16:25:12",lastFollowAt:"2026-09-09 17:00:00",region:["广东省","深圳市","福田区"],type:"加盟校开通",followRecord:"已发送合作方案",followMethod:"微信",nextFollowAt:"2026-09-16 15:30",status:"跟进中",referrer:"张弛 136****7788",identity:"家长"},
+    {id:11,referrerId:"710009",name:"徐子墨",phone:"15033445566",appliedAt:"2026-09-09 09:18:42",lastFollowAt:"",region:["上海市","上海市","静安区"],type:"加盟校开通",followRecord:"",nextFollowAt:"",status:"未跟进",referrer:"徐倩 150****2231",identity:"教师"},
     {id:12,name:"高文博",phone:"13755667788",appliedAt:"2026-09-08 18:40:05",lastFollowAt:"2026-09-08 19:10:00",region:["江苏省","南京市","鼓楼区"],type:"加盟校开通",followRecord:"客户希望了解分润政策",followMethod:"电话",nextFollowAt:"2026-09-18 10:00",status:"跟进中",referrer:"",identity:"机构人员"},
-    {id:13,name:"罗雨欣",phone:"18912345670",appliedAt:"2026-09-08 13:22:36",lastFollowAt:"2026-09-08 14:00:00",region:["浙江省","杭州市","滨江区"],type:"加盟校开通",followRecord:"已确认合作，待签署协议",followMethod:"线下",nextFollowAt:"2026-09-19 15:00",status:"已成交",partner:"课程顾问",expireAt:"2027-09-08",referrer:"罗成 189****5670",identity:"教师"},
-    {id:14,name:"蒋昊",phone:"15266778899",appliedAt:"2026-09-07 11:05:21",lastFollowAt:"2026-09-07 11:30:00",region:["广东省","广州市","越秀区"],type:"自主申请",followRecord:"课程顾问合作已终止，已关闭",nextFollowAt:"",status:"已关闭",partner:"课程顾问",expireAt:"2027-07-15",closeReason:"课程顾问合作已终止",referrer:"蒋丽 152****8899",identity:"家长"},
-    {id:15,name:"曾雪",phone:"13399887766",appliedAt:"2026-09-06 15:44:58",lastFollowAt:"",region:["北京市","北京市","东城区"],type:"加盟校开通",followRecord:"",nextFollowAt:"",status:"未跟进",referrer:"曾毅 133****7766",identity:"教师"},
-    {id:16,name:"彭一鸣",phone:"18122334455",appliedAt:"2026-09-05 10:12:09",lastFollowAt:"2026-09-05 10:40:00",region:["上海市","上海市","闵行区"],type:"自主申请",followRecord:"已完成资料初审",followMethod:"电话",nextFollowAt:"2026-09-16 11:00",status:"已成交",partner:"加盟校",quota:20,referrer:"彭敏 181****4455",identity:"机构人员"},
-    {id:17,name:"唐可",phone:"15677889900",appliedAt:"2026-09-04 17:30:00",lastFollowAt:"2026-09-04 18:00:00",region:["浙江省","宁波市","鄞州区"],type:"加盟校开通",followRecord:"客户希望周末再联系",followMethod:"微信",nextFollowAt:"2026-09-20 10:00",status:"跟进中",referrer:"唐敏 156****9900",identity:"家长"},
+    {id:13,referrerId:"710010",name:"罗雨欣",phone:"18912345670",appliedAt:"2026-09-08 13:22:36",lastFollowAt:"2026-09-08 14:00:00",region:["浙江省","杭州市","滨江区"],type:"加盟校开通",followRecord:"已确认合作，待签署协议",followMethod:"线下",nextFollowAt:"2026-09-19 15:00",status:"已成交",partner:"课程顾问",expireAt:"2027-09-08",referrer:"罗成 189****5670",identity:"教师"},
+    {id:14,referrerId:"710011",name:"蒋昊",phone:"15266778899",appliedAt:"2026-09-07 11:05:21",lastFollowAt:"2026-09-07 11:30:00",region:["广东省","广州市","越秀区"],type:"自主申请",followRecord:"课程顾问合作已终止，已关闭",nextFollowAt:"",status:"已关闭",partner:"课程顾问",expireAt:"2027-07-15",closeReason:"课程顾问合作已终止",referrer:"蒋丽 152****8899",identity:"家长"},
+    {id:15,referrerId:"710012",name:"曾雪",phone:"13399887766",appliedAt:"2026-09-06 15:44:58",lastFollowAt:"",region:["北京市","北京市","东城区"],type:"加盟校开通",followRecord:"",nextFollowAt:"",status:"未跟进",referrer:"曾毅 133****7766",identity:"教师"},
+    {id:16,referrerId:"710013",name:"彭一鸣",phone:"18122334455",appliedAt:"2026-09-05 10:12:09",lastFollowAt:"2026-09-05 10:40:00",region:["上海市","上海市","闵行区"],type:"自主申请",followRecord:"已完成资料初审",followMethod:"电话",nextFollowAt:"2026-09-16 11:00",status:"已成交",partner:"加盟校",quota:20,referrer:"彭敏 181****4455",identity:"机构人员"},
+    {id:17,referrerId:"710014",name:"唐可",phone:"15677889900",appliedAt:"2026-09-04 17:30:00",lastFollowAt:"2026-09-04 18:00:00",region:["浙江省","宁波市","鄞州区"],type:"加盟校开通",followRecord:"客户希望周末再联系",followMethod:"微信",nextFollowAt:"2026-09-20 10:00",status:"跟进中",referrer:"唐敏 156****9900",identity:"家长"},
     {id:18,name:"韩雪",phone:"13944556677",appliedAt:"2026-09-03 09:15:33",lastFollowAt:"2026-09-03 09:40:00",region:["江苏省","苏州市","姑苏区"],type:"加盟校开通",followRecord:"已发送入驻指引",followMethod:"微信",nextFollowAt:"2026-09-18 14:00",status:"已成交",partner:"课程顾问",expireAt:"2027-09-03",referrer:"",identity:"教师"},
     {id:19,name:"许安然",phone:"13866771234",appliedAt:"2026-09-02 14:26:18",lastFollowAt:"",region:["四川省","成都市","武侯区"],type:"自主申请",followRecord:"",nextFollowAt:"",status:"未跟进",identity:"家长"},
-    {id:20,name:"沈博文",phone:"18633445521",appliedAt:"2026-09-01 10:08:42",lastFollowAt:"2026-09-01 10:35:00",region:["湖北省","武汉市","洪山区"],type:"自主申请",followRecord:"已沟通合作方向，待确认身份",followMethod:"电话",nextFollowAt:"2026-09-08 14:00",status:"跟进中",referrer:"沈琳 186****5521",identity:"教师"},
-    {id:21,name:"顾思齐",phone:"15922336781",appliedAt:"2026-08-31 16:52:07",lastFollowAt:"2026-08-31 17:20:00",region:["山东省","青岛市","市南区"],type:"自主申请",followRecord:"已完成签约，开通课程顾问权限",followMethod:"微信",nextFollowAt:"",status:"已成交",partner:"课程顾问",expireAt:"2027-08-31",referrer:"顾宁 159****6781",identity:"机构人员"},
+    {id:20,referrerId:"710015",name:"沈博文",phone:"18633445521",appliedAt:"2026-09-01 10:08:42",lastFollowAt:"2026-09-01 10:35:00",region:["湖北省","武汉市","洪山区"],type:"自主申请",followRecord:"已沟通合作方向，待确认身份",followMethod:"电话",nextFollowAt:"2026-09-08 14:00",status:"跟进中",referrer:"沈琳 186****5521",identity:"教师"},
+    {id:21,referrerId:"710016",name:"顾思齐",phone:"15922336781",appliedAt:"2026-08-31 16:52:07",lastFollowAt:"2026-08-31 17:20:00",region:["山东省","青岛市","市南区"],type:"自主申请",followRecord:"已完成签约，开通课程顾问权限",followMethod:"微信",nextFollowAt:"",status:"已成交",partner:"课程顾问",expireAt:"2027-08-31",referrer:"顾宁 159****6781",identity:"机构人员"},
     {id:22,name:"梁静怡",phone:"13788990126",appliedAt:"2026-08-30 09:40:15",lastFollowAt:"2026-08-30 10:05:00",region:["福建省","厦门市","思明区"],type:"自主申请",followRecord:"已确认合作意向，正在准备加盟资料",followMethod:"线下",nextFollowAt:"2026-09-06 09:30",status:"跟进中",referrer:"",identity:"机构人员"},
-    {id:23,name:"郭子谦",phone:"15155667890",appliedAt:"2026-08-29 18:15:26",lastFollowAt:"2026-08-29 18:40:00",region:["河南省","郑州市","金水区"],type:"自主申请",followRecord:"暂不考虑合作，已关闭",nextFollowAt:"",status:"已关闭",closeReason:"暂不考虑合作",referrer:"郭敏 151****7890",identity:"家长"},
+    {id:23,referrerId:"710017",name:"郭子谦",phone:"15155667890",appliedAt:"2026-08-29 18:15:26",lastFollowAt:"2026-08-29 18:40:00",region:["河南省","郑州市","金水区"],type:"自主申请",followRecord:"暂不考虑合作，已关闭",nextFollowAt:"",status:"已关闭",closeReason:"暂不考虑合作",referrer:"郭敏 151****7890",identity:"家长"},
+  ];
+  // 明确创建的虚构推荐人资料，手机号仅用于演示；推荐关系按ID关联，不从脱敏文字还原或按姓名猜测。
+  const demoReferrerUsers = [
+    {id:"710001",name:"王小敏",phone:"13890002211",referrerPhone:"",superior:"无",identities:[]},
+    {id:"710002",name:"李强",phone:"13990008802",referrerPhone:"",superior:"无",identities:[]},
+    {id:"710003",name:"陈晨",phone:"15890003321",referrerPhone:"",superior:"无",identities:[]},
+    {id:"710004",name:"周舟",phone:"18690001190",referrerPhone:"",superior:"无",identities:[]},
+    {id:"710005",name:"刘洋",phone:"13590006621",referrerPhone:"",superior:"无",identities:[]},
+    {id:"710006",name:"吴倩",phone:"17790000098",referrerPhone:"",superior:"无",identities:[]},
+    {id:"710007",name:"何俊",phone:"15990003210",referrerPhone:"",superior:"无",identities:[]},
+    {id:"710008",name:"张弛",phone:"13690007788",referrerPhone:"",superior:"无",identities:[]},
+    {id:"710009",name:"徐倩",phone:"15090002231",referrerPhone:"",superior:"无",identities:[]},
+    {id:"710010",name:"罗成",phone:"18990005670",referrerPhone:"",superior:"无",identities:[]},
+    {id:"710011",name:"蒋丽",phone:"15290008899",referrerPhone:"",superior:"无",identities:[]},
+    {id:"710012",name:"曾毅",phone:"13390007766",referrerPhone:"",superior:"无",identities:[]},
+    {id:"710013",name:"彭敏",phone:"18190004455",referrerPhone:"",superior:"无",identities:[]},
+    {id:"710014",name:"唐敏",phone:"15690009900",referrerPhone:"",superior:"无",identities:[]},
+    {id:"710015",name:"沈琳",phone:"18690005521",referrerPhone:"",superior:"无",identities:[]},
+    {id:"710016",name:"顾宁",phone:"15990006781",referrerPhone:"",superior:"无",identities:[]},
+    {id:"710017",name:"郭敏",phone:"15190007890",referrerPhone:"",superior:"无",identities:[]}
   ];
   const CURRENT_OPERATOR = "王小敏";
   const records = seedData.map(function(item){
@@ -770,7 +790,10 @@ render();connectCustomerState();
     if (item.status === "已关闭" && item.closeReason) copy.timeline.push({ time:item.closedAt || item.lastFollowAt || item.appliedAt, person:CURRENT_OPERATOR, title:"关闭申请", text:"关闭原因：" + item.closeReason + "。" });
     return copy;
   });
-  const platformUserDirectory = seedData.map(function(item){ return {name:item.name, phone:item.phone, superior:item.referrer || "无", identities:item.identity === "教师" ? ["teacher"] : item.identity === "家长" ? ["parent"] : []}; }).concat([
+  const platformUserDirectory = seedData.map(function(item){
+    const referrer = demoReferrerUsers.find(function(user){ return user.id === item.referrerId; });
+    return {name:item.name, phone:item.phone, referrerPhone:referrer ? referrer.phone : "", superior:item.referrer || "无", identities:item.identity === "教师" ? ["teacher"] : item.identity === "家长" ? ["parent"] : []};
+  }).concat(demoReferrerUsers, [
     {name:"许嘉宁",phone:"13600000001",superior:"林老师 13811450001"},
     {name:"林老师",phone:"13811450001",superior:"无"},
     {name:"沈亦航",phone:"13600000002",superior:"无"},
