@@ -46,7 +46,7 @@
 .modal.wide .modal-row{grid-template-columns:96px minmax(0,1fr)}
 .modal.wide .modal-body{padding:16px 20px}
 .manual-phone-entry{display:flex;gap:8px;min-width:0}.manual-phone-entry input{min-width:0;flex:1}.manual-phone-entry .btn{flex:0 0 auto;white-space:nowrap}
-.user-search-select{position:relative;min-width:0}.user-search-input{width:100%;height:32px;padding:0 10px;border:1px solid var(--line);border-radius:4px;background:#fff;color:var(--text);outline:none}.user-search-input:focus{border-color:#409eff;box-shadow:0 0 0 2px rgba(64,158,255,.12)}.user-search-menu{position:absolute;z-index:5;top:36px;left:0;right:0;max-height:180px;overflow:auto;border:1px solid #dcdfe6;border-radius:4px;background:#fff;box-shadow:0 6px 18px rgba(24,36,56,.14)}.user-search-option{display:block;width:100%;padding:8px 10px;border:0;background:#fff;color:#303133;text-align:left;font:inherit;cursor:pointer}.user-search-option:hover,.user-search-option.active{background:#f4f9ff;color:var(--blue)}.user-search-empty{padding:9px 10px;color:#909399;font-size:12px}
+.user-search-select{position:relative;min-width:0}.user-search-input{width:100%;height:32px;padding:0 10px;border:1px solid var(--line);border-radius:4px;background:#fff;color:var(--text);outline:none}.user-search-input:focus{border-color:#409eff;box-shadow:0 0 0 2px rgba(64,158,255,.12)}.user-search-menu{position:absolute;z-index:5;top:36px;left:0;right:0;max-height:180px;overflow:auto;border:1px solid #dcdfe6;border-radius:4px;background:#fff;box-shadow:0 6px 18px rgba(24,36,56,.14)}.user-search-option{display:block;width:100%;padding:8px 10px;border:0;background:#fff;color:#303133;text-align:left;font:inherit;cursor:pointer}.user-search-option:hover,.user-search-option.active{background:#f4f9ff;color:var(--blue)}.user-search-option:disabled,.user-search-option:disabled:hover{background:#f8f9fb;color:#909399;cursor:not-allowed;opacity:1}.user-search-reason{display:block;margin-top:4px;color:#73767a;font-size:12px;line-height:18px;white-space:normal}.user-search-empty{padding:9px 10px;color:#909399;font-size:12px}
 .manual-commission-row>label{white-space:nowrap;font-size:12px}
 #manualConfig [hidden]{display:none!important}
 .count-wrap{position:relative}.count-wrap textarea{min-height:132px;padding-bottom:26px}.char-count{position:absolute;right:22px;bottom:8px;color:#a8abb2;font-size:12px;line-height:16px;pointer-events:none}
@@ -180,8 +180,8 @@
 &lt;/ul&gt;&lt;/section&gt;
 &lt;section&gt;&lt;h3&gt;五、修改推荐人：谨慎操作与二次确认&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;在列表行或详情点击「修改推荐人」打开弹窗，展示当前用户、原推荐人和醒目风险提醒：修改推荐关系可能影响后续佣金归属，请核实后提交。&lt;/li&gt;
-&lt;li&gt;只保留一个「新推荐人」搜索选择框。输入姓名或手机号展示匹配的候选用户，候选号码脱敏；必须点击候选结果完成选择，仅输入文字不算选择。不能选择用户本人、当前推荐人或该用户的下级，避免形成循环推荐关系；没有匹配时显示「无匹配用户」。&lt;/li&gt;
-&lt;li&gt;支持方向键切换候选项、回车选中、Esc关闭候选列表；修改输入会清除上次选择。新推荐人必选；与当前推荐人相同时禁止保存并提示重新选择。&lt;/li&gt;
+&lt;li&gt;只保留一个「新推荐人」搜索选择框。输入姓名或手机号展示匹配的候选用户，候选号码脱敏；必须点击候选结果完成选择，仅输入文字不算选择。本人、当前推荐人及直接或间接下级等不可选用户仍显示在搜索结果中，置灰并直接展示原因，不能点击或通过回车选中；仅确实无匹配用户时显示「无匹配用户」。&lt;/li&gt;
+&lt;li&gt;支持方向键跳过不可选项并切换有效候选、回车选中、Esc关闭候选列表；修改输入会清除上次选择。新推荐人必选；与当前推荐人相同时禁止保存并提示重新选择。&lt;/li&gt;
 &lt;li&gt;第一次点击「确认修改」只打开「确认修改推荐人」弹窗，展示当前用户、原推荐人、新推荐人的姓名、手机号及已知身份标签，尚不变更关系。点击「返回修改」、确认弹窗的关闭按钮或按Esc返回原表单，保留选择。&lt;/li&gt;
 &lt;li&gt;核对无误后点击「确认修改」才实际更新推荐关系；提交前再次校验关系是否变化、是否本人、现推荐人或下级；通过后确认按钮禁用，避免重复提交。同步更新列表、详情以及推荐人变更记录，记录操作时间、操作人和前后推荐人；从详情操作时切换到变更记录。修改成功后关闭操作弹窗，统一显示「推荐人修改成功」的系统提示，约2.6秒后自动消失；返回修改、取消或校验失败不显示成功提示。&lt;/li&gt;
 &lt;/ul&gt;&lt;/section&gt;
@@ -194,7 +194,7 @@
 &lt;li&gt;加盟校总名额为开通名额加赠送名额；有赠送时标明其中包含的赠送数量，无赠送时不额外展示赠送说明。切换身份后只按最终所选身份对应的日期或名额校验、保存。&lt;/li&gt;
 &lt;/ul&gt;&lt;/section&gt;
 &lt;section&gt;&lt;h3&gt;七、成为合伙人：绑定关系、佣金、备注与提交&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;「绑定关系」位于「分配佣金」上方，默认「保持当前绑定关系」。选择「变更绑定关系」后出现必填的「变更给」，支持按姓名或手机号搜索候选平台用户，必须选中结果；本人、当前推荐人、该用户下级及存在循环关系的候选均不可选择。输入会清除旧选择，支持方向键、回车选中及Esc收起；提交时再次校验。&lt;/li&gt;
+&lt;li&gt;「绑定关系」位于「分配佣金」上方，默认「保持当前绑定关系」。选择「变更绑定关系」后出现必填的「变更给」，支持按姓名或手机号搜索候选平台用户，必须选中结果；本人、当前推荐人、直接或间接下级及存在循环关系的候选保留在搜索结果中，置灰并直接显示不可选原因；鼠标及键盘均不能选中。输入会清除旧选择，支持方向键、回车选中及Esc收起；提交时再次校验。&lt;/li&gt;
 &lt;li&gt;分配佣金默认「不分配」，此时隐藏佣金接收人，也不要求填写。选择「分配」后展示「注册邀请分配给」和「销售转化分配给」。&lt;/li&gt;
 &lt;li&gt;注册邀请接收人按最终推荐关系自动带入并锁定，不支持手动选择：保持原绑定且能匹配到已有上级时自动带入；没有推荐人且未绑定新推荐人时显示「不分配」并禁用，允许为空，开通时不分配注册邀请佣金；已有上级但资料不完整、无法匹配到平台用户时锁定并提示核查，不能另选接收人，需先核查资料或变更为有效绑定对象。变更绑定后自动改为新绑定对象并锁定，未选新绑定对象前提示先选择。若原本无推荐人，选中新绑定对象后又切回「保持当前绑定关系」，自动清空注册邀请接收人并恢复「不分配」、不可选择。已有上级但无法匹配平台用户时，选择分配佣金会阻止提交，需先核查资料或选定有效的新绑定对象。&lt;/li&gt;
 &lt;li&gt;销售转化接收人非必填，支持姓名或手机号搜索并选择；不选择则不分配销售转化佣金。仅输入搜索文字、不选候选结果，不作为有效接收人。&lt;/li&gt;
@@ -362,7 +362,7 @@ function ensureUserDetail(){
  .ud-info{display:grid;grid-template-columns:18% 32% 18% 32%;border-top:1px solid #ebeef5;border-left:1px solid #ebeef5;margin:0 0 16px}.ud-info dt,.ud-info dd{font-size:13px;min-height:36px;margin:0;padding:7px 9px;border-right:1px solid #ebeef5;border-bottom:1px solid #ebeef5;overflow-wrap:anywhere;display:flex;align-items:center}.ud-info dt{background:#f5f7fa;color:#606266}.ud-info dd{color:#606266}.ud-info .ud-ref{display:block}.ud-info small{display:block;color:#909fb5;font-size:12px}
  .ud-tabs{display:flex;gap:38px;border-bottom:2px solid #e4e7ed;margin-bottom:14px}.ud-tab{position:relative;cursor:pointer;background:none;border:0;padding:9px 0 12px;font:inherit;font-weight:500;color:#303133}.ud-tab[aria-selected=true]{color:#409eff}.ud-tab[aria-selected=true]:after{content:&quot;&quot;;position:absolute;bottom:-2px;left:0;right:0;height:2px;background:#409eff}
  .ud-record-scroll{overflow:auto}.ud-table.ud-purchase-table{min-width:835px}.ud-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:13px;color:#606266}.ud-table th,.ud-table td{text-align:left;border:1px solid #ebeef5;padding:12px 9px;line-height:20px;overflow-wrap:anywhere;vertical-align:top;font-weight:400}.ud-table th{background:#f5f7fa;color:#677587;font-weight:500;padding:11px 9px}.ud-table tr:hover td{background:#fafcff}.ud-table .ud-empty{text-align:center;padding:28px;color:#909399}.ud-empty img{display:block;width:175px;height:175px;object-fit:contain;margin:0 auto 8px}.ud-summary{font-size:13px;margin:0 0 10px;color:#606b7b}.ud-summary span{color:#909fb5;margin-left:12px}.ud-footer{flex:none;display:flex;justify-content:flex-end;padding:18px 22px;border-top:1px solid #f1f2f5;background:#fff}.ud-notice{font-size:13px;color:#67a846;margin:0 0 14px}
- .ud-picker{position:relative}.ud-picker-options{position:relative;margin-top:5px;z-index:2;max-height:210px;overflow:auto;background:#fff;border:1px solid #dcdfe6;border-radius:4px;padding:5px 0;box-shadow:0 4px 14px #0002}.ud-picker-options[hidden]{display:none}.ud-picker-options button{display:block;width:100%;border:0;background:#fff;color:#606266;text-align:left;font:inherit;padding:9px 12px;cursor:pointer}.ud-picker-options button:hover,.ud-picker-options button.active{background:#ecf5ff;color:#409eff}.ud-picker-options button[aria-selected=true]{color:#409eff;font-weight:500}.ud-picker-empty{padding:12px;color:#909399;text-align:center}
+ .ud-picker{position:relative}.ud-picker-options{position:relative;margin-top:5px;z-index:2;max-height:210px;overflow:auto;background:#fff;border:1px solid #dcdfe6;border-radius:4px;padding:5px 0;box-shadow:0 4px 14px #0002}.ud-picker-options[hidden]{display:none}.ud-picker-options button{display:block;width:100%;border:0;background:#fff;color:#606266;text-align:left;font:inherit;padding:9px 12px;cursor:pointer}.ud-picker-options button:hover,.ud-picker-options button.active{background:#ecf5ff;color:#409eff}.ud-picker-options button[aria-selected=true]{color:#409eff;font-weight:500}.ud-picker-options button:disabled,.ud-picker-options button:disabled:hover{background:#f8f9fb;color:#909399;cursor:not-allowed;opacity:1}.ud-picker-reason{display:block;margin-top:4px;color:#73767a;font-size:12px;line-height:18px;white-space:normal}.ud-picker-empty{padding:12px;color:#909399;text-align:center}
  .ud-referrer-warning{padding:12px 14px;margin:0 0 18px;border:1px solid #f5d49a;border-radius:4px;background:#fdf6ec;color:#9c5b12;line-height:1.7}.ud-referrer-warning strong{display:block;margin-bottom:4px;color:#8b4c08}.ud-referrer-review{display:grid;grid-template-columns:92px minmax(0,1fr);gap:12px;margin:20px 0}.ud-referrer-review dt{color:#909399}.ud-referrer-review dd{margin:0;overflow-wrap:anywhere}.ud-referrer-review .new{color:#d46b08;font-weight:600}.ud-referrer-review .ud-identity-tags{margin:6px 0 0}
  .ud-identity-tags{display:flex;flex-wrap:wrap;gap:6px;margin:-6px 0 18px}.ud-selected-referrer-identities{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.ud-selected-referrer-identities:empty{display:none}.ud-identity-tag{display:inline-flex;align-items:center;min-height:24px;padding:2px 8px;border-radius:4px;background:#edf4ff;color:#2f73e6;font-size:12px;line-height:20px;white-space:nowrap}.ud-identity-tag.teacher{background:#ecf8f3;color:#32956b}.ud-identity-tag.partner{background:#f1f4fa;color:#526483}.ud-identity-tag.school{background:#fff5e5;color:#b87b24}
  .ud-action{width:min(480px,calc(100vw - 32px));margin:auto;border-radius:6px;box-shadow:0 12px 40px #0003}.ud-action .ud-main{padding:22px}.ud-form-row{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}.ud-form-row label{color:#606266}.ud-required:before{content:&quot;*&quot;;color:#f56c6c;margin-right:5px}.ud-input{width:100%;border:1px solid #dcdfe6;border-radius:4px;background:#fff;padding:8px 10px;min-height:34px;font:inherit;color:#303133;outline:none}.ud-input:focus{border-color:#409eff}.ud-input[aria-invalid=true]{border-color:#f56c6c}.ud-input option{color:#303133}.ud-count{color:#909399;font-size:12px;text-align:right}.ud-error{color:#f56c6c;font-size:13px;min-height:20px;margin-top:8px}.ud-action p{margin:0 0 16px;line-height:24px}.ud-action .ud-footer{gap:12px}
@@ -461,22 +461,28 @@ function openCustomerAction(type,index,fromDetail=false){
   const label=i=&gt;data[i].name+&#x27; · &#x27;+maskReferrerPhone(demoPhones[i]);
   referrerInput.value=&#x27;&#x27;;
   const closeOptions=()=&gt;{referrerList.hidden=true;referrerInput.setAttribute(&#x27;aria-expanded&#x27;,&#x27;false&#x27;);referrerInput.removeAttribute(&#x27;aria-activedescendant&#x27;);};
-  const choose=i=&gt;{selectedReferrer=i;referrerInput.value=label(i);selectedReferrerIdentities.innerHTML=identityBadgesFor(i)||&#x27;&lt;span class=&quot;ud-picker-empty&quot;&gt;暂无身份&lt;/span&gt;&#x27;;referrerInput.removeAttribute(&#x27;aria-invalid&#x27;);dialog.querySelector(&#x27;.ud-error&#x27;).textContent=&#x27;&#x27;;closeOptions();referrerInput.focus();};
-  const highlight=()=&gt;{Array.from(referrerList.querySelectorAll(&#x27;[role=option]&#x27;)).forEach((option,i)=&gt;{option.classList.toggle(&#x27;active&#x27;,i===activeReferrer);});if(activeReferrer&gt;=0){const option=referrerList.querySelectorAll(&#x27;[role=option]&#x27;)[activeReferrer];referrerInput.setAttribute(&#x27;aria-activedescendant&#x27;,option.id);option.scrollIntoView({block:&#x27;nearest&#x27;});}};
+  const choose=i=&gt;{if(customerRelationshipError(index,i))return;selectedReferrer=i;referrerInput.value=label(i);selectedReferrerIdentities.innerHTML=identityBadgesFor(i)||&#x27;&lt;span class=&quot;ud-picker-empty&quot;&gt;暂无身份&lt;/span&gt;&#x27;;referrerInput.removeAttribute(&#x27;aria-invalid&#x27;);dialog.querySelector(&#x27;.ud-error&#x27;).textContent=&#x27;&#x27;;closeOptions();referrerInput.focus();};
+  const highlight=()=&gt;{
+   const options=Array.from(referrerList.querySelectorAll(&#x27;[role=option]&#x27;));
+   options.forEach(option=&gt;option.classList.toggle(&#x27;active&#x27;,Number(option.dataset.refIndex)===referrerOptions[activeReferrer]));
+   const option=options.find(option=&gt;Number(option.dataset.refIndex)===referrerOptions[activeReferrer]);
+   if(option){referrerInput.setAttribute(&#x27;aria-activedescendant&#x27;,option.id);option.scrollIntoView({block:&#x27;nearest&#x27;});}
+  };
   const showOptions=()=&gt;{
    const q=referrerInput.value.trim().toLowerCase();
-   referrerOptions=data.map((row,i)=&gt;i).filter(i=&gt;!customerRelationshipError(index,i)&amp;&amp;(!q||data[i].name.toLowerCase().includes(q)||demoPhones[i].includes(q)));
+   const matches=data.map((row,i)=&gt;({index:i,error:customerRelationshipError(index,i)})).filter(item=&gt;!q||data[item.index].name.toLowerCase().includes(q)||demoPhones[item.index].includes(q));
+   referrerOptions=matches.filter(item=&gt;!item.error).map(item=&gt;item.index);
    activeReferrer=-1;referrerInput.removeAttribute(&#x27;aria-activedescendant&#x27;);
-   referrerList.innerHTML=referrerOptions.length?referrerOptions.map((i,n)=&gt;`&lt;button type=&quot;button&quot; role=&quot;option&quot; id=&quot;udReferrerOption-${n}&quot; aria-selected=&quot;${selectedReferrer===i}&quot; data-ref-index=&quot;${i}&quot;&gt;${detailEscape(label(i))}&lt;/button&gt;`).join(&#x27;&#x27;):&#x27;&lt;div class=&quot;ud-picker-empty&quot;&gt;无匹配用户&lt;/div&gt;&#x27;;
+   referrerList.innerHTML=matches.length?matches.map(({index:i,error},n)=&gt;`&lt;button type=&quot;button&quot; role=&quot;option&quot; id=&quot;udReferrerOption-${n}&quot; aria-selected=&quot;${selectedReferrer===i}&quot; aria-disabled=&quot;${Boolean(error)}&quot; ${error?&#x27;disabled&#x27;:&#x27;&#x27;} data-ref-index=&quot;${i}&quot;&gt;&lt;span&gt;${detailEscape(label(i))}&lt;/span&gt;${error?`&lt;small class=&quot;ud-picker-reason&quot;&gt;${detailEscape(error)}&lt;/small&gt;`:&#x27;&#x27;}&lt;/button&gt;`).join(&#x27;&#x27;):&#x27;&lt;div class=&quot;ud-picker-empty&quot;&gt;无匹配用户&lt;/div&gt;&#x27;;
    referrerList.hidden=false;referrerInput.setAttribute(&#x27;aria-expanded&#x27;,&#x27;true&#x27;);
   };
   referrerInput.onfocus=showOptions;
   referrerInput.oninput=()=&gt;{selectedReferrer=null;selectedReferrerIdentities.replaceChildren();showOptions();};
   referrerInput.onblur=closeOptions;
   referrerList.onmousedown=event=&gt;event.preventDefault();
-  referrerList.onclick=event=&gt;{const option=event.target.closest(&#x27;[data-ref-index]&#x27;);if(option)choose(Number(option.dataset.refIndex));};
+  referrerList.onclick=event=&gt;{const option=event.target.closest(&#x27;[data-ref-index]&#x27;);if(option&amp;&amp;!option.disabled)choose(Number(option.dataset.refIndex));};
   referrerInput.onkeydown=event=&gt;{
-   if(event.key===&#x27;ArrowDown&#x27;||event.key===&#x27;ArrowUp&#x27;){event.preventDefault();if(referrerList.hidden)showOptions();if(!referrerOptions.length)return;activeReferrer=(activeReferrer+(event.key===&#x27;ArrowDown&#x27;?1:-1)+referrerOptions.length)%referrerOptions.length;highlight();}
+   if(event.key===&#x27;ArrowDown&#x27;||event.key===&#x27;ArrowUp&#x27;){event.preventDefault();if(referrerList.hidden)showOptions();if(!referrerOptions.length)return;activeReferrer=activeReferrer&lt;0?(event.key===&#x27;ArrowDown&#x27;?0:referrerOptions.length-1):(activeReferrer+(event.key===&#x27;ArrowDown&#x27;?1:-1)+referrerOptions.length)%referrerOptions.length;highlight();}
    else if(event.key===&#x27;Enter&#x27;&amp;&amp;!referrerList.hidden){event.preventDefault();if(activeReferrer&gt;=0)choose(referrerOptions[activeReferrer]);}
    else if(event.key===&#x27;Escape&#x27;&amp;&amp;!referrerList.hidden){event.preventDefault();event.stopPropagation();closeOptions();}
   };
@@ -679,7 +685,7 @@ render();connectCustomerState();
                 <h3>绑定关系</h3>
                 <ul>
                   <li>「绑定关系」位于「分配佣金」上方，默认保持当前绑定关系。</li>
-                  <li>选择「变更绑定关系」后显示「变更给」，可按姓名或手机号检索并选择平台用户；不提供本人、当前推荐人或下级作为候选，防止循环关系。仅输入文字不算选择；修改输入会清除旧选择，支持方向键和回车选中、Esc收起。提交时再次校验，未选有效对象不能开通。</li>
+                  <li>选择「变更绑定关系」后显示「变更给」，可按姓名或手机号检索并选择平台用户；本人、当前推荐人及直接或间接下级等不可选用户仍可搜到，结果置灰并直接显示原因，鼠标及键盘均不可选中。仅输入文字不算选择；修改输入会清除旧选择，支持方向键和回车选中、Esc收起。提交时再次校验，未选有效对象不能开通。</li>
                   <li>绑定关系变更后，「注册邀请分配给」会自动同步为新的绑定对象并锁定，避免绑定对象和注册邀请接收人不一致。</li>
                 </ul>
               </section>
@@ -1233,10 +1239,11 @@ render();connectCustomerState();
     function renderMenu(keyword) {
       const query = String(keyword || "").trim().toLowerCase();
       const options = Array.from(select.options).filter(function(option){
-        return option.value && !option.disabled && (!query || option.textContent.toLowerCase().includes(query) || option.value.includes(query));
+        return option.value && (!query || option.textContent.toLowerCase().includes(query) || option.value.includes(query));
       });
       menu.innerHTML = options.length ? options.map(function(option){
-        return '<button type="button" class="user-search-option" data-value="' + escapeHtml(option.value) + '">' + escapeHtml(option.textContent) + '</button>';
+        const reason = option.getAttribute("data-reason") || "";
+        return '<button type="button" class="user-search-option" aria-disabled="' + Boolean(option.disabled) + '" ' + (option.disabled ? 'disabled ' : '') + 'data-value="' + escapeHtml(option.value) + '"><span>' + escapeHtml(option.textContent) + '</span>' + (reason ? '<small class="user-search-reason">' + escapeHtml(reason) + '</small>' : '') + '</button>';
       }).join("") : '<div class="user-search-empty">未找到匹配用户</div>';
       activeOption = -1;
       menu.hidden = false;
@@ -1244,7 +1251,7 @@ render();connectCustomerState();
     input.addEventListener("focus", function(){ renderMenu(select.value ? "" : input.value); });
     let activeOption = -1;
     function chooseOption(option) {
-      if (!option) return;
+      if (!option || option.disabled) return;
       select.value = option.getAttribute("data-value") || "";
       updateManualUserSearch(selectId);
       menu.hidden = true;
@@ -1260,15 +1267,15 @@ render();connectCustomerState();
       if (event.key === "ArrowDown" || event.key === "ArrowUp") {
         event.preventDefault();
         if (menu.hidden) renderMenu(select.value ? "" : input.value);
-        const options = Array.from(menu.querySelectorAll(".user-search-option"));
+        const options = Array.from(menu.querySelectorAll(".user-search-option:not(:disabled)"));
         if (!options.length) return;
-        activeOption = (activeOption + (event.key === "ArrowDown" ? 1 : -1) + options.length) % options.length;
+        activeOption = activeOption < 0 ? (event.key === "ArrowDown" ? 0 : options.length - 1) : (activeOption + (event.key === "ArrowDown" ? 1 : -1) + options.length) % options.length;
         options.forEach(function(option,index){option.style.background = index === activeOption ? "#edf4ff" : "";});
         options[activeOption].scrollIntoView({block:"nearest"});
       }
       if (event.key === "Enter" && !menu.hidden) {
         event.preventDefault();
-        const options = menu.querySelectorAll(".user-search-option");
+        const options = menu.querySelectorAll(".user-search-option:not(:disabled)");
         chooseOption(options[activeOption < 0 ? 0 : activeOption]);
       }
     });
@@ -1283,8 +1290,9 @@ render();connectCustomerState();
   }
   function fillManualPeopleSelect(selectId, excludedPhone) {
     const select = document.getElementById(selectId);
-    select.innerHTML = '<option value="">请选择用户</option>' + platformUserDirectory.filter(function(user){ return user.phone !== excludedPhone && (selectId !== "manualBindingTarget" || !relationshipError(excludedPhone,user.phone)); }).map(function(user){
-      return '<option value="' + escapeHtml(user.phone) + '">' + escapeHtml(user.name + " · " + user.phone) + '</option>';
+    select.innerHTML = '<option value="">请选择用户</option>' + platformUserDirectory.filter(function(user){ return selectId === "manualBindingTarget" || user.phone !== excludedPhone; }).map(function(user){
+      const reason = selectId === "manualBindingTarget" ? relationshipError(excludedPhone,user.phone) : "";
+      return '<option value="' + escapeHtml(user.phone) + '"' + (reason ? ' disabled data-reason="' + escapeHtml(reason) + '"' : '') + '>' + escapeHtml(user.name + " · " + user.phone) + '</option>';
     }).join("");
     updateManualUserSearch(selectId);
   }
